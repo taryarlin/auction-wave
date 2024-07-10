@@ -28,6 +28,7 @@ class CategoryResource extends Resource
                     ->columnSpan(2),
 
                 FileUpload::make('image')
+                    ->required()
                     ->directory('project')
                     ->imageEditor()
                     ->columnSpan(2),
