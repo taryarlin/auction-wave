@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\EmailVerifyController;
 use App\Http\Controllers\API\ForgotPasswordController;
+use App\Http\Controllers\API\ProductApiController;
 use App\Http\Controllers\API\ResetPasswordController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,12 +22,8 @@ Route::prefix('v1')->group(function () {
 
     # Authenticated
     Route::group([
-        'middleware' => ['auth:sanctum', 'verified']
+        // 'middleware' => ['auth:sanctum', 'verified']
     ], function () {
-        Route::get('user', function () {
-            return [
-                'data' => 'hereererere'
-            ];
-        });
+        Route::get('/products', [ProductApiController::class, 'getAllProducts']);
     });
 });
