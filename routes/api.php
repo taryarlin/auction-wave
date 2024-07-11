@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\CategoryApiController;
 use App\Http\Controllers\API\EmailVerifyController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Http\Controllers\API\ProductApiController;
@@ -24,6 +25,9 @@ Route::prefix('v1')->group(function () {
     Route::group([
         // 'middleware' => ['auth:sanctum', 'verified']
     ], function () {
+        //Products
         Route::get('/products', [ProductApiController::class, 'getAllProducts']);
+        //Categories
+        Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
     });
 });
