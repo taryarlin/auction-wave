@@ -13,4 +13,9 @@ class Customer extends Authenticatable implements MustVerifyEmail
     use HasFactory, Notifiable, HasApiTokens;
 
     protected $guarded = [];
+
+    public function AuctionList()
+    {
+        return $this->hasMany(AuctionList::class);
+    }
 }
