@@ -42,6 +42,10 @@ class AuctionListApiController extends Controller
             } else {
                 return fail("Your amount is lower than latest auction.");
             }
+        } else {
+            $data = AuctionList::create($auction);
+
+            return success($data, "Listing Success");
         }
     }
 }
