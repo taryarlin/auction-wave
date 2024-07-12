@@ -23,6 +23,10 @@ Route::prefix('v1')->group(function () {
     Route::group([
         'middleware' => ['auth:sanctum', 'verified']
     ], function () {
-        //
+        Route::get('user', function () {
+            return [
+                'data' => 'hereererere'
+            ];
+        });
     });
 });
