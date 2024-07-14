@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Product;
+use App\Models\AuctionList;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\AuctionListResource;
-use App\Models\AuctionList;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Resources\AuctionListResource;
 
 class AuctionListApiController extends Controller
 {
@@ -33,12 +34,17 @@ class AuctionListApiController extends Controller
         $auction['customer_id'] = Auth::User()->id;
 
         $latest_auction = AuctionList::where('product_id', $auction['product_id'])->latest()->first();
+        $product = Product::where('id', $auction['product_id'])->first();
 
         if(isset($latest_auction)) {
-            if ($latest_auction->amount !== NULL && $latest_auction->amount <= $auction['amount']) {
-                $data = AuctionList::create($auction);
+            if ($latest_auction->amount !== NULL && $latest_auction->amount < $auction['amount']) {
+                if (($auction['amount'] - $latest_auction->amount) >= $product->bid_increment) {
+                    $data = AuctionList::create($auction);
 
-                return success($data, "Listing Success");
+                    return success($data, "Listing Success");
+                } else {
+                    return fail("Your amount is lower than bid increment.");
+                }
             } else {
                 return fail("Your amount is lower than latest auction.");
             }
@@ -46,6 +52,16 @@ class AuctionListApiController extends Controller
             $data = AuctionList::create($auction);
 
             return success($data, "Listing Success");
+        }
+    }
+
+    public function destroy(AuctionList $auction_list) {
+        if ( $auction_list->customer_id == auth::user()->id ) {
+            $auction_list->delete();
+
+            return successMessage("Auction delete successfully");
+        } else {
+            return failedMessage("You can't delete this auction");
         }
     }
 }
