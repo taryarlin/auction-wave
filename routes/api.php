@@ -8,6 +8,7 @@ use App\Http\Controllers\API\EmailVerifyController;
 use App\Http\Controllers\API\ResetPasswordController;
 use App\Http\Controllers\API\AuctionListApiController;
 use App\Http\Controllers\API\ForgotPasswordController;
+use App\Models\AuctionList;
 
 Route::prefix('v1')->group(function () {
     # Login & Register
@@ -33,5 +34,6 @@ Route::prefix('v1')->group(function () {
         //Auction List
         Route::get('get_auction_by_product_id', [AuctionListApiController::class, 'getAuctionByProductId']);
         Route::post('/auction_list_store', [AuctionListApiController::class, 'store']);
+        Route::delete('/auction_list_delete/{auction_list}', [AuctionListApiController::class, 'destroy']);
     });
 });
