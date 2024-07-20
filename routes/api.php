@@ -27,6 +27,8 @@ Route::prefix('v1')->group(function () {
     Route::group([
         'middleware' => ['auth:sanctum', 'verified']
     ], function () {
+        # Logout
+        Route::post('/logout', [AuthController::class, 'logout']);
         //Products
         Route::get('/products', [ProductApiController::class, 'getAllProducts']);
         //Categories
