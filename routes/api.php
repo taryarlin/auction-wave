@@ -25,12 +25,16 @@ Route::prefix('v1')->group(function () {
 
     //Products
     Route::get('/products', [ProductApiController::class, 'getAllProducts']);
+    Route::get('/product/{id}', [ProductApiController::class, 'productDetail']);
     //Categories
     Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
 
     # Authenticated
     Route::group([
-        'middleware' => ['auth:sanctum', 'verified']
+        'middleware' => [
+            'auth:sanctum',
+            // 'verified'
+        ]
     ], function () {
         //Auction List
         Route::get('get_auction_by_product_id', [AuctionListApiController::class, 'getAuctionByProductId']);
