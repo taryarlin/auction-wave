@@ -27,4 +27,10 @@ class ProductApiController extends Controller
 
         return $data;
     }
+
+    public function productDetail($id) {
+        $product = Product::find($id);
+        $data = ProductResource::make($product)->additional(['code' => 200, 'result' => 1, 'message' => 'Success']);
+        return $data;
+    }
 }
