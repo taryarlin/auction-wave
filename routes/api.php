@@ -9,6 +9,7 @@ use App\Http\Controllers\API\ResetPasswordController;
 use App\Http\Controllers\API\AuctionListApiController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Models\AuctionList;
+use App\Models\Product;
 
 Route::prefix('v1')->group(function () {
     # Login & Register
@@ -37,5 +38,10 @@ Route::prefix('v1')->group(function () {
         Route::get('get_auction_by_product_id', [AuctionListApiController::class, 'getAuctionByProductId']);
         Route::post('/auction_list_store', [AuctionListApiController::class, 'store']);
         Route::delete('/auction_list_delete/{auction_list}', [AuctionListApiController::class, 'destroy']);
+        //Product
+        Route::post('/products/create', [ProductApiController::class, 'store']);
+        Route::get('/products/{product}', [ProductApiController::class, 'show']);
+        // Route::get('')
+        Route::delete('/products/{product}', [ProductApiController::class, 'destroy']);
     });
 });
