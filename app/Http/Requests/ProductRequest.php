@@ -30,7 +30,7 @@ class ProductRequest extends FormRequest
             'end_datetime' => 'required|date',
             'buyer_premium_percent' => 'required|numeric',
             'bid_increment' => 'required|numeric',
-            'images' => 'required|array',
+            'images' => 'array',
             'images.*' => 'file|mimes:jpg,jpeg,png,gif',
             'description' => 'required|string',
             'delivery_option' => 'required|string'

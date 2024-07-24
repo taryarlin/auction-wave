@@ -7,6 +7,7 @@ use App\Http\Controllers\API\CategoryApiController;
 use App\Http\Controllers\API\EmailVerifyController;
 use App\Http\Controllers\API\ResetPasswordController;
 use App\Http\Controllers\API\AuctionListApiController;
+use App\Http\Controllers\API\CustomerApiController;
 use App\Http\Controllers\API\ForgotPasswordController;
 use App\Models\AuctionList;
 use App\Models\Product;
@@ -41,7 +42,10 @@ Route::prefix('v1')->group(function () {
         //Product
         Route::post('/products/create', [ProductApiController::class, 'store']);
         Route::get('/products/{product}', [ProductApiController::class, 'show']);
-        // Route::get('')
+        Route::patch('/products/{product}', [ProductApiController::class, 'update']);
         Route::delete('/products/{product}', [ProductApiController::class, 'destroy']);
+        //Profile
+        Route::get('/profile', [CustomerApiController::class, 'getProfile']);
+        Route::patch('/profile/edit', [CustomerApiController::class, 'editProfile']);
     });
 });
