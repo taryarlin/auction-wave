@@ -34,6 +34,11 @@ class Product extends Model
         return $this->hasMany(AuctionList::class);
     }
 
+    public function Customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
     public static function generateUniqueListingId()
     {
         return uniqid();

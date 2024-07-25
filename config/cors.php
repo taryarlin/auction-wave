@@ -19,9 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // 'allowed_origins' => ['*'],
     'allowed_origins' => ['http://localhost:3000'],
-    // 'allowed_origins' => [env('SANCTUM_STATEFUL_DOMAINS', 'http://localhost:3000'), '*'],
 
     'allowed_origins_patterns' => [],
 
