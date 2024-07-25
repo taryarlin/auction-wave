@@ -23,4 +23,9 @@ class Customer extends Authenticatable implements MustVerifyEmail
     {
         return config('app.url') . '/' . $value;
     }
+
+    public function Product()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
