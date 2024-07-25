@@ -70,4 +70,11 @@ class AuthController extends Controller
             'message' => 'Logged out Successfully.',
         ]);
     }
+
+    // public function getAuthUser()
+    // {
+    //     $customer = Auth::guard('customer')->user();
+
+    //     return success($customer);
+    // }
 }

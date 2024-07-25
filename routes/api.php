@@ -37,12 +37,8 @@ Route::prefix('v1')->group(function () {
             // 'verified'
         ]
     ], function () {
-        # Logout
-        Route::post('/logout', [AuthController::class, 'logout']);
-        //Products
-        Route::get('/products', [ProductApiController::class, 'getAllProducts']);
-        //Categories
-        Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
+        // Route::get('/auth-user', [AuthController::class, 'getAuthUser']);
+
         //Auction List
         Route::get('get_auction_by_product_id', [AuctionListApiController::class, 'getAuctionByProductId']);
         Route::post('/auction_list_store', [AuctionListApiController::class, 'store']);

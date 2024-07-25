@@ -17,7 +17,7 @@ class CategoryResource extends JsonResource
     public function toArray(Request $request): array
     {
         if ($this->image !== null) {
-            $category_image = env('APP_URL').'/'.$this->image;
+            $category_image = config('app.url') . '/' . $this->image;
         }
         $now = Carbon::now();
         $twoDaysLater = Carbon::now()->addDays(2);
@@ -33,7 +33,7 @@ class CategoryResource extends JsonResource
         foreach ($products as $product) {
             $image_urls = [];
             foreach ($product->images as $image) {
-                $image_urls[] = env('APP_URL').'/'.$image;
+                $image_urls[] = config('app.url') . '/' . $image;
             }
             $product->image_urls = $image_urls;
         }

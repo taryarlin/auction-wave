@@ -17,13 +17,13 @@ class ProductResource extends JsonResource
     {
         $images = [];
         foreach($this->images as $key => $image) {
-            $image_url = env('APP_URL').'/'.$image;
+            $image_url = config('app.url') . '/' . $image;
 
             $images[$key] = $image_url;
         }
 
         if ($this->category && $this->category->image !== null) {
-            $category_image = env('APP_URL').'/'.$this->category->image;
+            $category_image = config('app.url') . '/' . $this->category->image;
 
             $this->category->image_url = $category_image;
         }

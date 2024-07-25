@@ -18,7 +18,9 @@ class AuctionListResource extends JsonResource
             'id' => $this->id,
             'product' => $this->Product,
             'customer' => $this->Customer,
-            'amount' => $this->amount,
+            'amount' => number_format($this->amount, 2),
+            'date' => date('Y-m-d', strtotime($this->created_at)),
+            'time' => date('H:i:s', strtotime($this->created_at)),
             'created_at' => $this->created_at
         ];
     }
