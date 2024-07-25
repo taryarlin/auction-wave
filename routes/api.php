@@ -40,10 +40,10 @@ Route::prefix('v1')->group(function () {
     ], function () {
         # Logout
         Route::post('/logout', [AuthController::class, 'logout']);
-        //Products
-        Route::get('/products', [ProductApiController::class, 'getAllProducts']);
-        //Categories
-        Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
+        // //Products
+        // Route::get('/products', [ProductApiController::class, 'getAllProducts']);
+        // //Categories
+        // Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
         //Auction List
         Route::get('get_auction_by_product_id', [AuctionListApiController::class, 'getAuctionByProductId']);
         Route::post('/auction_list_store', [AuctionListApiController::class, 'store']);
