@@ -12,18 +12,36 @@ use App\Http\Resources\ProductResource;
 
 class ProductApiController extends Controller
 {
-    public function getAllProducts () {
+    public function getAllProducts (Request $request) {
         $now = Carbon::now();
         $twoDaysLater = Carbon::now()->addDays(2);
+        $perPage = (int) $request->perPage ?? 10;
 
-        $products = Product::with('Category')->where('start_datetime', '<=', $twoDaysLater)->where('end_datetime', '>=', $now)->where('status', 'approved')->paginate(5);
+        $products = Product::with('Category')
+            ->where('start_datetime', '<=', $twoDaysLater)->where('end_datetime', '>=', $now)
+            ->where('status', 'approved')
+            ->when($request->customerId, function ($query) use ($request) {
+                return $query->where('customer_id', $request->customerId);
+            })
+            ->when($request->categoryId, function ($query) use ($request) {
+                return $query->where('category_id', $request->categoryId);
+            })
+            ->paginate($perPage);
 
         $data = ProductResource::collection($products)->additional(['code' => 200, 'result' => 1, 'message' => 'Success']);
 
         return $data;
     }
 
+    public function productDetail($id) {
+        $product = Product::find($id);
+        $data = ProductResource::make($product)->additional(['code' => 200, 'result' => 1, 'message' => 'Success']);
+        return $data;
+    }
+
     public function store (ProductRequest $productRequest) {
+        // \Log::info($productRequest->all());
+
         $attributes = $productRequest->validated();
 
         if($productRequest->hasFile('images')) {
@@ -53,7 +71,7 @@ class ProductApiController extends Controller
 
     public function show (Product $product) {
         $images = [];
-        foreach($product->images as $key => $image) {   
+        foreach($product->images as $key => $image) {
             $image_url = env('APP_URL').'/'.$image;
 
             $images[$key] = $image_url;

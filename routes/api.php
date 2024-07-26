@@ -25,16 +25,25 @@ Route::prefix('v1')->group(function () {
     Route::post('password/forgot', [ForgotPasswordController::class, 'sendResetLinkEmail']);
     Route::post('password/reset', [ResetPasswordController::class, 'reset']);
 
+     //Products
+     Route::get('/products', [ProductApiController::class, 'getAllProducts']);
+     Route::get('/product/{id}', [ProductApiController::class, 'productDetail']);
+     //Categories
+     Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
+
     # Authenticated
     Route::group([
-        'middleware' => ['auth:sanctum', 'verified']
+        'middleware' => [
+            'auth:sanctum',
+            'verified'
+        ]
     ], function () {
         # Logout
         Route::post('/logout', [AuthController::class, 'logout']);
-        //Products
-        Route::get('/products', [ProductApiController::class, 'getAllProducts']);
-        //Categories
-        Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
+        // //Products
+        // Route::get('/products', [ProductApiController::class, 'getAllProducts']);
+        // //Categories
+        // Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
         //Auction List
         Route::get('get_auction_by_product_id', [AuctionListApiController::class, 'getAuctionByProductId']);
         Route::post('/auction_list_store', [AuctionListApiController::class, 'store']);
