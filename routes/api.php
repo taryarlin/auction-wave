@@ -25,11 +25,11 @@ Route::prefix('v1')->group(function () {
     Route::post('password/forgot', [ForgotPasswordController::class, 'sendResetLinkEmail']);
     Route::post('password/reset', [ResetPasswordController::class, 'reset']);
 
-    //Products
-    Route::get('/products', [ProductApiController::class, 'getAllProducts']);
-    Route::get('/product/{id}', [ProductApiController::class, 'productDetail']);
-    //Categories
-    Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
+     //Products
+     Route::get('/products', [ProductApiController::class, 'getAllProducts']);
+     Route::get('/product/{id}', [ProductApiController::class, 'productDetail']);
+     //Categories
+     Route::get('/categories', [CategoryApiController::class, 'getAllCategories']);
 
     # Authenticated
     Route::group([
