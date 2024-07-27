@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Carbon\Carbon;
@@ -12,8 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductApiController extends Controller
 {
-    public function getAllProducts(Request $request)
-    {
+    public function getAllProducts (Request $request) {
         $now = Carbon::now();
         $twoDaysLater = Carbon::now()->addDays(2);
         $perPage = (int) $request->perPage ?? 10;
@@ -21,6 +19,9 @@ class ProductApiController extends Controller
         $products = Product::with('Category')
             ->where('start_datetime', '<=', $twoDaysLater)->where('end_datetime', '>=', $now)
             ->where('status', 'approved')
+            ->when($request->customerId, function ($query) use ($request) {
+                return $query->where('customer_id', $request->customerId);
+            })
             ->when($request->categoryId, function ($query) use ($request) {
                 return $query->where('category_id', $request->categoryId);
             })
@@ -31,16 +32,15 @@ class ProductApiController extends Controller
         return $data;
     }
 
-    public function productDetail($id)
-    {
+    public function productDetail($id) {
         $product = Product::find($id);
         $data = ProductResource::make($product)->additional(['code' => 200, 'result' => 1, 'message' => 'Success']);
-
         return $data;
     }
 
-    public function store(ProductRequest $productRequest)
-    {
+    public function store (ProductRequest $productRequest) {
+        // \Log::info($productRequest->all());
+
         $attributes = $productRequest->validated();
 
         if($productRequest->hasFile('images')) {
