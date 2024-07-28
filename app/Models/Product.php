@@ -34,6 +34,11 @@ class Product extends Model
         return $this->hasMany(AuctionList::class);
     }
 
+    public function auctions()
+    {
+        return $this->belongsToMany(Customer::class, 'customer_product')->withPivot(['amount']);
+    }
+
     public function Customer()
     {
         return $this->belongsTo(Customer::class);
@@ -47,5 +52,21 @@ class Product extends Model
     public static function generateUniqueItemNumber()
     {
         return Str::uuid();
+    }
+
+    public function getCurrentBidAttribute()
+    {
+        return $this->auctions->first()->pivot->amount ?? $this->starting_price;
+    }
+
+    public function getAcsrImagesAttribute()
+    {
+        $baseUrl = url('/');
+
+        $imageUrls = array_map(function ($image) use ($baseUrl) {
+            return $baseUrl . '/storage/' . $image;
+        }, $this->images);
+
+        return $imageUrls;
     }
 }

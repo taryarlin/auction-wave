@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://pixner.net/sbidu/main/about.html -->
+<html lang="en" class=" sizes customelements history pointerevents postmessage webgl websockets cssanimations csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox picture srcset webworkers"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Sbidu - Bid And Auction HTML Template</title>
+
+    <link rel="stylesheet" href="./overview5_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./overview5_files/all.min.css">
+    <link rel="stylesheet" href="./overview5_files/animate.css">
+    <link rel="stylesheet" href="./overview5_files/nice-select.css">
+    <link rel="stylesheet" href="./overview5_files/owl.min.css">
+    <link rel="stylesheet" href="./overview5_files/magnific-popup.css">
+    <link rel="stylesheet" href="./overview5_files/flaticon.css">
+    <link rel="stylesheet" href="./overview5_files/jquery-ui.min.css">
+    <link rel="stylesheet" href="./overview5_files/aos.css">
+    <link rel="stylesheet" href="./overview5_files/main.css">
+
+    <link rel="shortcut icon" href="https://pixner.net/sbidu/main/assets/images/favicon.png" type="image/x-icon">
+</head>
+
+<body data-aos-easing="ease-in-out" data-aos-duration="400" data-aos-delay="0">
+    <!--============= ScrollToTop Section Starts Here =============-->
+    <div class="overlayer" id="overlayer" style="display: none;">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <a href="https://pixner.net/sbidu/main/about.html#0" class="scrollToTop active"><i class="fas fa-angle-up"></i></a>
+    <div class="overlay"></div>
+    <!--============= ScrollToTop Section Ends Here =============-->
+
+
+    <!--============= Header Section Starts Here =============-->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-wrapper">
+                    <ul class="customer-support">
+                        <li class="cmn-support-text">
+                            <a href="https://pixner.net/sbidu/main/about.html#0" class="mr-3"><i class="fas fa-phone-alt"></i><span class="ml-2 d-none d-sm-inline-block">Customer Support</span></a>
+                        </li>
+                        <li class="customer-cupport-lang">
+                            <i class="fas fa-globe"></i>
+                            <select name="language" class="select-bar" style="display: none;">
+                                <option value="en">En</option>
+                                <option value="Bn">Bn</option>
+                                <option value="Rs">Rs</option>
+                                <option value="Us">Us</option>
+                                <option value="Pk">Pk</option>
+                                <option value="Arg">Arg</option>
+                            </select><div class="nice-select select-bar" tabindex="0"><span class="current">En</span><ul class="list"><li data-value="en" class="option selected">En</li><li data-value="Bn" class="option">Bn</li><li data-value="Rs" class="option">Rs</li><li data-value="Us" class="option">Us</li><li data-value="Pk" class="option">Pk</li><li data-value="Arg" class="option">Arg</li></ul></div>
+                        </li>
+                    </ul>
+                    <ul class="cart-button-area">
+                        <li>
+                            <a href="https://pixner.net/sbidu/main/about.html#0" class="cart-button"><i class="flaticon-shopping-basket"></i><span class="amount">08</span></a>
+                        </li>                        
+                        <li>
+                            <a href="https://pixner.net/sbidu/main/sign-in.html" class="user-button"><i class="flaticon-user"></i></a>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom active">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <a href="https://pixner.net/sbidu/main/index.html">
+                            <img src="./overview5_files/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <ul class="menu ml-auto">
+                        <li class="menu-item-has-children">
+                            <a href="https://pixner.net/sbidu/main/about.html#0">Home</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/index.html">Home Page One</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/index-2.html">Home Page Two</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/index-3.html">Home Page Three</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/index-4.html">Home Page Four</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/index-5.html">Home Page Five</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://pixner.net/sbidu/main/product.html">Auction</a>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="https://pixner.net/sbidu/main/about.html#0">Pages</a>
+                            <ul class="submenu">
+                                <li class="menu-item-has-children">
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Product</a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/product.html">Product Page 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/product-2.html">Product Page 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/product-details.html">Product Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">My Account</a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/sign-up.html">Sign Up</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/sign-in.html">Sign In</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children">
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Dashboard</a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/dashboard.html">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/profile.html">Personal Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/my-bid.html">My Bids</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/winning-bids.html">Winning Bids</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/notifications.html">My Alert</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/my-favorites.html">My Favorites</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://pixner.net/sbidu/main/referral.html">Referrals</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/faqs.html">Faqs</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/error.html">404 Error</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://pixner.net/sbidu/main/contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search for brand, model....">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    <div class="search-bar d-md-none">
+                        <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fas fa-search"></i></a>
+                    </div>
+                    <div class="header-bar d-lg-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--============= Header Section Ends Here =============-->
+
+    <!--============= Cart Section Starts Here =============-->
+    <div class="cart-sidebar-area">
+        <div class="top-content">
+            <a href="https://pixner.net/sbidu/main/index.html" class="logo">
+                <img src="./overview5_files/logo2.png" alt="logo">
+            </a>
+            <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="bottom-content">
+            <div class="cart-products">
+                <h4 class="title">Shopping cart</h4>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/shop01.jpg" alt="shop"></a>
+                    </div>
+                    <div class="content">
+                        <h4 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Color Pencil</a></h4>
+                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
+                        <a href="https://pixner.net/sbidu/main/about.html#" class="remove-cart">Remove</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/shop02.jpg" alt="shop"></a>
+                    </div>
+                    <div class="content">
+                        <h4 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Water Pot</a></h4>
+                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
+                        <a href="https://pixner.net/sbidu/main/about.html#" class="remove-cart">Remove</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/shop03.jpg" alt="shop"></a>
+                    </div>
+                    <div class="content">
+                        <h4 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Art Paper</a></h4>
+                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
+                        <a href="https://pixner.net/sbidu/main/about.html#" class="remove-cart">Remove</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/shop04.jpg" alt="shop"></a>
+                    </div>
+                    <div class="content">
+                        <h4 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Stop Watch</a></h4>
+                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
+                        <a href="https://pixner.net/sbidu/main/about.html#" class="remove-cart">Remove</a>
+                    </div>
+                </div>
+                <div class="single-product-item">
+                    <div class="thumb">
+                        <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/shop05.jpg" alt="shop"></a>
+                    </div>
+                    <div class="content">
+                        <h4 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Comics Book</a></h4>
+                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
+                        <a href="https://pixner.net/sbidu/main/about.html#" class="remove-cart">Remove</a>
+                    </div>
+                </div>
+                <div class="btn-wrapper text-center">
+                    <a href="https://pixner.net/sbidu/main/about.html#0" class="custom-button"><span>Checkout</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--============= Cart Section Ends Here =============-->
+
+
+    <!--============= Hero Section Starts Here =============-->
+    <div class="hero-section">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="https://pixner.net/sbidu/main/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="https://pixner.net/sbidu/main/about.html#0">Pages</a>
+                </li>
+                <li>
+                    <span>About Us</span>
+                </li>
+            </ul>
+        </div>
+        <div class="bg_img hero-bg bottom_center" data-background="./assets/images/banner/hero-bg.png" style="background-image: url(&quot;./assets/images/banner/hero-bg.png&quot;);"></div>
+    </div>
+    <!--============= Hero Section Ends Here =============-->
+
+
+    <!--============= About Section Starts Here =============-->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-wrapper mt--100 mt-lg--440 padding-top">
+                <div class="row">
+                    <div class="col-lg-7 col-xl-6">
+                        <div class="about-content">
+                            <h4 class="subtitle aos-init aos-animate" data-aos="fade-down" data-aos-duration="1000">About Us</h4>
+                            <h2 class="title aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200"><span class="d-block">OVER 60</span> YEARS EXPERIENCE</h2>
+                            <p class="gra aos-init aos-animate" data-aos="fade-down" data-aos-duration="1300">Innovation have made us leaders in auctions platform</p>
+                            <div class="item-area aos-init aos-animate" data-aos="fade-down" data-aos-duration="1600">
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/01.png" alt="about">
+                                    </div>
+                                    <p>award-winning team</p>
+                                </div>
+                                <div class="item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/02.png" alt="about">
+                                    </div>
+                                    <p>AFFILIATIONS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-thumb">
+                    <img src="./overview5_files/about.png" alt="about">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--============= About Section Ends Here =============-->
+
+
+    <!--============= Counter Section Starts Here =============-->
+    <div class="counter-section padding-top mt--10">
+        <div class="container">
+            <div class="row justify-content-center mb-30-none">
+                <div class="col-sm-6 col-lg-3 aos-init aos-animate" data-aos="zoom-out-up" data-aos-duration="1100">
+                    <div class="counter-item">
+                        <h3 class="counter-header">
+                            <span class="title counter">62</span><span class="title">M</span>
+                        </h3>
+                        <p>ITEMS AUCTIONED</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 aos-init aos-animate" data-aos="zoom-out-up" data-aos-duration="1300">
+                    <div class="counter-item">
+                        <h3 class="counter-header">
+                            <span>$</span><span class="title counter">887</span><span class="title">M</span>
+                        </h3>
+                        <p>IN SECURE BIDS</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 aos-init aos-animate" data-aos="zoom-out-up" data-aos-duration="1500">
+                    <div class="counter-item">
+                        <h3 class="counter-header">
+                            <span class="title counter">63</span><span class="title">M</span>
+                        </h3>
+                        <p>ITEMS AUCTIONED</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 aos-init aos-animate" data-aos="zoom-out-up" data-aos-duration="1700">
+                    <div class="counter-item">
+                        <h3 class="counter-header">
+                            <span>0</span><span class="title counter">5</span><span class="title">K</span>
+                        </h3>
+                        <p>AUCTION EXPERTS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--============= Counter Section Ends Here =============-->
+
+
+    <!--============= Overview Section Starts Here =============-->
+    <section class="overview-section padding-top">
+        <div class="container mw-lg-100 p-lg-0">
+            <div class="row m-0">
+                <div class="col-lg-6 p-0">
+                    <div class="overview-content">
+                        <div class="section-header text-lg-left aos-init aos-animate" data-aos="zoom-out-down" data-aos-duration="1000">
+                            <h2 class="title">What can you expect?</h2>
+                            <p>Voluptate aut blanditiis accusantium officiis expedita dolorem inventore odio reiciendis obcaecati quod nisi quae</p>
+                        </div>
+                        <div class="row mb--50">
+                            <div class="col-sm-6">
+                                <div class="expert-item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/01(1).png" alt="overview">
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="title">Real-time Auction</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="expert-item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/02(1).png" alt="overview">
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="title">Supports Multiple Currency</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="expert-item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/03.png" alt="overview">
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="title">Winner Announcement</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="expert-item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/04.png" alt="overview">
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="title">Supports Multiple Currency</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="expert-item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/05.png" alt="overview">
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="title">Show all bidders history</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="expert-item">
+                                    <div class="thumb">
+                                        <img src="./overview5_files/06.png" alt="overview">
+                                    </div>
+                                    <div class="content">
+                                        <h6 class="title">Add to watchlist</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pl-30 pr-0">
+                    <div class="w-100 h-100 bg_img" data-background="./assets/images/overview/overview-bg.png" style="background-image: url(&quot;./assets/images/overview/overview-bg.png&quot;);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--============= Overview Section Ends Here =============-->
+
+
+    <!--============= Call In Section Starts Here =============-->
+    <section class="call-in-section padding-top padding-bottom">
+        <div class="container">
+            <div class="call-wrapper cl-white bg_img" data-background="./assets/images/call-in/call-bg.png" style="background-image: url(&quot;./assets/images/call-in/call-bg.png&quot;);">
+                <div class="section-header aos-init aos-animate" data-aos="zoom-out-down" data-aos-duration="1200">
+                    <h3 class="title">Register for Free &amp; Start Bidding Now!</h3>
+                    <p>From cars to diamonds to iPhones, we have it all.</p>
+                </div>
+                <a href="https://pixner.net/sbidu/main/about.html#0" class="custom-button white">Register</a>
+            </div>
+        </div>
+    </section>
+    <!--============= Call In Section Ends Here =============-->
+
+
+    <!--============= Team Section Starts Here =============-->
+    <section class="team-section section-bg padding-top padding-bottom">
+        <div class="container">
+            <div class="section-header aos-init" data-aos="zoom-out-down" data-aos-duration="1200">
+                <h2 class="title">Meet the Management Team</h2>
+                <p>Our team consists of passionate and talented individuals invested in your success.</p>
+            </div>
+            <div class="team-wrapper row justify-content-between">
+                <div class="team-item aos-init" data-aos="zoom-out-up" data-aos-duration="1100">
+                    <div class="team-inner">
+                        <div class="team-thumb">
+                            <a href="https://pixner.net/sbidu/main/about.html#0">
+                                <img src="./overview5_files/team1.png" alt="team">
+                            </a>
+                        </div>
+                        <div class="team-content">
+                            <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Kent Quinn</a></h6>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item aos-init" data-aos="zoom-out-up" data-aos-duration="1200">
+                    <div class="team-inner">
+                        <div class="team-thumb">
+                            <a href="https://pixner.net/sbidu/main/about.html#0">
+                                <img src="./overview5_files/team2.png" alt="team">
+                            </a>
+                        </div>
+                        <div class="team-content">
+                            <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Dustin Day</a></h6>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item aos-init" data-aos="zoom-out-up" data-aos-duration="1300">
+                    <div class="team-inner">
+                        <div class="team-thumb">
+                            <a href="https://pixner.net/sbidu/main/about.html#0">
+                                <img src="./overview5_files/team3.png" alt="team">
+                            </a>
+                        </div>
+                        <div class="team-content">
+                            <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Antonia Little</a></h6>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item aos-init" data-aos="zoom-out-up" data-aos-duration="1400">
+                    <div class="team-inner">
+                        <div class="team-thumb">
+                            <a href="https://pixner.net/sbidu/main/about.html#0">
+                                <img src="./overview5_files/team4.png" alt="team">
+                            </a>
+                        </div>
+                        <div class="team-content">
+                            <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Marie Wolfe</a></h6>
+                            <ul class="social">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--============= Team Section Ends Here =============-->
+
+
+    <!--============= Client Section Starts Here =============-->
+    <section class="client-section padding-top padding-bottom">
+        <div class="container">
+            <div class="section-header aos-init" data-aos="zoom-out-down" data-aos-duration="1200">
+                <h2 class="title">Don’t just take our word for it!</h2>
+                <p>Our hard work is paying off. Great reviews from amazing customers.</p>
+            </div>
+            <div class="m--15">
+                <div class="client-slider owl-theme owl-carousel owl-loaded owl-drag">
+                    
+                    
+                    
+                <div class="owl-stage-outer owl-height" style="height: 251px;"><div class="owl-stage" style="transform: translate3d(-1520px, 0px, 0px); transition: all 1s ease 0s; width: 3420px;"><div class="owl-item cloned" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>I can't stop bidding! It's a great way to spend some time and I want everything on Sbidu.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client01.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Alexis Moore</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item cloned" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>I came I saw I won. Love what I have won, and will try to win something else.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client02.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Darin Griffin</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item cloned" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>This was my first time, but it was exciting. I will try it again. Thank you so much.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client03.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Tom Powell</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>I can't stop bidding! It's a great way to spend some time and I want everything on Sbidu.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client01.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Alexis Moore</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item active" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>I came I saw I won. Love what I have won, and will try to win something else.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client02.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Darin Griffin</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item active" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>This was my first time, but it was exciting. I will try it again. Thank you so much.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client03.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Tom Powell</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item cloned active" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>I can't stop bidding! It's a great way to spend some time and I want everything on Sbidu.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client01.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Alexis Moore</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item cloned" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>I came I saw I won. Love what I have won, and will try to win something else.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client02.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Darin Griffin</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div><div class="owl-item cloned" style="width: 380px;"><div class="client-item">
+                        <div class="client-content">
+                            <p>This was my first time, but it was exciting. I will try it again. Thank you so much.</p>
+                        </div>
+                        <div class="client-author">
+                            <div class="thumb">
+                                <a href="https://pixner.net/sbidu/main/about.html#0">
+                                    <img src="./overview5_files/client03.png" alt="client">
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h6 class="title"><a href="https://pixner.net/sbidu/main/about.html#0">Tom Powell</a></h6>
+                                <div class="ratings">
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                    <span><i class="fas fa-star"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"></div><div class="owl-thumbs"></div></div>
+            </div>
+        </div>
+    </section>
+    <!--============= Client Section Ends Here =============-->
+
+
+    <!--============= Footer Section Starts Here =============-->
+    <footer class="bg_img padding-top oh" data-background="./assets/images/footer/footer-bg.jpg" style="background-image: url(&quot;./assets/images/footer/footer-bg.jpg&quot;);">
+        <div class="footer-top-shape">
+            <img src="./overview5_files/footer-top-shape.png" alt="css">
+        </div>
+        <div class="anime-wrapper">
+            <div class="anime-1 plus-anime">
+                <img src="./overview5_files/p1.png" alt="footer">
+            </div>
+            <div class="anime-2 plus-anime">
+                <img src="./overview5_files/p2.png" alt="footer">
+            </div>
+            <div class="anime-3 plus-anime">
+                <img src="./overview5_files/p3.png" alt="footer">
+            </div>
+            <div class="anime-5 zigzag">
+                <img src="./overview5_files/c2.png" alt="footer">
+            </div>
+            <div class="anime-6 zigzag">
+                <img src="./overview5_files/c3.png" alt="footer">
+            </div>
+            <div class="anime-7 zigzag">
+                <img src="./overview5_files/c4.png" alt="footer">
+            </div>
+        </div>
+        <div class="newslater-wrapper">
+            <div class="container">
+                <div class="newslater-area">
+                    <div class="newslater-thumb">
+                        <img src="./overview5_files/newslater.png" alt="footer">
+                    </div>
+                    <div class="newslater-content">
+                        <div class="section-header left-style mb-low aos-init" data-aos="fade-down" data-aos-duration="1100">
+                            <h5 class="cate">Subscribe to Sbidu</h5>
+                            <h3 class="title">To Get Exclusive Benefits</h3>
+                        </div>
+                        <form class="subscribe-form">
+                            <input type="text" placeholder="Enter Your Email" name="email">
+                            <button type="submit" class="custom-button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-top padding-bottom padding-top">
+            <div class="container">
+                <div class="row mb--60">
+                    <div class="col-sm-6 col-lg-3 aos-init" data-aos="fade-down" data-aos-duration="1000">
+                        <div class="footer-widget widget-links">
+                            <h5 class="title">Auction Categories</h5>
+                            <ul class="links-list">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Ending Now</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Vehicles</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Watches</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Electronics</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Real Estate</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Jewelry</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Art</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Sports &amp; Outdoor</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 aos-init" data-aos="fade-down" data-aos-duration="1300">
+                        <div class="footer-widget widget-links">
+                            <h5 class="title">About Us</h5>
+                            <ul class="links-list">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">About Sbidu</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Help</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Affiliates</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Press</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Our blog</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Collectors' portal</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 aos-init" data-aos="fade-down" data-aos-duration="1600">
+                        <div class="footer-widget widget-links">
+                            <h5 class="title">We're Here to Help</h5>
+                            <ul class="links-list">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Your Account</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Safe and Secure</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Shipping Information</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0">Help &amp; FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 aos-init" data-aos="fade-down" data-aos-duration="1800">
+                        <div class="footer-widget widget-follow">
+                            <h5 class="title">Follow Us</h5>
+                            <ul class="links-list">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fas fa-phone-alt"></i>(646) 663-4575</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fas fa-blender-phone"></i>(646) 968-0608</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fas fa-envelope-open-text"></i>help@engotheme.com</a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fas fa-location-arrow"></i>1201 Broadway Suite</a>
+                                </li>
+                            </ul>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0" class="active"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://pixner.net/sbidu/main/about.html#0"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright-area">
+                    <div class="footer-bottom-wrapper">
+                        <div class="logo">
+                            <a href="https://pixner.net/sbidu/main/index.html"><img src="./overview5_files/footer-logo.png" alt="logo"></a>
+                        </div>
+                        <ul class="gateway-area">
+                            <li>
+                                <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/paypal.png" alt="footer"></a>
+                            </li>
+                            <li>
+                                <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/visa.png" alt="footer"></a>
+                            </li>
+                            <li>
+                                <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/discover.png" alt="footer"></a>
+                            </li>
+                            <li>
+                                <a href="https://pixner.net/sbidu/main/about.html#0"><img src="./overview5_files/mastercard.png" alt="footer"></a>
+                            </li>
+                        </ul>
+                        <div class="copyright"><p>© Copyright 2024 | <a href="https://pixner.net/sbidu/main/about.html#0">Sbidu</a> By <a href="https://pixner.net/sbidu/main/about.html#0">Uiaxis</a></p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--============= Footer Section Ends Here =============-->
+
+
+
+    <script src="./overview5_files/jquery-3.3.1.min.js.download"></script>
+    <script src="./overview5_files/modernizr-3.6.0.min.js.download"></script>
+    <script src="./overview5_files/plugins.js.download"></script>
+    <script src="./overview5_files/bootstrap.min.js.download"></script>
+    <script src="./overview5_files/isotope.pkgd.min.js.download"></script>
+    <script src="./overview5_files/aos.js.download"></script>
+    <script src="./overview5_files/wow.min.js.download"></script>
+    <script src="./overview5_files/waypoints.js.download"></script>
+    <script src="./overview5_files/nice-select.js.download"></script>
+    <script src="./overview5_files/counterup.min.js.download"></script>
+    <script src="./overview5_files/owl.min.js.download"></script>
+    <script src="./overview5_files/magnific-popup.min.js.download"></script>
+    <script src="./overview5_files/yscountdown.min.js.download"></script>
+    <script src="./overview5_files/jquery-ui.min.js.download"></script>
+    <script src="./overview5_files/main.js.download"></script>
+
+
+</body></html>
