@@ -21,7 +21,7 @@
                 </ul>
                 <ul class="cart-button-area">
                     <li>
-                        <a href="login.php" class="user-button"><i class="fa-regular fa-user"></i></a>
+                        <a href="{{ route('login') }}" class="user-button"><i class="fa-regular fa-user"></i></a>
                     </li>
                 </ul>
             </div>
@@ -31,21 +31,21 @@
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <a href="./index.html">
-                        <img src="./assets/images/pg-logo.png" alt="logo" width="20" height="50">
+                    <a href="/">
+                        <img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo" width="20" height="50">
                     </a>
                 </div>
                 <ul class="menu ml-auto">
                     <li>
-                        <a href="./index.php">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="auction.php">Auction</a>
+                        <a href="/auctions">Auction</a>
                     </li>
                     <li>
                         <a href="#">Pages</a>
                         <ul class="submenu">
-                            <li>
+                            {{-- <li>
                                 <a href="#0">Product</a>
                                 <ul class="submenu">
                                     <li>
@@ -55,15 +55,15 @@
                                         <a href="details.php">Product Details</a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="#0">My Account</a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="./sign-up.php">Sign Up</a>
+                                        <a href="{{ route('register') }}">Sign Up</a>
                                     </li>
                                     <li>
-                                        <a href="./login.php">Sign In</a>
+                                        <a href="{{ route('login') }}">Sign In</a>
                                     </li>
                                 </ul>
                             </li>
@@ -99,7 +99,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.php">Contact</a>
+                        <a href="/contact">Contact</a>
                     </li>
                 </ul>
                 <form class="search-form">

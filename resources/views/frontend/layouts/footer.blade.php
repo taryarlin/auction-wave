@@ -1,32 +1,32 @@
-<footer class="bg_img padding-top oh" data-background="./assets/images/footer-bg.jpg" style="background-image: url(./assets/images/footer-bg.png);">
+<footer class="bg_img padding-top oh" data-background="{{ asset('assets/images/footer-bg.jpg') }}" style="background-image: url({{ asset('assets/images/footer-bg.png') }});">
     <div class="footer-top-shape">
-        <img src="./assets/images/footer-top-shape.png" alt="css">
+        <img src="{{ asset('assets/images/footer-top-shape.png') }}" alt="css">
     </div>
     <div class="anime-wrapper">
         <div class="anime-1 plus-anime">
-            <img src="./assets/images/p1.png" alt="footer">
+            <img src="{{ asset('assets/images/p1.png') }}" alt="footer">
         </div>
         <div class="anime-2 plus-anime">
-            <img src="./assets/images/p2.png" alt="footer">
+            <img src="{{ asset('assets/images/p2.png') }}" alt="footer">
         </div>
         <div class="anime-3 plus-anime">
-            <img src="./assets/images/p3.png" alt="footer">
+            <img src="{{ asset('assets/images/p3.png') }}" alt="footer">
         </div>
         <div class="anime-5 zigzag">
-            <img src="./assets/images/c2.png" alt="footer">
+            <img src="{{ asset('assets/images/c2.png') }}" alt="footer">
         </div>
         <div class="anime-6 zigzag">
-            <img src="./assets/images/c3.png" alt="footer">
+            <img src="{{ asset('assets/images/c3.png') }}" alt="footer">
         </div>
         <div class="anime-7 zigzag">
-            <img src="./assets/images/c4.png" alt="footer">
+            <img src="{{ asset('assets/images/c4.png') }}" alt="footer">
         </div>
     </div>
     <div class="newslater-wrapper">
         <div class="container">
             <div class="newslater-area">
                 <div class="newslater-thumb">
-                    <img src="./assets/images/newslater.png" alt="footer">
+                    <img src="{{ asset('assets/images/newslater.png') }}" alt="footer">
                 </div>
                 <div class="newslater-content">
                     <div class="section-header left-style mb-low" data-aos="fade-down" data-aos-duration="1100">
@@ -148,20 +148,20 @@
             <div class="copyright-area">
                 <div class="footer-bottom-wrapper">
                     <div class="logo">
-                        <a href="index.html"><img src="./assets/images/pg-logo.png" alt="logo"></a>
+                        <a href="index.html"><img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo"></a>
                     </div>
                     <ul class="gateway-area">
                         <li>
-                            <a href="#0"><img src="./assets/images/paypal.png" alt="footer"></a>
+                            <a href="#0"><img src="{{ asset('assets/images/paypal.png') }}" alt="footer"></a>
                         </li>
                         <li>
-                            <a href="#0"><img src="./assets/images/visa.png" alt="footer"></a>
+                            <a href="#0"><img src="{{ asset('assets/images/visa.png') }}" alt="footer"></a>
                         </li>
                         <li>
-                            <a href="#0"><img src="./assets/images/discover.png" alt="footer"></a>
+                            <a href="#0"><img src="{{ asset('assets/images/discover.png') }}" alt="footer"></a>
                         </li>
                         <li>
-                            <a href="#0"><img src="./assets/images/mastercard.png" alt="footer"></a>
+                            <a href="#0"><img src="{{ asset('assets/images/mastercard.png') }}" alt="footer"></a>
                         </li>
                     </ul>
                     <div class="copyright">

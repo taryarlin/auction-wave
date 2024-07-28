@@ -2,7 +2,7 @@
 
 @section('content')
     <!--============= Banner Section Starts Here =============-->
-    <section class="banner-section bg_img" data-background="./assets/images/banner-bg.png" style="background-image: url(images/banner-bg.png); ">
+    <section class="banner-section bg_img" data-background="{{ asset('assets/images/banner-bg.png') }}" style="background-image: url(images/banner-bg.png); ">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-xl-6">
@@ -12,18 +12,18 @@
                         <p class="pras" data-aos="zoom-out-down" data-aos-duration="1300">
                             Online Auction is where everyone goes to shop, sell,and give, while discovering variety and affordability.
                         </p>
-                        <a href="sign-up.php" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">Get Started</a>
+                        <a href="{{ route('register') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">Get Started</a>
                     </div>
                 </div>
                 <div class="d-none d-lg-block col-lg-6" data-aos="fade-right" data-aos-duration="1200">
                     <div class="banner-thumb-2">
-                        <img src="./assets/images/banner.png" alt="banner">
+                        <img src="{{ asset('assets/images/banner.png') }}" alt="banner">
                     </div>
                 </div>
             </div>
         </div>
         <div class="banner-shape d-none d-lg-block">
-            <img src="./assets/images/banner-shape.png" alt="css">
+            <img src="{{ asset('assets/images/banner-shape.png') }}" alt="css">
         </div>
     </section>
     <!--============= Banner Section Ends Here =============-->
@@ -35,7 +35,7 @@
                 <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                     <div class="left">
                         <div class="thumb">
-                            <img src="./assets/images/art.png" alt="header-icons">
+                            <img src="{{ asset('assets/images/art.png') }}" alt="header-icons">
                         </div>
                         <div class="title-area">
                             <h2 class="title">{{ $category->name }}</h2>
@@ -100,7 +100,7 @@
 
     <!--============= Popular Auction Section Starts Here =============-->
     <section class="popular-auction padding-top pos-rel" style="margin-bottom: 60px;">
-        <div class="popular-bg bg_img" data-background="./assets/images/popular-bg.png"></div>
+        <div class="popular-bg bg_img" data-background="{{ asset('assets/images/popular-bg.png') }}"></div>
         <div class="container">
             <div class="section-header cl-white" data-aos="fade-down" data-aos-duration="1000">
                 <span class="cate">Closing Within 24 Hours</span>
@@ -145,12 +145,12 @@
     <!--============= Call In Section Starts Here =============-->
     <section class="call-in-section pt-max-xl-0">
         <div class="container">
-            <div class="call-wrapper cl-white bg_img" data-background="./assets/images/call-bg.png" style="background-image: url(./assets/images/call-bg.png);">
+            <div class="call-wrapper cl-white bg_img" data-background="{{ asset('assets/images/call-bg.png') }}" style="background-image: url({{ asset('assets/images/call-bg.png') }});">
                 <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
                     <h3 class="title">Register for Free & Start Bidding Now!</h3>
                     <p>From cars to diamonds to iPhones, we have it all.</p>
                 </div>
-                <a href="sign-up.php" class="custom-button white">Register</a>
+                <a href="{{ route('register') }}" class="custom-button white">Register</a>
             </div>
         </div>
     </section>
@@ -167,7 +167,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="how-item">
                             <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1000">
-                                <img src="./assets/images/how1.png" alt="how">
+                                <img src="{{ asset('assets/images/how1.png') }}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1200">
                                 <h4 class="title">Sign Up</h4>
@@ -178,7 +178,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="how-item">
                             <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1200">
-                                <img src="./assets/images/how2.png" alt="how">
+                                <img src="{{ asset('assets/images/how2.png') }}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1400">
                                 <h4 class="title">Bid</h4>
@@ -189,7 +189,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="how-item">
                             <div class="how-thumb" data-aos="zoom-out-up" data-aos-duration="1400">
-                                <img src="./assets/images/how3.png" alt="how">
+                                <img src="{{ asset('assets/images/how3.png') }}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1600">
                                 <h4 class="title">Win</h4>
@@ -218,7 +218,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="./assets/images/client01.png" alt="client">
+                                    <img src="{{ asset('assets/images/client01.png') }}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -240,7 +240,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="./assets/images/client02.png" alt="client">
+                                    <img src="{{ asset('assets/images/client02.png') }}" alt="client">
                                 </a>
                             </div>
                             <div class="content">
@@ -262,7 +262,7 @@
                         <div class="client-author">
                             <div class="thumb">
                                 <a href="#0">
-                                    <img src="./assets/images/client03.png" alt="client">
+                                    <img src="{{ asset('assets/images/client03.png') }}" alt="client">
                                 </a>
                             </div>
                             <div class="content">

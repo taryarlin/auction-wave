@@ -48,6 +48,12 @@
     <script src="{{ asset('assets/js/yscountdown.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @include('frontend.layouts.page_info')
+
+    @stack('script')
 </body>
 
 </html>

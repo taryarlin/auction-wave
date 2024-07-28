@@ -20,6 +20,7 @@ return new class extends Migration {
             $table->text('address');
             $table->string('phone');
             $table->date('date_of_birth')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -1,0 +1,383 @@
+@extends('frontend.layouts.app')
+
+@section('content')
+    <!--============= Hero Section Starts Here =============-->
+    <div class="hero-section style-2">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li>
+                    <a href="/">Home<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
+                </li>
+
+                <li>
+                    <a href="/auctions">Pages<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
+                </li>
+
+                @if (!auth()->check())
+                    <li>
+                        <a href="{{ route('login') }}">Sign in</a>
+                    </li>
+                @endif
+            </ul>
+        </div>
+        <div class="bg_img hero-bg bottom_center" data-background="{{ asset('assets/images/hero-bg.png') }}"></div>
+    </div>
+    <!--============= Hero Section Ends Here =============-->
+
+
+    <section class="product-details padding-bottom mt--240 mt-lg--440">
+        <div class="container">
+            <div class="product-details-slider-top-wrapper">
+                <div class="product-details-slider owl-theme owl-carousel" id="sync1">
+                    <div class="slide-top-item">
+                        @foreach ($product->acsr_images as $image)
+                            <div class="slide-inner">
+                                <img src="{{ $image }}" alt="product">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-40-60-80">
+                <div class="col-lg-8">
+                    <div class="product-details-content">
+                        <div class="product-details-header">
+                            <h2 class="title">{{ $product->name }}</h2>
+                            <ul>
+                                <li>Listing ID: {{ $product->listing_id }}</li>
+                                <li>Item #: {{ $product->item_number }}</li>
+                            </ul>
+                        </div>
+                        <ul class="price-table mb-30">
+                            <li class="header">
+                                <h5 class="current">Current Price</h5>
+                                <h3 class="price">{{ $product->current_bid }} MMK</h3>
+                            </li>
+                            <li>
+                                <span class="details">Buyer's Premium</span>
+                                <h5 class="info">{{ $product->buyer_premium_percent }}%</h5>
+                            </li>
+                            <li>
+                                <span class="details">Bid Increment (US)</span>
+                                <h5 class="info">{{ $product->bid_increment }} MMK</h5>
+                            </li>
+                        </ul>
+                        <div class="product-bid-area">
+                            <form action="{{ route('make-bid') }}" method="POST" class="product-bid-form">
+                                @csrf
+                                <div class="search-icon">
+                                    <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
+                                </div>
+                                <input type="number" name="amount" placeholder="Enter you bid amount">
+                                <button type="submit" class="custom-button">Submit a bid</button>
+                            </form>
+                        </div>
+                        <div class="buy-now-area">
+                            <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
+                            <div class="share-area">
+                                <span>Share to:</span>
+                                <ul>
+                                    <li>
+                                        <a href="#0"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#0"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#0"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#0"><i class="fab fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="product-sidebar-area">
+                        <div class="product-single-sidebar mb-3">
+                            <h6 class="title">This Auction Ends in:</h6>
+                            <div class="countdown">
+                                <div id="product_bid_counter"></div>
+                            </div>
+                            <div class="side-counter-area">
+                                <div class="side-counter-item">
+                                    <div class="thumb">
+                                        <img src="{{ asset('assets/images/icon1.png') }}" alt="product">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="count-title"><span class="counter">{{ $product->auctions->count() }}</span></h3>
+                                        <p>Active Bidders</p>
+                                    </div>
+                                </div>
+                                {{--
+                                <div class="side-counter-item">
+                                    <div class="thumb">
+                                        <img src="{{ asset('assets/images/icon2.png') }}" alt="product">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="count-title"><span class="counter">203</span></h3>
+                                        <p>Watching</p>
+                                    </div>
+                                </div> --}}
+
+                                <div class="side-counter-item">
+                                    <div class="thumb">
+                                        <img src="{{ asset('assets/images/icon3.png') }}" alt="product">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="count-title"><span class="counter">{{ $product->auctions->count() }}</span></h3>
+                                        <p>Total Bids</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <a href="#0" class="cart-link">View Shipping, Payment & Auction Policies</a> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-tab-menu-area mb-40-60 mt-70-100">
+            <div class="container">
+                <ul class="product-tab-menu nav nav-tabs">
+                    <li>
+                        <a href="#details" class="active" data-toggle="tab">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/tab1.png') }}" alt="product">
+                            </div>
+                            <div class="content">Description</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#delevery" data-toggle="tab">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/tab2.png') }}" alt="product">
+                            </div>
+                            <div class="content">Delivery Options</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#history" data-toggle="tab">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/tab3.png') }}" alt="product">
+                            </div>
+                            <div class="content">Bid History ({{ $product->auctions->count() }})</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#questions" data-toggle="tab">
+                            <div class="thumb">
+                                <img src="{{ asset('assets/images/tab4.png') }}" alt="product">
+                            </div>
+                            <div class="content">Questions </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="details">
+                    <div class="tab-details-content">
+                        {{ $product->description }}
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show" id="delevery">
+                    <div class="shipping-wrapper">
+                        {{ $product->delivery_option }}
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show" id="history">
+                    <div class="history-wrapper">
+                        <div class="item">
+                            <h5 class="title">Bid History</h5>
+                            <div class="history-table-area">
+                                <table class="history-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Bidder</th>
+                                            <th>date</th>
+                                            <th>time</th>
+                                            <th>unit price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-history="bidder">
+                                                <div class="user-info">
+                                                    <div class="thumb">
+                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
+                                                    </div>
+                                                    <div class="content">
+                                                        Moses Watts
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td data-history="date">06/16/2024</td>
+                                            <td data-history="time">02:45:25 PM</td>
+                                            <td data-history="unit price">$900.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-history="bidder">
+                                                <div class="user-info">
+                                                    <div class="thumb">
+                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
+                                                    </div>
+                                                    <div class="content">
+                                                        Pat Powell
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td data-history="date">06/16/2024</td>
+                                            <td data-history="time">02:45:25 PM</td>
+                                            <td data-history="unit price">$900.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-history="bidder">
+                                                <div class="user-info">
+                                                    <div class="thumb">
+                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
+                                                    </div>
+                                                    <div class="content">
+                                                        Jack Rodgers
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td data-history="date">06/16/2024</td>
+                                            <td data-history="time">02:45:25 PM</td>
+                                            <td data-history="unit price">$900.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-history="bidder">
+                                                <div class="user-info">
+                                                    <div class="thumb">
+                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
+                                                    </div>
+                                                    <div class="content">
+                                                        Arlene Paul
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td data-history="date">06/16/2024</td>
+                                            <td data-history="time">02:45:25 PM</td>
+                                            <td data-history="unit price">$900.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-history="bidder">
+                                                <div class="user-info">
+                                                    <div class="thumb">
+                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
+                                                    </div>
+                                                    <div class="content">
+                                                        Marcia Clarke
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td data-history="date">06/16/2024</td>
+                                            <td data-history="time">02:45:25 PM</td>
+                                            <td data-history="unit price">$900.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text-center mb-3 mt-4">
+                                    <a href="#0" class="button-3">Load More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade show" id="questions">
+                    <h5 class="faq-head-title">Frequently Asked Questions</h5>
+                    <div class="faq-wrapper">
+                        <div class="faq-item">
+                            <div class="faq-title">
+                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
+                            </div>
+                            <div class="faq-content">
+                                <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-title">
+                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
+                            </div>
+                            <div class="faq-content">
+                                <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-title">
+                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
+                            </div>
+                            <div class="faq-content">
+                                <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-title">
+                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
+                            </div>
+                            <div class="faq-content">
+                                <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item open active">
+                            <div class="faq-title">
+                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
+                            </div>
+                            <div class="faq-content">
+                                <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-title">
+                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
+                            </div>
+                            <div class="faq-content">
+                                <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+@endsection
+
+@push('script')
+    <script>
+        $(function() {
+            if ($("#product_bid_counter").length) {
+                // If you need specific date then comment out 1 and comment in 2
+                // let endDate = "2020/03/20"; //This is 1
+                // let endDate = (new Date().getFullYear()) + '/' + (new Date().getMonth() + 1) + '/' + (new Date().getDate() + 1); //This is 2
+
+                let endDate = "{{ \Carbon\Carbon::parse($product->end_datetime)->format('Y/m/d') }}"
+                // 2024/7/30
+
+
+                let counterElement = document.querySelector("#product_bid_counter");
+                let myCountDown = new ysCountDown(endDate, function(remaining, finished) {
+                    let message = "";
+                    if (finished) {
+                        message = "Expired";
+                    } else {
+                        var re_days = remaining.totalDays;
+                        var re_hours = remaining.hours;
+                        message += re_days + "d  : ";
+                        message += re_hours + "h  : ";
+                        message += remaining.minutes + "m  : ";
+                        message += remaining.seconds + "s";
+                    }
+                    counterElement.textContent = message;
+                });
+            }
+        })
+    </script>
+@endpush
