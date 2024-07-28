@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Carbon\Carbon;
@@ -11,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductApiController extends Controller
 {
-    public function getAllProducts (Request $request) {
+    public function getAllProducts(Request $request)
+    {
         $now = Carbon::now();
         $twoDaysLater = Carbon::now()->addDays(2);
         $perPage = (int) $request->perPage ?? 10;
@@ -32,13 +34,16 @@ class ProductApiController extends Controller
         return $data;
     }
 
-    public function productDetail($id) {
+    public function productDetail($id)
+    {
         $product = Product::find($id);
         $data = ProductResource::make($product)->additional(['code' => 200, 'result' => 1, 'message' => 'Success']);
+
         return $data;
     }
 
-    public function store (ProductRequest $productRequest) {
+    public function store(ProductRequest $productRequest)
+    {
         // \Log::info($productRequest->all());
 
         $attributes = $productRequest->validated();
