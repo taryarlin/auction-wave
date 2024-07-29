@@ -114,12 +114,12 @@
                                 <a href="./about.php">About Us</a>
                             </li>
                             <li>
-                                <a href="./faq.php">Faqs</a>
+                                <a href="{{ route('faq') }}">Faqs</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="/contact">Contact</a>
+                        <a href="{{ route('contact-us') }}">Contact</a>
                     </li>
                 </ul>
                 <form class="search-form">
