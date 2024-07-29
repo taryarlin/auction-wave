@@ -1,41 +1,19 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <!--============= Hero Section Starts Here =============-->
-    <div class="hero-section style-2">
-        <div class="container">
-            <ul class="breadcrumb">
-                <li>
-                    <a href="/">Home<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
-                </li>
-
-                <li>
-                    <a href="/auctions">Pages<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
-                </li>
-
-                @if (!auth()->check())
-                    <li>
-                        <a href="{{ route('login') }}">Sign in</a>
-                    </li>
-                @endif
-            </ul>
-        </div>
-        <div class="bg_img hero-bg bottom_center" data-background="{{ asset('assets/images/hero-bg.png') }}"></div>
-    </div>
-    <!--============= Hero Section Ends Here =============-->
-
+    @include('frontend.layouts.hero_section')
 
     <section class="product-details padding-bottom mt--240 mt-lg--440">
         <div class="container">
             <div class="product-details-slider-top-wrapper">
                 <div class="product-details-slider owl-theme owl-carousel" id="sync1">
-                    <div class="slide-top-item">
-                        @foreach ($product->acsr_images as $image)
-                            <div class="slide-inner">
-                                <img src="{{ $image }}" alt="product">
-                            </div>
-                        @endforeach
-                    </div>
+                    {{-- <div class="slide-top-item"> --}}
+                    @foreach ($product->acsr_images as $image)
+                        {{-- <div class="slide-inner"> --}}
+                        <img src="{{ $image }}" alt="product">
+                        {{-- </div> --}}
+                    @endforeach
+                    {{-- </div> --}}
                 </div>
             </div>
 
@@ -69,6 +47,7 @@
                                 <div class="search-icon">
                                     <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
                                 </div>
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <input type="number" name="amount" placeholder="Enter you bid amount">
                                 <button type="submit" class="custom-button">Submit a bid</button>
                             </form>
@@ -108,20 +87,10 @@
                                         <img src="{{ asset('assets/images/icon1.png') }}" alt="product">
                                     </div>
                                     <div class="content">
-                                        <h3 class="count-title"><span class="counter">{{ $product->auctions->count() }}</span></h3>
+                                        <h3 class="count-title"><span class="counter">{{ $product->auctions->groupBy('id')->count() }}</span></h3>
                                         <p>Active Bidders</p>
                                     </div>
                                 </div>
-                                {{--
-                                <div class="side-counter-item">
-                                    <div class="thumb">
-                                        <img src="{{ asset('assets/images/icon2.png') }}" alt="product">
-                                    </div>
-                                    <div class="content">
-                                        <h3 class="count-title"><span class="counter">203</span></h3>
-                                        <p>Watching</p>
-                                    </div>
-                                </div> --}}
 
                                 <div class="side-counter-item">
                                     <div class="thumb">
@@ -181,13 +150,13 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="details">
                     <div class="tab-details-content">
-                        {{ $product->description }}
+                        {!! $product->description !!}
                     </div>
                 </div>
 
                 <div class="tab-pane fade show" id="delevery">
                     <div class="shipping-wrapper">
-                        {{ $product->delivery_option }}
+                        {!! $product->delivery_option !!}
                     </div>
                 </div>
 
@@ -201,91 +170,30 @@
                                         <tr>
                                             <th>Bidder</th>
                                             <th>date</th>
-                                            <th>time</th>
+                                            <th>since</th>
                                             <th>unit price</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
+                                        @foreach ($auctions as $auction)
+                                            <tr>
+                                                <td data-history="bidder">
+                                                    <div class="user-info">
+                                                        <div class="content">
+                                                            {{ $auction->name }}
+                                                        </div>
                                                     </div>
-                                                    <div class="content">
-                                                        Moses Watts
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2024</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Pat Powell
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2024</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Jack Rodgers
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2024</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Arlene Paul
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2024</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-history="bidder">
-                                                <div class="user-info">
-                                                    <div class="thumb">
-                                                        <img src="{{ asset('assets/images/history/01.png') }}" alt="history">
-                                                    </div>
-                                                    <div class="content">
-                                                        Marcia Clarke
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td data-history="date">06/16/2024</td>
-                                            <td data-history="time">02:45:25 PM</td>
-                                            <td data-history="unit price">$900.00</td>
-                                        </tr>
+                                                </td>
+                                                <td data-history="date">{{ $auction->pivot->created_at }}</td>
+                                                <td data-history="time">{{ $auction->pivot->created_at->diffForHumans() }}</td>
+                                                <td data-history="unit price">{{ $auction->pivot->amount }} MMK</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
-                                <div class="text-center mb-3 mt-4">
+                                {{-- <div class="text-center mb-3 mt-4">
                                     <a href="#0" class="button-3">Load More</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

@@ -21,7 +21,27 @@
                 </ul>
                 <ul class="cart-button-area">
                     <li>
-                        <a href="{{ route('login') }}" class="user-button"><i class="fa-regular fa-user"></i></a>
+                        @if (auth()->guard('customer')->check())
+                            <a href="{{ route('profile.edit') }}" class="user-button">
+                                <i class="fa-regular fa-user"></i>
+                            </a>
+                            |
+                            <form action="{{ route('logout') }}" method="POST" class="d-inline-block">
+                                @csrf
+
+                                <button type="submit" class="user-button">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                </button>
+                            </form>
+                        @else
+                            <a href="{{ route('login') }}" style="color: white;">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                            </a>
+                            |
+                            <a href="{{ route('register') }}" style="color: white;">
+                                Register
+                            </a>
+                        @endif
                     </li>
                 </ul>
             </div>

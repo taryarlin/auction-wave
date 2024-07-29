@@ -36,7 +36,7 @@ class Product extends Model
 
     public function auctions()
     {
-        return $this->belongsToMany(Customer::class, 'customer_product')->withPivot(['amount']);
+        return $this->belongsToMany(Customer::class, 'customer_product')->withPivot(['amount', 'created_at']);
     }
 
     public function Customer()
@@ -56,7 +56,9 @@ class Product extends Model
 
     public function getCurrentBidAttribute()
     {
-        return $this->auctions->first()->pivot->amount ?? $this->starting_price;
+        $last_auction = $this->auctions()->orderBy('pivot_created_at', 'desc')->first();
+
+        return $last_auction->pivot->amount ?? $this->starting_price;
     }
 
     public function getAcsrImagesAttribute()

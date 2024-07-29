@@ -2,7 +2,7 @@
 
 @section('content')
     <!--============= Banner Section Starts Here =============-->
-    <section class="banner-section bg_img" data-background="{{ asset('assets/images/banner-bg.png') }}" style="background-image: url(images/banner-bg.png); ">
+    <section class="banner-section bg_img" data-background="{{ asset('assets/images/banner-bg.png') }}" style="background-image: url({{ asset('assets/images/banner-bg.png') }}); ">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-xl-6">

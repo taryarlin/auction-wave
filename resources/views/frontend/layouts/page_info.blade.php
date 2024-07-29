@@ -7,6 +7,14 @@
         });
     @endif
 
+    @if (session()->has('status'))
+        Swal.fire({
+            icon: "info",
+            title: "Info",
+            text: "{{ session('status') }}",
+        });
+    @endif
+
     @if (session()->has('error'))
         Swal.fire({
             icon: "error",

@@ -1,4 +1,4 @@
-<footer class="bg_img padding-top oh" data-background="{{ asset('assets/images/footer-bg.jpg') }}" style="background-image: url({{ asset('assets/images/footer-bg.png') }});">
+<footer class="bg_img padding-top oh" data-background="{{ asset('assets/images/footer-bg.jpg') }}" style="background-image: url({{ asset('assets/images/footer-bg.jpg') }});">
     <div class="footer-top-shape">
         <img src="{{ asset('assets/images/footer-top-shape.png') }}" alt="css">
     </div>

@@ -8,8 +8,8 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-        dd(request()->user());
+        $auctions = $product->auctions()->latest()->get();
 
-        return view('frontend.detail', compact('product'));
+        return view('frontend.detail', compact('product', 'auctions'));
     }
 }
