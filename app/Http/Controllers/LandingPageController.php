@@ -11,11 +11,15 @@ class LandingPageController extends Controller
     public function __invoke(Request $request)
     {
         $categories = Category::query()
-            ->with('products', 'products.auctions')
+            ->with([
+                'products' => fn ($query) => $query->where('status', 'approved'),
+                'products.auctions'
+            ])
             ->has('products')
             ->paginate(3);
 
         $popular_products = Product::query()
+            ->where('status', 'approved')
             ->withCount('auctions')
             ->orderBy('auctions_count', 'desc')
             ->paginate(5);
