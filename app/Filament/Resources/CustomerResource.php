@@ -60,9 +60,9 @@ class CustomerResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('profile')
-                    ->circular()
-                    ->defaultImageUrl(url('/images/placeholder.png')),
+                // ImageColumn::make('profile')
+                //     ->circular()
+                //     ->defaultImageUrl(url('/images/placeholder.png')),
 
                 TextColumn::make('name')->searchable(),
 
