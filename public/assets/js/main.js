@@ -1198,8 +1198,6 @@
       pullDrag: false,
       scrollPerPage: true,
       autoplayHoverPause: false,
-      nav: true,
-      dots: true,
     }).on('changed.owl.carousel', syncPosition);
 
     function syncPosition(el) {

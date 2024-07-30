@@ -5,15 +5,20 @@
 
     <section class="product-details padding-bottom mt--240 mt-lg--440">
         <div class="container">
-            <div class="product-details-slider-top-wrapper">
-                <div class="product-details-slider owl-theme owl-carousel" id="sync1">
-                    {{-- <div class="slide-top-item"> --}}
-                    @foreach ($product->acsr_images as $image)
-                        {{-- <div class="slide-inner"> --}}
-                        <img src="{{ $image }}" alt="product">
-                        {{-- </div> --}}
-                    @endforeach
-                    {{-- </div> --}}
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="product-details-slider-top-wrapper">
+                        {{-- <div class="product-details-slider owl-theme owl-carousel" id="sync1"> --}}
+                        <div class="product-details-sl owl-theme owl-carousel">
+                            {{-- <div class="slide-top-item"> --}}
+                            @foreach ($product->acsr_images as $image)
+                                {{-- <div class="slide-inner"> --}}
+                                <img src="{{ $image }}" alt="product">
+                                {{-- </div> --}}
+                            @endforeach
+                            {{-- </div> --}}
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -204,7 +209,7 @@
                     <div class="faq-wrapper">
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
+                                <img src="{{ asset('assets/images/faq.png') }}" alt="css"><span class="title">How to start bidding?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -212,7 +217,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
+                                <img src="{{ asset('assets/images/faq.png') }}" alt="css"><span class="title">Security Deposit / Bidding Power </span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -220,7 +225,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
+                                <img src="{{ asset('assets/images/faq.png') }}" alt="css"><span class="title">Delivery time to the destination port </span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -228,7 +233,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
+                                <img src="{{ asset('assets/images/faq.png') }}" alt="css"><span class="title">How to register to bid in an auction?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -236,7 +241,7 @@
                         </div>
                         <div class="faq-item open active">
                             <div class="faq-title">
-                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
+                                <img src="{{ asset('assets/images/faq.png') }}" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -244,7 +249,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-title">
-                                <img src="{{ asset('assets/css/img/faq.png') }}" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
+                                <img src="{{ asset('assets/images/faq.png') }}" alt="css"><span class="title">What happens if I bid on the wrong lot?</span><span class="right-icon"></span>
                             </div>
                             <div class="faq-content">
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
@@ -261,6 +266,16 @@
 @push('script')
     <script>
         $(function() {
+            var owl = $('.product-details-sl');
+            owl.owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true
+            });
+
             if ($("#product_bid_counter").length) {
                 // If you need specific date then comment out 1 and comment in 2
                 // let endDate = "2020/03/20"; //This is 1
