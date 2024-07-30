@@ -50,10 +50,10 @@
                             <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
                                 <div class="auction-thumb">
                                     <a href="{{ route('product.detail', $product->id) }}">
-                                        <img src="{{ $product->acsr_images[0] }}" alt="car">
+                                        <img src="{{ $product->acsr_images[0] ?? '' }}" alt="car">
                                     </a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                    <a href="#0" class="bid"><img src="{{ $product->acsr_images[0] }}"></a>
+                                    <a href="#0" class="bid"><img src="{{ $product->acsr_images[0] ?? '' }}"></a>
                                 </div>
                                 <div class="auction-content">
                                     <h6 class="title">
