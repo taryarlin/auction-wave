@@ -13,13 +13,13 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
-                            <a href="./details.php"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
+                            <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                            <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                            <a href="{{ route('product.detail', $product->id) }}" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
                         <div class="auction-content">
                             <h6 class="title">
-                                <a href="#0">{{ $product->name }}</a>
+                                <a href="{{ route('product.detail', $product->id) }}">{{ $product->name }}</a>
                             </h6>
                             <div class="bid-area">
                                 <div class="bid-amount">
@@ -48,7 +48,7 @@
                                 <span class="total-bids">{{ $product->AuctionList->count() }} Bids</span>
                             </div>
                             <div class="text-center">
-                                <a href="" class="custom-button">Submit a bid</a>
+                                <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>
                             </div>
                         </div>
                     </div>

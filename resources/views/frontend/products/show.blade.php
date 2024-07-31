@@ -8,15 +8,12 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <div class="product-details-slider-top-wrapper">
-                        {{-- <div class="product-details-slider owl-theme owl-carousel" id="sync1"> --}}
                         <div class="product-details-sl owl-theme owl-carousel">
-                            {{-- <div class="slide-top-item"> --}}
-                            @foreach ($product->acsr_images as $image)
-                                {{-- <div class="slide-inner"> --}}
+                            @forelse ($product->acsr_images as $image)
                                 <img src="{{ $image }}" alt="product">
-                                {{-- </div> --}}
-                            @endforeach
-                            {{-- </div> --}}
+                            @empty
+                                <img src="{{ asset('assets/images/no-product-image.png') }}" alt="product">
+                            @endforelse
                         </div>
                     </div>
                 </div>
@@ -53,8 +50,12 @@
                                     <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
                                 </div>
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                <input type="number" name="amount" placeholder="Enter you bid amount">
+                                <input type="number" name="amount" placeholder="Enter you bid amount" {{ !auth()->guard('customer')->check() ? 'disabled' : '' }}>
+                                @if (auth()->guard('customer')->check())
                                 <button type="submit" class="custom-button">Submit a bid</button>
+                                @else
+                                <a href="{{ route('login') }}" class="custom-button">Login to bid</a>
+                                @endif
                             </form>
                         </div>
                         <div class="buy-now-area">
@@ -196,9 +197,9 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{-- <div class="text-center mb-3 mt-4">
-                                    <a href="#0" class="button-3">Load More</a>
-                                </div> --}}
+                                <div class="text-center mb-3 mt-4">
+                                    {{ $auctions->links() }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -239,7 +240,7 @@
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                             </div>
                         </div>
-                        <div class="faq-item open active">
+                        <div class="faq-item">
                             <div class="faq-title">
                                 <img src="{{ asset('assets/images/faq.png') }}" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
                             </div>

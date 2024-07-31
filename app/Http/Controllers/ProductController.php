@@ -15,8 +15,8 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        $auctions = $product->auctions()->latest()->get();
+        $auctions = $product->auctions()->latest()->paginate(20);
 
-        return view('frontend.detail', compact('product', 'auctions'));
+        return view('frontend.products.show', compact('product', 'auctions'));
     }
 }
