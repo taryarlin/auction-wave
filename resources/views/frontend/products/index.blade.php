@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="amount-content">
                                         <div class="current">Current Bid</div>
-                                        <div class="amount">${{ $product->starting_price }}</div>
+                                        <div class="amount">{{ $product->starting_price }} MMK</div>
                                     </div>
                                 </div>
                                 <div class="bid-amount">
@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="amount-content">
                                         <div class="current">Buy Now</div>
-                                        <div class="amount">${{ $product->fixed_price }}</div>
+                                        <div class="amount">{{ $product->fixed_price }} MMK</div>
                                     </div>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                 <div class="countdown">
                                     <div id="bid_counter1"></div>
                                 </div>
-                                <span class="total-bids">{{ $product->AuctionList->count() }} Bids</span>
+                                <span class="total-bids">{{ $product->auctions()->count() }} Bids</span>
                             </div>
                             <div class="text-center">
                                 <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>

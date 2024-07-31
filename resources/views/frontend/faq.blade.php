@@ -44,7 +44,7 @@
                                 <p>All successful bidders can confirm their winning bid by checking the “Sbidu”. In addition, all successful bidders will receive an email notifying them of their winning bid after the auction closes.</p>
                             </div>
                         </div>
-                        <div class="faq-item open active">
+                        <div class="faq-item">
                             <div class="faq-title">
                                 <img src="./assets/images/faq.png" alt="css"><span class="title">How will I know if my bid was successful?</span><span class="right-icon"></span>
                             </div>
