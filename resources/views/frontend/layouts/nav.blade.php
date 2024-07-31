@@ -23,19 +23,18 @@
                     <li>
                         @if (auth()->guard('customer')->check())
                             <a href="{{ route('profile.edit') }}" class="user-button">
-                                <i class="fa-regular fa-user"></i>
+                                <i class="far fa-user"></i>
                             </a>
                             |
                             <form action="{{ route('logout') }}" method="POST" class="d-inline-block">
                                 @csrf
-
                                 <button type="submit" class="user-button">
-                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                    <i class="fas fa-sign-out-alt"></i>
                                 </button>
                             </form>
                         @else
                             <a href="{{ route('login') }}" style="color: white;">
-                                <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+                                Login
                             </a>
                             |
                             <a href="{{ route('register') }}" style="color: white;">
