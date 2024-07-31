@@ -62,7 +62,7 @@
                         <h5 class="title">About Us</h5>
                         <ul class="links-list">
                             <li>
-                                <a href="#0">About us</a>
+                                <a href="{{ route('about-us') }}">About us</a>
                             </li>
                             <li>
                                 <a href="#0">Help</a>
@@ -99,10 +99,10 @@
                                 <a href="#0">Shipping Information</a>
                             </li>
                             <li>
-                                <a href="#0">Contact Us</a>
+                                <a href="{{ route('contact-us') }}">Contact Us</a>
                             </li>
                             <li>
-                                <a href="#0">Help & FAQ</a>
+                                <a href="{{ route('faq') }}">Help & FAQ</a>
                             </li>
                         </ul>
                     </div>

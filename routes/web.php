@@ -17,6 +17,7 @@ Route::get('auctions/{product}', [ProductController::class, 'show'])->name('prod
 Route::post('make-bid', [BIDController::class, 'makeBid'])->name('make-bid');
 Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::get('faq', [PageController::class, 'faq'])->name('faq');
+Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -10,4 +10,9 @@ class PageController extends Controller
     {
         return view('frontend.faq');
     }
+
+    public function aboutUs()
+    {
+        return view('frontend.about_us');
+    }
 }

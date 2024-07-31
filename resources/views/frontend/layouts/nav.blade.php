@@ -111,7 +111,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="./about.php">About Us</a>
+                                <a href="{{ route('about-us') }}">About Us</a>
                             </li>
                             <li>
                                 <a href="{{ route('faq') }}">Faqs</a>
