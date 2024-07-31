@@ -8,7 +8,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::latest()->get();
+        $products = Product::approved()->latest()->paginate(9);
 
         return view('frontend.products.index', compact('products'));
     }

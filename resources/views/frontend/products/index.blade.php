@@ -13,7 +13,7 @@
                 <div class="col-sm-10 col-md-6 col-lg-4">
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
-                            <a href="./details.php"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : '' }}" alt="product"></a>
+                            <a href="./details.php"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
                             <a href="#0" class="rating"><i class="far fa-star"></i></a>
                             <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
@@ -55,6 +55,11 @@
                 </div>
                 @endforeach
             </div>
+
+            <div class="d-flex justify-content-center mt-5">
+                {{ $products->links() }}
+            </div>
+
         </div>
     </section>
 

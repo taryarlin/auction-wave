@@ -14,6 +14,11 @@ class Product extends Model
         'images' => 'array',
     ];
 
+    const STATUS = ['pending', 'approved', 'rejected'];
+    const PENDING = self::STATUS[0];
+    const APPROVED = self::STATUS[1];
+    const REJECTED = self::STATUS[2];
+
     public static function boot()
     {
         parent::boot();
@@ -42,6 +47,21 @@ class Product extends Model
     public function Customer()
     {
         return $this->belongsTo(Customer::class);
+    }
+
+    public function scopePending($query)
+    {
+        return $query->where('status', self::PENDING);
+    }
+
+    public function scopeApproved($query)
+    {
+        return $query->where('status', self::APPROVED);
+    }
+
+    public function scopeRejected($query)
+    {
+        return $query->where('status', self::REJECTED);
     }
 
     public static function generateUniqueListingId()
