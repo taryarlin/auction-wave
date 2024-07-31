@@ -42,18 +42,16 @@
                             <p>We offer affordable {{ $category->name }}</p>
                         </div>
                     </div>
-                    <a href="/auctions" class="normal-button">View All</a>
+                    <a href="{{ route('product.index') }}" class="normal-button">View All</a>
                 </div>
                 <div class="row justify-content-center mb-30-none">
                     @foreach ($category->products as $product)
                         <div class="col-sm-10 col-md-6 col-lg-4">
                             <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
                                 <div class="auction-thumb">
-                                    <a href="{{ route('product.detail', $product->id) }}">
-                                        <img src="{{ $product->acsr_images[0] ?? '' }}" alt="car">
-                                    </a>
+                                    <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                    <a href="#0" class="bid"><img src="{{ $product->acsr_images[0] ?? '' }}"></a>
+                                    <a href="{{ route('product.detail', $product->id) }}" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
                                 <div class="auction-content">
                                     <h6 class="title">
@@ -86,7 +84,7 @@
                                         <span class="total-bids">{{ $product->auctions->count() }} Bids</span>
                                     </div>
                                     <div class="text-center">
-                                        <a href="#0" class="custom-button">Submit a bid</a>
+                                        <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>
                                     </div>
                                 </div>
                             </div>

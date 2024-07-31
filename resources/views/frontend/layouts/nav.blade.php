@@ -60,7 +60,7 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="/auctions">Auction</a>
+                        <a href="{{ route('product.index') }}">Auction</a>
                     </li>
                     <li>
                         <a href="#">Pages</a>
