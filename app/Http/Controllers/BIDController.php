@@ -17,11 +17,13 @@ class BIDController extends Controller
 
         $last_auction = $product->auctions()->orderBy('pivot_created_at', 'desc')->first();
 
-        if($last_auction->pivot->amount >= $request->amount) {
+        $last_auction_amount = !is_null($last_auction) ? $last_auction->pivot->amount : 0;
+
+        if( $last_auction_amount >= $request->amount) {
             return back()->with('error', 'Your bid must be higher than the previous bid amount');
         }
 
-        if($product->bid_increment && ($last_auction->pivot->amount + $product->bid_increment) >= $request->amount) {
+        if($product->bid_increment && ($last_auction_amount + $product->bid_increment) >= $request->amount) {
             return back()->with('error', 'Your bid must be higher than the last bid amount plus the bid increment');
         }
 
