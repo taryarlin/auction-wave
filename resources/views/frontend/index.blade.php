@@ -35,7 +35,7 @@
                 <div class="section-header-3" data-aos="zoom-out-down" data-aos-duration="1200">
                     <div class="left">
                         <div class="thumb">
-                            <img src="{{ asset('assets/images/art.png') }}" alt="header-icons">
+                            <img src="{{ $category->acsr_image }}" alt="header-icons">
                         </div>
                         <div class="title-area">
                             <h2 class="title">{{ $category->name }}</h2>
