@@ -64,7 +64,7 @@ class Customer extends Authenticatable implements MustVerifyEmail
         return $value ? Storage::url($value) : 'https://ui-avatars.com/api/?background=random&name=' . $this->name;
     }
 
-    public function Product()
+    public function product()
     {
         return $this->hasMany(Product::class);
     }

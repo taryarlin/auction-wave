@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use App\Models\Product;
+use App\Models\Category;
 use App\Models\Customer;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -16,8 +18,7 @@ class ProfileController extends Controller
 {
     public function dashboard()
     {
-        $auth_user = Auth::guard('customer')->user();
-        return view('profile.dashboard', compact('auth_user'));
+        return view('profile.dashboard');
     }
 
     public function personal()
@@ -62,8 +63,7 @@ class ProfileController extends Controller
 
     public function personalChangePassword()
     {
-        $auth_user = Auth::guard('customer')->user();
-        return view('profile.personal.change_password', compact('auth_user'));
+        return view('profile.personal.change_password');
     }
 
     public function personalUpdatePassword(Request $request)
@@ -90,6 +90,61 @@ class ProfileController extends Controller
             ]);
 
             return redirect()->route('profile.personal.index')->with('success', 'Password updated successfully');
+
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function myProduct()
+    {
+        $auth_user = auth()->guard('customer')->user();
+        $products = $auth_user->product()->latest()->paginate(4);
+
+        return view('profile.my_product.index', compact('products'));
+    }
+
+    public function myProductCreate()
+    {
+        $categories = Category::get();
+        return view('profile.my_product.create', compact('categories'));
+    }
+
+    public function myProductStore(Request $request)
+    {
+        try {
+            $request->validate([
+                'name' => 'required',
+                'category_id' => 'required',
+                'starting_price' => 'required',
+                'fixed_price' => 'required',
+                'start_datetime' => 'required',
+                'end_datetime' => 'required',
+                'buyer_premium_percent' => 'required',
+                'bid_increment' => 'required',
+                'images' => 'required'
+            ]);
+
+            $auth_user = auth()->guard('customer')->user();
+
+            Product::create([
+                'name' => $request->name,
+                'ownerable_type' => Customer::class,
+                'ownerable_id' => $auth_user->id,
+                'category_id' => $request->category_id,
+                'customer_id' => $auth_user->id,
+                'starting_price' => $request->starting_price,
+                'fixed_price' => $request->fixed_price,
+                'start_datetime' => $request->start_datetime,
+                'end_datetime' => $request->end_datetime,
+                'buyer_premium_percent' => $request->buyer_premium_percent,
+                'bid_increment' => $request->bid_increment,
+                'images' => $request->images,
+                'description' => $request->description,
+                'delivery_option' => $request->delivery_option
+            ]);
+
+            return redirect()->route('profile.my-product.index')->with('success', 'Product created successfully');
 
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());

@@ -24,11 +24,17 @@ Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth:customer')->group(function () {
-    Route::get('/profile/dashboard', [ProfileController::class, 'dashboard'])->name('profile.dashboard');
+    Route::prefix('/profile')->name('profile.')->group(function () {
+        Route::get('/dashboard', [ProfileController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/profile', [ProfileController::class, 'personal'])->name('profile.personal.index');
-    Route::get('/profile/personal/edit', [ProfileController::class, 'personalEdit'])->name('profile.personal.edit');
-    Route::put('/profile/personal/update', [ProfileController::class, 'personalUpdate'])->name('profile.personal.update');
-    Route::get('/profile/personal/change-password', [ProfileController::class, 'personalChangePassword'])->name('profile.personal.change-password');
-    Route::patch('/profile/personal/update-password', [ProfileController::class, 'personalUpdatePassword'])->name('profile.personal.update-password');
+        Route::get('/', [ProfileController::class, 'personal'])->name('personal.index');
+        Route::get('/personal/edit', [ProfileController::class, 'personalEdit'])->name('personal.edit');
+        Route::put('/personal/update', [ProfileController::class, 'personalUpdate'])->name('personal.update');
+        Route::get('/personal/change-password', [ProfileController::class, 'personalChangePassword'])->name('personal.change-password');
+        Route::patch('/personal/update-password', [ProfileController::class, 'personalUpdatePassword'])->name('personal.update-password');
+
+        Route::get('/my-product', [ProfileController::class, 'myProduct'])->name('my-product.index');
+        Route::get('/my-product/create', [ProfileController::class, 'myProductCreate'])->name('my-product.create');
+        Route::put('/my-product/store', [ProfileController::class, 'myProductStore'])->name('my-product.store');
+    });
 });

@@ -2,6 +2,9 @@
     <div class="dashboard-widget mb-30 mb-lg-0">
         <div class="user">
             <div class="thumb-area">
+                @php
+                    $auth_user = auth()->guard('customer')->user();
+                @endphp
                 <div class="thumb border border-secondary">
                     <img src="{{ $auth_user->profile }}" alt="{{ $auth_user->name }}">
                 </div>
@@ -18,6 +21,9 @@
             </li>
             <li>
                 <a href="{{ route('profile.personal.index') }}" class="{{ $current_route == request()->routeIs('profile.personal.*') ? 'active' : '' }}"><i class="flaticon-user"></i>Personal Profile </a>
+            </li>
+            <li>
+                <a href="{{ route('profile.my-product.index') }}" class="{{ $current_route == request()->routeIs('profile.my-product.*') ? 'active' : '' }}"><i class="flaticon-bag"></i>My Products</a>
             </li>
             <li>
                 <a href="mybid.php"><i class="flaticon-auction"></i>My Bids</a>
