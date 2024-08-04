@@ -24,7 +24,9 @@ Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth:customer')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile/dashboard', [ProfileController::class, 'dashboard'])->name('profile.dashboard');
+
+    Route::get('/profile', [ProfileController::class, 'personal'])->name('profile.personal.index');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

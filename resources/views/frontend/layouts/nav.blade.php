@@ -22,7 +22,7 @@
                 <ul class="cart-button-area">
                     <li>
                         @if (auth()->guard('customer')->check())
-                            <a href="{{ route('profile.edit') }}" class="user-button">
+                            <a href="{{ route('profile.personal.index') }}" class="user-button">
                                 <i class="far fa-user"></i>
                             </a>
                             |

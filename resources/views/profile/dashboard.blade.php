@@ -10,26 +10,25 @@
                     <div class="dashboard-widget mb-30 mb-lg-0">
                         <div class="user">
                             <div class="thumb-area">
-                                <div class="thumb">
-                                    <img src="./assets/images/user.png" alt="user">
+                                <div class="thumb border border-secondary">
+                                    <img src="{{ $auth_user->profile }}" alt="{{ $auth_user->name }}">
                                 </div>
-                                <label for="profile-pic" class="profile-pic-edit"><i class="flaticon-pencil"></i></label>
+                                <label for="profile-pic" class="profile-pic-edit bg-secondary"><i class="flaticon-pencil"></i></label>
                                 <input type="file" id="profile-pic" class="d-none">
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="#0">Percy Reed</a></h5>
-                                <span class="username"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="365c595e5876515b575f5a1855595b">[email&#160;protected]</a></span>
+                                <h5 class="title"><a href="#0">{{ $auth_user->name }}</a></h5>
                             </div>
                         </div>
                         <ul class="dashboard-menu">
                             <li>
-                                <a href="Dashboard.php" class="active"><i class="fa-light fa-table-columns"></i>Dashboard</a>
+                                <a href="{{ route('profile.dashboard') }}" class="{{ request()->routeIs('profile.dashboard') ? 'active' : '' }}"><i class="flaticon-dashboard"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="personal-profile.php"><i class="fa-solid fa-"></i>Personal Profile </a>
+                                <a href="{{ route('profile.personal.index') }}" class="{{ request()->routeIs('profile.personal.index') ? 'active' : '' }}"><i class="flaticon-user"></i>Personal Profile </a>
                             </li>
                             <li>
-                                <a href="mybid.php"><i class="fa-thin fa-"></i>My Bids</a>
+                                <a href="mybid.php"><i class="flaticon-auction"></i>My Bids</a>
                             </li>
                             <li>
                                 <a href="winning-bid.php"><i class="flaticon-best-seller"></i>Winning Bids</a>
@@ -52,7 +51,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="dashboard-item">
                                     <div class="thumb">
-                                        <img src="./assets/images/icon4.png" alt="dashboard">
+                                        <img src="../assets/images/icon4.png" alt="dashboard">
                                     </div>
                                     <div class="content">
                                         <h2 class="title"><span class="counter">80</span></h2>
@@ -63,7 +62,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="dashboard-item">
                                     <div class="thumb">
-                                        <img src="./assets/images/icon5.png" alt="dashboard">
+                                        <img src="../assets/images/icon5.png" alt="dashboard">
                                     </div>
                                     <div class="content">
                                         <h2 class="title"><span class="counter">15</span></h2>
@@ -74,7 +73,7 @@
                             <div class="col-md-4 col-sm-6">
                                 <div class="dashboard-item">
                                     <div class="thumb">
-                                        <img src="./assets/images/icon6.png" alt="dashboard">
+                                        <img src="../assets/images/icon6.png" alt="dashboard">
                                     </div>
                                     <div class="content">
                                         <h2 class="title"><span class="counter">115</span></h2>

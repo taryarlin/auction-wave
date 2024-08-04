@@ -11,6 +11,18 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    public function personal()
+    {
+        $auth_user = Auth::guard('customer')->user();
+        return view('profile.personal.index', compact('auth_user'));
+    }
+
+    public function dashboard()
+    {
+        $auth_user = Auth::guard('customer')->user();
+        return view('profile.dashboard', compact('auth_user'));
+    }
+
     /**
      * Display the user's profile form.
      */
