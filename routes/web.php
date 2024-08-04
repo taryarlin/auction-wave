@@ -27,6 +27,8 @@ Route::middleware('auth:customer')->group(function () {
     Route::get('/profile/dashboard', [ProfileController::class, 'dashboard'])->name('profile.dashboard');
 
     Route::get('/profile', [ProfileController::class, 'personal'])->name('profile.personal.index');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile/personal/edit', [ProfileController::class, 'personalEdit'])->name('profile.personal.edit');
+    Route::put('/profile/personal/update', [ProfileController::class, 'personalUpdate'])->name('profile.personal.update');
+    Route::get('/profile/personal/change-password', [ProfileController::class, 'personalChangePassword'])->name('profile.personal.change-password');
+    Route::patch('/profile/personal/update-password', [ProfileController::class, 'personalUpdatePassword'])->name('profile.personal.update-password');
 });
