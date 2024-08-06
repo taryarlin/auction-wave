@@ -151,6 +151,53 @@ class ProfileController extends Controller
         }
     }
 
+    public function myProductEdit(Product $product, Request $request)
+    {
+        $categories = Category::get();
+        return view('profile.my_product.edit', compact('product', 'categories'));
+    }
+
+    public function myProductUpdate(Product $product, Request $request)
+    {
+        try {
+            $request->validate([
+                'name' => 'required',
+                'category_id' => 'required',
+                'starting_price' => 'required',
+                'fixed_price' => 'required',
+                'start_datetime' => 'required',
+                'end_datetime' => 'required',
+                'buyer_premium_percent' => 'required',
+                'bid_increment' => 'required',
+                'images' => 'required'
+            ]);
+
+            $auth_user = auth()->guard('customer')->user();
+
+            Product::create([
+                'name' => $request->name,
+                'ownerable_type' => Customer::class,
+                'ownerable_id' => $auth_user->id,
+                'category_id' => $request->category_id,
+                'customer_id' => $auth_user->id,
+                'starting_price' => $request->starting_price,
+                'fixed_price' => $request->fixed_price,
+                'start_datetime' => $request->start_datetime,
+                'end_datetime' => $request->end_datetime,
+                'buyer_premium_percent' => $request->buyer_premium_percent,
+                'bid_increment' => $request->bid_increment,
+                'images' => $request->images,
+                'description' => $request->description,
+                'delivery_option' => $request->delivery_option
+            ]);
+
+            return redirect()->route('profile.my-product.index')->with('success', 'Product created successfully');
+
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
     /**
      * Display the user's profile form.
      */

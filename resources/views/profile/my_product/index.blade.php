@@ -25,7 +25,7 @@
                                 <div class="auction-thumb">
                                     <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                    <a href="{{ route('product.detail', $product->id) }}" class="bid"><i class="flaticon-auction"></i></a>
+                                    <a href="{{ route('profile.my-product.edit', $product->id) }}" class="bid"><i class="flaticon-edit"></i></a>
                                 </div>
                                 <div class="auction-content">
                                     <h6 class="title">
@@ -58,7 +58,8 @@
                                         <span class="total-bids">{{ $product->auctions()->count() }} Bids</span>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>
+                                        <a href="{{ route('product.detail', $product->id) }}" class="custom-button"><i class="flaticon-edit"></i></a>
+                                        {{-- <a href="{{ route('product.detail', $product->id) }}" class="custom-button"><i class="flaticon-edit"></i></a> --}}
                                     </div>
                                 </div>
                             </div>
