@@ -122,10 +122,21 @@ class ProfileController extends Controller
                 'end_datetime' => 'required',
                 'buyer_premium_percent' => 'required',
                 'bid_increment' => 'required',
-                'images' => 'required'
+                'images' => 'required',
+                'images.*' => 'mimes:jpeg,jpg,png,gif|max:2048',
             ]);
 
             $auth_user = auth()->guard('customer')->user();
+
+            $file_names_ary = [];
+
+            if ($request->hasFile('images')) {
+                foreach($request->file('images') as $file) {
+                    $file_name = 'product-images/' . time() . '_' . uniqid() . '.' . str_replace(' ', '', $file->getClientOriginalName());
+                    $file->storeAs('public/product-images', $file_name);
+                    $file_names_ary[] = $file_name;
+                }
+            }
 
             Product::create([
                 'name' => $request->name,
@@ -139,12 +150,12 @@ class ProfileController extends Controller
                 'end_datetime' => $request->end_datetime,
                 'buyer_premium_percent' => $request->buyer_premium_percent,
                 'bid_increment' => $request->bid_increment,
-                'images' => $request->images,
+                'images' => $file_names_ary,
                 'description' => $request->description,
                 'delivery_option' => $request->delivery_option
             ]);
 
-            return redirect()->route('profile.my-product.index')->with('success', 'Product created successfully');
+            return redirect()->route('profile.my-product.index')->with('success', 'successfully Product created. Please wait for admin approve.');
 
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
