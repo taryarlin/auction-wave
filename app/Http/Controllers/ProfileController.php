@@ -198,6 +198,15 @@ class ProfileController extends Controller
         }
     }
 
+    public function myBid()
+    {
+        $products = Product::whereHas('auctions', function ($query) {
+            return $query->where('customer_id', auth()->guard('customer')->user()->id);
+        })->latest()->paginate(4);
+
+        return view('profile.my_bid.index', compact('products'));
+    }
+
     /**
      * Display the user's profile form.
      */

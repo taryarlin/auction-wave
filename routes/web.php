@@ -38,5 +38,7 @@ Route::middleware('auth:customer')->group(function () {
         Route::put('/my-product/store', [ProfileController::class, 'myProductStore'])->name('my-product.store');
         Route::get('/my-product/{product}/edit', [ProfileController::class, 'myProductEdit'])->name('my-product.edit');
         Route::put('/my-product/{product}/update', [ProfileController::class, 'myProductUpdate'])->name('my-product.update');
+
+        Route::get('/my-bid', [ProfileController::class, 'myBid'])->name('my-bid.index');
     });
 });

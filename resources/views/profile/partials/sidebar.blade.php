@@ -26,13 +26,10 @@
                 <a href="{{ route('profile.my-product.index') }}" class="{{ $current_route == request()->routeIs('profile.my-product.*') ? 'active' : '' }}"><i class="flaticon-bag"></i>My Products</a>
             </li>
             <li>
-                <a href="mybid.php"><i class="flaticon-auction"></i>My Bids</a>
+                <a href="{{ route('profile.my-bid.index') }}" class="{{ $current_route == request()->routeIs('profile.my-bid.*') ? 'active' : '' }}"><i class="flaticon-auction"></i>My Bids</a>
             </li>
             <li>
                 <a href="winning-bid.php"><i class="flaticon-best-seller"></i>Winning Bids</a>
-            </li>
-            <li>
-                <a href="alert.php"><i class="flaticon-alarm"></i>My Alerts</a>
             </li>
             <li>
                 <a href="favorite.php"><i class="flaticon-star"></i>My Favorites</a>
