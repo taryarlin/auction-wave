@@ -30,12 +30,14 @@
                 </div>
                 <div class="newslater-content">
                     <div class="section-header left-style mb-low" data-aos="fade-down" data-aos-duration="1100">
-                        <h5 class="cate">Subscribe to Sbidu</h5>
-                        <h3 class="title">To Get Exclusive Benefits</h3>
+                        <h5 class="cate">ကျွန်ုပ်တို့ရဲ့ နောက်ဆုံးရ သတင်းတွေကို ပုံမှန် ကျွန်ုပ်တို့၏စနစ်တွင် စစ်ဆေးပြီး နေ့စဉ် နေ့တိုင်း အဆက်မပြတ် ရယူနိုင်ပါသည်။
+                        </h5>
+                        <!-- <p>ကျွန်ုပ်တို့ရဲ့ နောက်ဆုံးရ သတင်းတွေကို ပုံမှန် ကျွန်ုပ်တို့၏စနစ်တွင် စစ်ဆေးပြီး နေ့စဉ် နေ့တိုင်း အဆက်မပြတ် ရယူနိုင်ပါသည်။</p> -->
                     </div>
                     <form class="subscribe-form">
-                        <input type="text" placeholder="Enter Your Email" name="email">
-                        <button type="submit" class="custom-button">Subscribe</button>
+                        <a href="{{ route('contact-us') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">Contact</a>
+                        <!-- <input type="text" placeholder="Enter Your Email" name="email">
+                        <button type="submit" class="custom-button">Contact us</button> -->
                     </form>
                 </div>
             </div>
@@ -147,7 +149,7 @@
         <div class="container">
             <div class="copyright-area">
                 <div class="footer-bottom-wrapper">
-                    <div class="logo">
+                    <!-- <div class="logo">
                         <a href="index.html"><img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo"></a>
                     </div>
                     <ul class="gateway-area">
@@ -163,7 +165,7 @@
                         <li>
                             <a href="#0"><img src="{{ asset('assets/images/mastercard.png') }}" alt="footer"></a>
                         </li>
-                    </ul>
+                    </ul> -->
                     <div class="copyright">
                         <p>&copy; Copyright 2024
                     </div>

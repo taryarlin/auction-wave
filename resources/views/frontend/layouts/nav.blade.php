@@ -16,7 +16,7 @@
                     <li class="cmn-support-text">
                         <a href="#0" class="mr-3">
                             <i class="fas fa-phone-alt"></i>
-                            <span class="ml-2 d-none d-sm-inline-block">Customer Support</span></a>
+                            <span class="ml-2 d-none d-sm-inline-block">အကူအညီ +၉၅၉ ၄၀၀ ၇၅၂ ၉၁၇</span></a>
                     </li>
                 </ul>
                 <ul class="cart-button-area">
@@ -122,8 +122,8 @@
                     </li>
                 </ul>
                 <form class="search-form">
-                    <input type="text" placeholder="Search for picture....">
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <!-- <input type="text" placeholder="Search for picture....">
+                    <button type="submit"><i class="fas fa-search"></i></button> -->
                 </form>
                 <div class="search-bar d-md-none">
                     <a href="#0"><i class="fas fa-search"></i></a>
