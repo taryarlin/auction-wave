@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
 
@@ -180,29 +181,45 @@ class ProfileController extends Controller
                 'end_datetime' => 'required',
                 'buyer_premium_percent' => 'required',
                 'bid_increment' => 'required',
-                'images' => 'required'
+                'images' => !$product->images ? 'required' : 'nullable',
+                'images.*' => 'mimes:jpeg,jpg,png,gif|max:2048',
             ]);
 
             $auth_user = auth()->guard('customer')->user();
 
-            Product::create([
+            $file_names_ary = [];
+
+            if ($request->hasFile('images')) {
+                if ($product->images) {
+                    foreach($product->images as $image) {
+                        if (Storage::exists('public/' . $image)) {
+                            Storage::delete('public/' . $image);
+                        }
+                    }
+                }
+
+                foreach($request->file('images') as $file) {
+                    $file_name = 'product-images/' . time() . '_' . uniqid() . '.' . str_replace(' ', '', $file->getClientOriginalName());
+                    $file->storeAs('public/', $file_name);
+                    $file_names_ary[] = $file_name;
+                }
+            }
+
+            $product->update([
                 'name' => $request->name,
-                'ownerable_type' => Customer::class,
-                'ownerable_id' => $auth_user->id,
                 'category_id' => $request->category_id,
-                'customer_id' => $auth_user->id,
                 'starting_price' => $request->starting_price,
                 'fixed_price' => $request->fixed_price,
                 'start_datetime' => $request->start_datetime,
                 'end_datetime' => $request->end_datetime,
                 'buyer_premium_percent' => $request->buyer_premium_percent,
                 'bid_increment' => $request->bid_increment,
-                'images' => $request->images,
+                'images' => $file_names_ary ? $file_names_ary : $product->images,
                 'description' => $request->description,
                 'delivery_option' => $request->delivery_option
             ]);
 
-            return redirect()->route('profile.my-product.index')->with('success', 'Product created successfully');
+            return redirect()->route('profile.my-product.index')->with('success', 'Product updated successfully');
 
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());

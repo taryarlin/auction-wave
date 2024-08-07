@@ -7,6 +7,19 @@
         border-left: none;
         border-right: none;
     }
+
+    .preview-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .preview-image {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
 </style>
 @endsection
 @section('content')
@@ -28,7 +41,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <form class="contact-form" method="POST" action="{{ route('profile.my-product.update', $product->id) }}" id="contact_form">
+                                        <form class="contact-form" method="POST" action="{{ route('profile.my-product.update', $product->id) }}" enctype="multipart/form-data" id="contact_form">
                                             @csrf
                                             @method('PUT')
                                             <div class="form-group">
@@ -54,11 +67,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="startDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="date" placeholder="Start Datetime" name="start_datetime" value="{{ $product->start_datetime }}" id="startDatetime">
+                                                <input type="date" placeholder="Start Datetime" name="start_datetime" value="{{ Carbon\Carbon::parse($product->start_datetime)->format('Y-m-d') }}" id="startDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="endDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="date" placeholder="end Datetime" name="end_datetime" value="{{ $product->end_datetime }}" id="endDatetime">
+                                                <input type="date" placeholder="end Datetime" name="end_datetime" value="{{ Carbon\Carbon::parse($product->end_datetime)->format('Y-m-d') }}" id="endDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="buyerPremiumPercent"><i class="fas fa-percent"></i></label>
@@ -70,12 +83,13 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="images"><i class="fas fa-images"></i></label>
-                                                <input type="file" placeholder="Images" name="images" multiple id="images">
-                                            </div>
-                                            <div v-if="images.length">
-                                                <h6>Preview:</h6>
-                                                <div v-for="(image, index) in images" :key="index">
-                                                    {{-- <img :src="image.url" :alt="'Image ' + (index + 1)" width="100" /> --}}
+                                                <input type="file" placeholder="Images" name="images[]" class="images-input" multiple id="images">
+                                                <div class="mt-1">
+                                                    <div class="preview-container">
+                                                        @foreach ($product->acsr_images as $image)
+                                                        <img src="{{ asset($image) }}" class="preview-image" alt="">
+                                                        @endforeach
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -101,3 +115,23 @@
         </div>
     </section>
 @endsection
+
+@push('script')
+<script>
+    $(document).ready(function () {
+        $('.images-input').on('change', function(event) {
+            var files = event.target.files;
+            $('.preview-container').empty();
+
+            $.each(files, function(index, file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var img = $('<img>').attr('src', e.target.result).addClass('preview-image');
+                    $('.preview-container').append(img);
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+    });
+</script>
+@endpush
