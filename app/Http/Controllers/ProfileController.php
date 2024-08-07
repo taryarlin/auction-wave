@@ -133,7 +133,7 @@ class ProfileController extends Controller
             if ($request->hasFile('images')) {
                 foreach($request->file('images') as $file) {
                     $file_name = 'product-images/' . time() . '_' . uniqid() . '.' . str_replace(' ', '', $file->getClientOriginalName());
-                    $file->storeAs('public/product-images', $file_name);
+                    $file->storeAs('public/', $file_name);
                     $file_names_ary[] = $file_name;
                 }
             }
