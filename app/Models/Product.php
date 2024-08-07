@@ -14,6 +14,8 @@ class Product extends Model
         'images' => 'array',
     ];
 
+    protected $dates = ['date'];
+
     const STATUS = ['pending', 'approved', 'rejected'];
     const PENDING = self::STATUS[0];
     const APPROVED = self::STATUS[1];
