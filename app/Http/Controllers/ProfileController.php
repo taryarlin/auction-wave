@@ -226,6 +226,35 @@ class ProfileController extends Controller
         }
     }
 
+    public function myProductDelete(Product $product, Request $request)
+    {
+        try {
+            if (!$request->ajax()) Exception('Invalid Request!');
+
+            if ($product->images) {
+                foreach($product->images as $image) {
+                    if (Storage::exists('public/' . $image)) {
+                        Storage::delete('public/' . $image);
+                    }
+                }
+            }
+
+            $product->delete();
+
+            return response()->json([
+                'result' => 1,
+                'message' => 'Successfully delete.'
+            ]);
+
+        } catch (Exception $e) {
+            return response()->json([
+                'result' => 0,
+                'message' => 'Something wrong!',
+                'data' => $e->getMessage()
+            ]);
+        }
+    }
+
     public function myBid()
     {
         $products = Product::whereHas('auctions', function ($query) {

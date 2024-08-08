@@ -38,6 +38,7 @@ Route::middleware('auth:customer')->group(function () {
         Route::post('/my-product/store', [ProfileController::class, 'myProductStore'])->name('my-product.store');
         Route::get('/my-product/{product}/edit', [ProfileController::class, 'myProductEdit'])->name('my-product.edit');
         Route::put('/my-product/{product}/update', [ProfileController::class, 'myProductUpdate'])->name('my-product.update');
+        Route::delete('/my-product/{product}/delete', [ProfileController::class, 'myProductDelete'])->name('my-product.delete');
 
         Route::get('/my-bid', [ProfileController::class, 'myBid'])->name('my-bid.index');
     });
