@@ -48,20 +48,16 @@
             <div class="row mb--60">
                 <div class="col-sm-6 col-lg-2" data-aos="fade-down" data-aos-duration="1000">
                     <div class="footer-widget widget-links">
-                        <h5 class="title">Online Auction <br>System</h5>
-                        <div class="logo">
-                            <a href="/">
-                                <img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo" width="280" height="100">
-                            </a>
-                        </div>
-                        <!-- <ul class="links-list">
+                        <h5 class="title">Auction Categories</h5>
+                        <ul class="links-list">
                             <li>
-                                <a href="#0">Ending Now</a>
+                                <a href="{{ route('product.index') }}">{{ $category->name }}</a>
                             </li>
+                            @if (($key + 1) == count($categories))
                             <li>
-                                <a href="#0">Art</a>
+                                <a href="{{ route('product.index') }}">See all</a>
                             </li>
-                        </ul> -->
+                        </ul>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1300">
@@ -71,7 +67,7 @@
                             <li>
                                 <a href="#">hello</a>
                             </li>
-                        </ul>   
+                        </ul>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-down" data-aos-duration="1300">
@@ -109,7 +105,7 @@
                                 <a href="https://www.facebook.com/">
                                     <abbr title="Facebook">
                                         <i class="fab fa-facebook-f"></i>
-                                    </abbr>                                    
+                                    </abbr>
                                 </a>
                             </li>
                             <li>
