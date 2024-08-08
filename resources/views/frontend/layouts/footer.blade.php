@@ -82,6 +82,7 @@
                             <li>
                                 <a href="{{ route('product.index') }}">See all</a>
                             </li>
+                        </ul>
                             @endif
                             @endforeach
                         </ul>
