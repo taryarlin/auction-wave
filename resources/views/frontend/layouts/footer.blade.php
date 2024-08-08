@@ -46,43 +46,80 @@
     <div class="footer-top padding-bottom padding-top">
         <div class="container">
             <div class="row mb--60">
-                <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1000">
+                <div class="col-sm-6 col-lg-2" data-aos="fade-down" data-aos-duration="1000">
                     <div class="footer-widget widget-links">
-                        <h5 class="title">Auction Categories</h5>
-                        <ul class="links-list">
+                        <h5 class="title">Online Auction <br>System</h5>
+                        <div class="logo">
+                            <a href="/">
+                                <img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo" width="280" height="100">
+                            </a>
+                        </div>
+                        <!-- <ul class="links-list">
                             <li>
                                 <a href="#0">Ending Now</a>
                             </li>
                             <li>
                                 <a href="#0">Art</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1300">
                     <div class="footer-widget widget-links">
-                        <h5 class="title">About Us</h5>
+                        <h5 class="title">Auction Categories</h5>
                         <ul class="links-list">
                             <li>
+                                <a href="#">hello</a>
+                            </li>
+                        </ul>   
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-down" data-aos-duration="1300">
+                    <div class="footer-widget widget-links">
+                        <h5 class="title">Contact Us</h5>
+                        <ul class="links-list">
+                            <!-- <li>
                                 <a href="{{ route('about-us') }}">About us</a>
+                            </li> -->
+                            <!-- <li>
+                                <a href="{{ route('about-us') }}#help">
+                                    <i class="fas fa-book"></i>User guide
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="#0"><i class="fas fa-phone-alt"></i>(+959) 400 752 917</a>
                             </li>
                             <li>
-                                <a href="#0">Help</a>
+                                <a href="#0"><i class="fas fa-blender-phone"></i>(+959) 679 016 500</a>
                             </li>
                             <li>
-                                <a href="#0">Affiliates</a>
+                                <a href="#0"><i class="fas fa-envelope-open-text"></i>khinekhinesoe@ucsh.edu.mm</a>
                             </li>
                             <li>
-                                <a href="#0">Jobs</a>
+                                <a href="#0"><i class="fas fa-envelope-open-text"></i>thaesuaye@ucsh.edu.mm</a>
                             </li>
                             <li>
-                                <a href="#0">Press</a>
+                                <a href="#0"><i class="fas fa-location-arrow"></i>
+                                <abbr title="University of Computer Studies, Hinthada" class="text-decoration-none">UCSH</abbr>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i>
+                                </a>
                             </li>
                             <li>
-                                <a href="#0">Our blog</a>
+                                <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#0">Collectors' portal</a>
+                                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://mm.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://lms.ucsh.edu.mm/"><i class="fa fa-link"></i></a>
                             </li>
                         </ul>
                     </div>
