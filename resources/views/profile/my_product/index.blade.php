@@ -1,4 +1,29 @@
 @extends('frontend.layouts.app')
+@section('css')
+<style>
+    .status {
+        background: whitesmoke;
+        font-size: 13px;
+        border-radius: 10px;
+        padding: 2px 8px;
+    }
+
+    .status.status-pending {
+        background: rgb(251, 153, 73) !important;
+        color: rgb(54, 54, 54) !important;
+    }
+
+    .status.status-approved {
+        background: rgb(161, 238, 44) !important;
+        color: rgb(54, 54, 54) !important;
+    }
+
+    .status.status-rejected {
+        background: rgb(223, 0, 0) !important;
+        color: whitesmoke !important;
+    }
+</style>
+@endsection
 @section('content')
     @include('frontend.layouts.hero_section')
 
@@ -23,7 +48,7 @@
                             <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                                 <div class="auction-thumb">
                                     <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
-                                    <a href="#0" class="rating"><i class="far fa-star"></i></a>
+                                    <a href="#0" class="rating status status-{{ $product->status }}">{{ ucfirst($product->status) }}</a>
                                     <a href="{{ route('profile.my-product.edit', $product->id) }}" class="bid"><i class="flaticon-edit"></i></a>
                                 </div>
                                 <div class="auction-content">
@@ -58,7 +83,7 @@
                                     </div>
                                     <div class="text-center">
                                         <a href="{{ route('profile.my-product.edit', $product->id) }}" class="custom-button w-25 mx-1"><i class="flaticon-edit"></i></a>
-                                        <a href="#0" class="custom-button w-25 mx-1 pink delete-btn" data-id={{ $product->id }} data-delete-url="{{ route('profile.my-product.delete', $product->id) }}"><i class="fas fa-trash"></i></a>
+                                        <a href="#0" class="custom-button w-25 mx-1 pink delete-btn" data-id="{{ $product->id }}" data-delete-url="{{ route('profile.my-product.delete', $product->id) }}"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </div>
                             </div>
