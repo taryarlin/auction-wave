@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
     
     <section class="overview-section padding-top" style="padding-bottom:120px;">
         <div class="container mw-lg-100 p-lg-0">
@@ -91,6 +91,46 @@
                 </div>
                 <div class="col-lg-6 pl-30 pr-0">
                     <div class="w-100 h-100 bg_img" data-background="./assets/images/overview-bg.png"></div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+    <section class="about-section">
+        <div class="container">
+            <div class="footer-top-shape">
+                <img src="{{ asset('assets/images/footer-top-shape.png') }}" alt="css">
+            </div>
+            <div class="anime-wrapper">
+                <div class="anime-1 plus-anime">
+                    <img src="{{ asset('assets/images/p1.png') }}" alt="footer">
+                </div>
+                <div class="anime-2 plus-anime">
+                    <img src="{{ asset('assets/images/p2.png') }}" alt="footer">
+                </div>
+                <div class="anime-3 plus-anime">
+                    <img src="{{ asset('assets/images/p3.png') }}" alt="footer">
+                </div>
+                <div class="anime-5 zigzag">
+                    <img src="{{ asset('assets/images/c2.png') }}" alt="footer">
+                </div>
+                <div class="anime-6 zigzag">
+                    <img src="{{ asset('assets/images/c3.png') }}" alt="footer">
+                </div>
+                <div class="anime-7 zigzag">
+                    <img src="{{ asset('assets/images/c4.png') }}" alt="footer">
+                </div>
+            </div>
+            <div class="newslater-content">
+                <div class="section-header left-style mb-low" data-aos="fade-down" data-aos-duration="1100">
+                    <h5 class="cate">အသုံးပြုရန် လမ်းညွှန်ချက်များ ဖတ်ရန်</h5><br>
+                    <p>၁။ အွန်လိုင်းလေလံစနစ်အား အသုံးပြုရန် စာရင်းသွင်းခြင်း (သို့မဟုတ်)           လက်မှတ်ထိုးဝင်ရောက်ထားရန် လိုအပ်ပါသည်။ </p><br>
+                    <p>၂။ အသုံးပြုသူတွင် အကောင့်မရှိပါက စာရင်းပေးသွင်း၍ လိုအပ်သောအချက်အလက်များဖြည့်သွင်းကာ အကောင့်သစ်ဖွင့်နိုင်သည်။ </p><br>
+                    <p>၃။ လေလံဆွဲထားသော ပစ္စည်းများအား ပုံများကိုနှိပ်ကာ အသေးစိတ်အချက်အလက်နှင့်တကွ လေလံပစ္စည်းများကိုကြည့်ရှုနိုင်သည်။ </p><br>
+                    <p>၄။ လေလံပစ္စည်းတစ်ခုချင်းစီတွင် လေလံဆွဲထားသော ပစ္စည်းအား မည်သည့်စျေးနှုန်းဖြင့် လေလံဆွဲထားကြောင်း ကြည့်ရှုနိုင်ပါသည်။ </p><br>
+                    <p>၅။ အသုံးပြုသူသည် သတ်မှတ်ထားသော လေလံတိုးနှုန်းနှင့်အတူ လက်ရှိစျေးနှုန်းထက်ပို၍ ပေးမှသာ လေလံတိုးခြင်းအောင်မြင်မည်။ </p><br>
+                    <p>၆။ လေလံပစ္စည်းများအား သတ်မှတ်ထားသောအချိန်အတွင်းတွင်သာ လေလံဆွဲခွင့်ပြုသည်။ </p><br>
+                    <p>၇။ အသုံးပြုသူသည် ထွက်လိုလျှင် ထွက်ရန်ခလုတ်အားနှိပ်ကာ အသုံးပြုခြင်း ရပ်ဆိုင်းနိုင်ပါသည်။ </p>
                 </div>
             </div>
         </div>

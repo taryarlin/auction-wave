@@ -7,12 +7,12 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner-content cl-white">
-                        <h5 class="cate" data-aos="fade-down" data-aos-duration="1000">Next Generation Auction</h5>
-                        <h1 class="title" data-aos="zoom-out-up" data-aos-duration="1200"><span class="d-xl-block">Find Your</span> Next Deal!</h1>
+                        <h5 class="cate" data-aos="fade-down" data-aos-duration="1000">Online Auction System</h5>
+                        <!-- <h3 class="title" data-aos="zoom-out-up" data-aos-duration="1200"><span class="d-xl-block">သင့်ရဲ့ ကြွယ်ဝမှုကို </span> လေလံပွဲတွင် ပြသလေ့ရှိပါသလား?</h3> -->
                         <p class="pras" data-aos="zoom-out-down" data-aos-duration="1300">
-                            Online Auction is where everyone goes to shop, sell,and give, while discovering variety and affordability.
+                        အွန်လိုင်းလေလံစနစ်တွင်ပါဝင်ပြီး ဒစ်ဂျစ်တယ်စျေးကွက်အား မြှင့်တင်နိုင်ရန် မတူညီသော ပစ္စည်းများအား ယခုပဲ ဝင်ရောက်ကြည့်ရှုလိုက်ပါ။
                         </p>
-                        <a href="{{ route('register') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">Get Started</a>
+                        <a href="{{ route('register') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">စတင်လိုက်ပါ</a>
                     </div>
                 </div>
                 <div class="d-none d-lg-block col-lg-6" data-aos="fade-right" data-aos-duration="1200">
@@ -27,6 +27,7 @@
         </div>
     </section>
     <!--============= Banner Section Ends Here =============-->
+    <!-- home page -->
 
     <!--============= Art Auction Section Starts Here =============-->
     @foreach ($categories as $key => $category)
@@ -145,8 +146,8 @@
         <div class="container">
             <div class="call-wrapper cl-white bg_img" data-background="{{ asset('assets/images/call-bg.png') }}" style="background-image: url({{ asset('assets/images/call-bg.png') }});">
                 <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
-                    <h3 class="title">Register for Free & Start Bidding Now!</h3>
-                    <p>From cars to diamonds to iPhones, we have it all.</p>
+                    <h3 class="title">အခမဲ့စာရင်းသွင်းပြီး ယခုပဲ လေလံဆွဲခြင်း စတင်ပါ!</h3>
+                    <p>ပစ္စည်းအမျိုးအစားများစွာအား ကြည့်ရှုနိုင်ပါတယ်။</p>
                 </div>
                 <a href="{{ route('register') }}" class="custom-button white">Register</a>
             </div>
@@ -158,8 +159,9 @@
         <div class="container">
             <div class="how-wrapper section-bg">
                 <div class="section-header text-lg-left" data-aos="zoom-out-up" data-aos-duration="1200">
-                    <h2 class="title">How it works</h2>
-                    <p>Easy 3 steps to win</p>
+                    <h2 class="title">ဘယ်လို အလုပ် လုပ်သလဲ ?</h2>
+                    <p>လွယ်ကူသော အဆင့် ၃ ဆင့်</p> 
+                    <p><a href="{{ route('about-us') }}">အသေးစိတ်အချက်အလက်များအတွက်</a></p>
                 </div>
                 <div class="row justify-content-center mb--40">
                     <div class="col-md-6 col-lg-4">
@@ -168,8 +170,8 @@
                                 <img src="{{ asset('assets/images/how1.png') }}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1200">
-                                <h4 class="title">Sign Up</h4>
-                                <p>No Credit Card Required</p>
+                                <h4 class="title">စာရင်းပေးသွင်းပါ</h4>
+                                <p>Credit Card မလိုအပ်ပါ</p>
                             </div>
                         </div>
                     </div>
@@ -179,8 +181,8 @@
                                 <img src="{{ asset('assets/images/how2.png') }}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1400">
-                                <h4 class="title">Bid</h4>
-                                <p>Bidding is free Only pay if you win</p>
+                                <h4 class="title">လေလံဆွဲပါ</h4>
+                                <p>လေလံဆွဲခြင်းသည် အခမဲ့ဖြစ်ပြီး အနိုင်ရရှိမှသာ ငွေပေးချေရန်လိုအပ်ပါတယ်</p>
                             </div>
                         </div>
                     </div>
@@ -190,8 +192,8 @@
                                 <img src="{{ asset('assets/images/how3.png') }}" alt="how">
                             </div>
                             <div class="how-content" data-aos="zoom-out-up" data-aos-duration="1600">
-                                <h4 class="title">Win</h4>
-                                <p>Fun - Excitement - Great deals</p>
+                                <h4 class="title">လေလံအောင်မြင်ခြင်း</h4>
+                                <p>ပျော်ရွှင်ပြီး စိတ်လှုပ်ရှားစရာ ကောင်းပါတယ်</p>
                             </div>
                         </div>
                     </div>
@@ -201,7 +203,7 @@
     </section>
     <!--============= How Section Ends Here =============-->
     <!--============= Client Section Starts Here =============-->
-    <section class="client-section padding-top padding-bottom">
+    <!-- <section class="client-section padding-top padding-bottom">
         <div class="container">
             <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
                 <h2 class="title">Don’t just take our word for it!</h2>
@@ -278,6 +280,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--============= Client Section Ends Here =============-->
 @endsection
