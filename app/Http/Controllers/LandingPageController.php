@@ -12,14 +12,14 @@ class LandingPageController extends Controller
     {
         $categories = Category::query()
             ->with([
-                'products' => fn ($query) => $query->where('status', 'approved'),
+                'products' => fn ($query) => $query->approved()->latest()->limit(3),
                 'products.auctions'
             ])
             ->has('products')
             ->paginate(3);
 
         $popular_products = Product::query()
-            ->where('status', 'approved')
+            ->approved()
             ->withCount('auctions')
             ->orderBy('auctions_count', 'desc')
             ->paginate(5);
