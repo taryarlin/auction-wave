@@ -264,6 +264,13 @@ class ProfileController extends Controller
         return view('profile.my_bid.index', compact('products'));
     }
 
+    public function winningBid()
+    {
+        $products = Product::where('winner_id', auth()->guard('customer')->user()->id)->finished()->whereNotNull(['won_amount', 'won_datetime'])->latest()->paginate(4);
+
+        return view('profile.winning_bid.index', compact('products'));
+    }
+
     /**
      * Display the user's profile form.
      */

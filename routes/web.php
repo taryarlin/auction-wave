@@ -41,5 +41,7 @@ Route::middleware('auth:customer')->group(function () {
         Route::delete('/my-product/{product}/delete', [ProfileController::class, 'myProductDelete'])->name('my-product.delete');
 
         Route::get('/my-bid', [ProfileController::class, 'myBid'])->name('my-bid.index');
+
+        Route::get('/winning-bid', [ProfileController::class, 'winningBid'])->name('winning-bid.index');
     });
 });

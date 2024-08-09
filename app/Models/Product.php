@@ -68,6 +68,11 @@ class Product extends Model
         return $query->where('status', self::REJECTED);
     }
 
+    public function scopeFinished($query)
+    {
+        return $query->where('status', self::FINISHED);
+    }
+
     public static function generateUniqueListingId()
     {
         return uniqid();
