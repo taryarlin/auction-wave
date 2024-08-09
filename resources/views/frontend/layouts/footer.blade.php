@@ -48,7 +48,17 @@
             <div class="row mb--60">
                 <div class="col-sm-6 col-lg-2" data-aos="fade-down" data-aos-duration="1000">
                     <div class="footer-widget widget-links">
-                        <h5 class="title">Auction Categories</h5>
+                        <h5 class="title"><p>Online Auction </p>System</h5>
+                        <div class="logo">
+                            <a href="/">
+                                <img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo" width="300" height="100">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1300">
+                    <div class="footer-widget widget-links">
+                       <h5 class="title">Auction Categories</h5>
                         <ul class="links-list">
                             @php
                                 $categories = App\Models\Category::limit(8)->get(['id', 'name']);
@@ -63,17 +73,7 @@
                             </li>
                             @endif
                             @endforeach
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1300">
-                    <div class="footer-widget widget-links">
-                        <h5 class="title">Auction Categories</h5>
-                        <ul class="links-list">
-                            <li>
-                                <a href="#">hello</a>
-                            </li>
-                        </ul>   
+                        </ul>  
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-down" data-aos-duration="1300">

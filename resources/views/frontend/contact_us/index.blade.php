@@ -7,9 +7,9 @@
         <div class="container">
             <div class="contact-wrapper padding-top padding-bottom mt--100 mt-lg--440">
                 <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
-                    <h5 class="cate">Contact Us</h5>
-                    <h2 class="title">get in touch</h2>
-                    <p>We'd love to hear from you! Let us know how we can help.</p>
+                    <h5 class="cate">ဆက်သွယ်ရန်</h5>
+                    <!-- <h2 class="title">get in touch</h2> -->
+                    <p>သင့်ရဲ့ စကားသံများကို ကျွန်ုပ်တို့ နားထောင်နေပါတယ်။ ဘာအကူအညီ လိုအပ်ပါသလဲ?</p>
                 </div>
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">

@@ -16,7 +16,7 @@
                     <li class="cmn-support-text">
                         <a href="#0" class="mr-3">
                             <i class="fas fa-phone-alt"></i>
-                            <span class="ml-2 d-none d-sm-inline-block">အကူအညီ +၉၅၉ ၄၀၀ ၇၅၂ ၉၁၇</span></a>
+                            <span class="ml-2 d-none d-sm-inline-block">အကူအညီ (+၉၅၉) ၄၀၀ ၇၅၂ ၉၁၇</span></a>
                     </li>
                 </ul>
                 <ul class="cart-button-area">
