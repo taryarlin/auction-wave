@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -92,5 +93,10 @@ class Product extends Model
         }, $this->images);
 
         return $imageUrls;
+    }
+
+    public function isExpired()
+    {
+        return Carbon::now()->lt(Carbon::parse($this->end_datetime));
     }
 }
