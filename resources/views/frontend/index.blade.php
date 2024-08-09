@@ -209,7 +209,8 @@
                 <h2 class="title">Don’t just take our word for it!</h2>
                 <p>Our hard work is paying off. Great reviews from amazing customers.</p>
             </div>
-            <div class="m--15">
+            <div class="m--10">
+                <div class="client-slider owl-theme owl-carousel">
                 <div class="client-slider owl-theme owl-carousel">
                     <div class="client-item">
                         <div class="client-content">
