@@ -76,11 +76,10 @@
                             @endphp
                             @foreach ($categories as $key => $category)
                             <li>
-                                <a href="{{ route('product.index') }}">{{ $category->name }}</a>
+                                <a href="#0">Ending Now</a>
                             </li>
-                            @if (($key + 1) == count($categories))
                             <li>
-                                <a href="{{ route('product.index') }}">See all</a>
+                                <a href="#0">Art</a>
                             </li>
                         </ul>
                             @endif
