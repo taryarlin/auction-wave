@@ -22,6 +22,11 @@
         background: rgb(223, 0, 0) !important;
         color: whitesmoke !important;
     }
+
+    .status.status-finished {
+        background: rgb(0, 179, 255) !important;
+        color: whitesmoke !important;
+    }
 </style>
 @endsection
 @section('content')
