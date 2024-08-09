@@ -48,47 +48,7 @@
                 <div class="row justify-content-center mb-30-none">
                     @foreach ($category->products as $product)
                         <div class="col-sm-10 col-md-6 col-lg-4">
-                            <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
-                                <div class="auction-thumb">
-                                    <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
-                                    <a href="#0" class="rating"><i class="far fa-star"></i></a>
-                                    <a href="{{ route('product.detail', $product->id) }}" class="bid"><i class="flaticon-auction"></i></a>
-                                </div>
-                                <div class="auction-content">
-                                    <h6 class="title">
-                                        <a href="{{ route('product.detail', $product->id) }}">{{ $product->name }}</a>
-                                    </h6>
-                                    <div class="bid-area">
-                                        <div class="bid-amount">
-                                            <div class="icon">
-                                                <i class="flaticon-auction"></i>
-                                            </div>
-                                            <div class="amount-content">
-                                                <div class="current">Current Bid</div>
-                                                <div class="amount">{{ $product->auctions->first()->pivot->amount ?? $product->starting_price }} MMK</div>
-                                            </div>
-                                        </div>
-                                        <div class="bid-amount">
-                                            <div class="icon">
-                                                <i class="flaticon-money"></i>
-                                            </div>
-                                            <div class="amount-content">
-                                                <div class="current">Buy Now</div>
-                                                <div class="amount">{{ $product->fixed_price }} MMK</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="countdown-area">
-                                        <div class="countdown">
-                                            <div id="bid_counter26"></div>
-                                        </div>
-                                        <span class="total-bids">{{ $product->auctions->count() }} Bids</span>
-                                    </div>
-                                    <div class="text-center">
-                                        <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @include('frontend.products._partials.auction_card')
                         </div>
                     @endforeach
                 </div>
@@ -112,12 +72,12 @@
                         <div class="col-lg-6">
                             <div class="auction-item-3" data-aos="zoom-out-up" data-aos-duration="1500">
                                 <div class="auction-thumb">
-                                    <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images[0] }}" alt="popular"></a>
-                                    <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
+                                    <a href="{{ route('product.detail', $popular_product->id) }}"><img src="{{ $popular_product->acsr_images ? $popular_product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 200px; object-fit: cover" alt="product"></a>
+                                    <a href="{{ route('product.detail', $popular_product->id) }}" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
                                 <div class="auction-content">
                                     <h6 class="title">
-                                        <a href="{{ route('product.detail', $product->id) }}">{{ $product->name }}</a>
+                                        <a href="{{ route('product.detail', $popular_product->id) }}">{{ $popular_product->name }}</a>
                                     </h6>
                                     <div class="bid-amount">
                                         <div class="icon">
@@ -125,11 +85,11 @@
                                         </div>
                                         <div class="amount-content">
                                             <div class="current">Current Bid</div>
-                                            <div class="amount">{{ $product->current_bid }} MMK</div>
+                                            <div class="amount">{{ $popular_product->current_bid }} MMK</div>
                                         </div>
                                     </div>
                                     <div class="bids-area">
-                                        Total Bids : <span class="total-bids">{{ $product->auctions->count() }} Bids</span>
+                                        Total Bids : <span class="total-bids">{{ $popular_product->auctions->count() }} Bids</span>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +120,7 @@
             <div class="how-wrapper section-bg">
                 <div class="section-header text-lg-left" data-aos="zoom-out-up" data-aos-duration="1200">
                     <h2 class="title">ဘယ်လို အလုပ် လုပ်သလဲ ?</h2>
-                    <p>လွယ်ကူသော အဆင့် ၃ ဆင့်</p> 
+                    <p>လွယ်ကူသော အဆင့် ၃ ဆင့်</p>
                     <p><a href="{{ route('about-us') }}">အသေးစိတ်အချက်အလက်များအတွက်</a></p>
                 </div>
                 <div class="row justify-content-center mb--40">

@@ -30,34 +30,66 @@
                             </ul>
                         </div>
                         <ul class="price-table mb-30">
+                            @if (auth()->guard('customer')->check())
+                            <li>
+                                <span class="details">Owner Name</span>
+                                <h5 class="info">{{ $product->customer->name }}</h5>
+                            </li>
+                            <li>
+                                <span class="details">Owner Email</span>
+                                <h5 class="info">{{ $product->customer->email }}</h5>
+                            </li>
+                            <li>
+                                <span class="details">Owner Phone</span>
+                                <h5 class="info">{{ $product->customer->phone }}</h5>
+                            </li>
+                            <hr>
+                            @endif
                             <li class="header">
                                 <h5 class="current">Current Price</h5>
                                 <h3 class="price">{{ $product->current_bid }} MMK</h3>
                             </li>
+
                             <li>
                                 <span class="details">Buyer's Premium</span>
                                 <h5 class="info">{{ $product->buyer_premium_percent }}%</h5>
                             </li>
                             <li>
-                                <span class="details">Bid Increment (US)</span>
+                                <span class="details">Bid Increment</span>
                                 <h5 class="info">{{ $product->bid_increment }} MMK</h5>
                             </li>
+                            <li>
+                                <span class="details">Latest Total Bid Price</span>
+                                <h5 class="info">{{ $product->current_bid + $product->bid_increment }} MMK</h5>
+                            </li>
                         </ul>
+                        @if (auth()->guard('customer')->check())
+                            @if (auth()->guard('customer')->user()->id != $product->customer_id)
+                                @if ($product->isExpired())
+                                <div class="product-bid-area">
+                                    <form action="{{ route('make-bid') }}" method="POST" class="product-bid-form">
+                                        @csrf
+                                        <div class="search-icon">
+                                            <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
+                                        </div>
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <input type="number" name="amount" placeholder="Enter you bid amount">
+                                        <button type="submit" class="custom-button">Submit a bid</button>
+                                    </form>
+                                </div>
+                                @endif
+                            @endif
+                        @else
                         <div class="product-bid-area">
-                            <form action="{{ route('make-bid') }}" method="POST" class="product-bid-form">
-                                @csrf
+                            <form class="product-bid-form">
                                 <div class="search-icon">
                                     <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
                                 </div>
-                                <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                <input type="number" name="amount" placeholder="Enter you bid amount" {{ !auth()->guard('customer')->check() ? 'disabled' : '' }}>
-                                @if (auth()->guard('customer')->check())
-                                <button type="submit" class="custom-button">Submit a bid</button>
-                                @else
+                                <input type="number" name="amount" placeholder="Enter you bid amount" disabled>
                                 <a href="{{ route('login') }}" class="custom-button">Login to bid</a>
-                                @endif
                             </form>
                         </div>
+                        @endif
                         <div class="buy-now-area">
                             <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
                             <div class="share-area">
@@ -85,7 +117,7 @@
                         <div class="product-single-sidebar mb-3">
                             <h6 class="title">This Auction Ends in:</h6>
                             <div class="countdown">
-                                <div id="product_bid_counter"></div>
+                                <div id="product_bid_counter" data-end-date="{{ \Carbon\Carbon::parse($product->end_datetime)->format('Y/m/d') }}"></div>
                             </div>
                             <div class="side-counter-area">
                                 <div class="side-counter-item">
@@ -282,7 +314,7 @@
                 // let endDate = "2020/03/20"; //This is 1
                 // let endDate = (new Date().getFullYear()) + '/' + (new Date().getMonth() + 1) + '/' + (new Date().getDate() + 1); //This is 2
 
-                let endDate = "{{ \Carbon\Carbon::parse($product->end_datetime)->format('Y/m/d') }}"
+                let endDate = $("#product_bid_counter").data('end-date');
                 // 2024/7/30
 
 
