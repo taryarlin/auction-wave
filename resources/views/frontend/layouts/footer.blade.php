@@ -106,20 +106,39 @@
                         </ul>
                         <ul class="social-icons">
                             <li>
-                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i>
+                                <a href="https://www.facebook.com/">
+                                    <abbr title="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </abbr>                                    
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a href="https://twitter.com/">
+                                    <abbr title="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </abbr>
+                                </a>
                             </li>
                             <li>
-                                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/">
+                                    <abbr title="Twitter">
+                                        <i class="fab fa-instagram"></i>
+                                    </abbr>
+                                </a>
                             </li>
                             <li>
-                                <a href="https://mm.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://mm.linkedin.com/">
+                                    <abbr title="Linked In">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </abbr>
+                                </a>
                             </li>
                             <li>
-                                <a href="http://lms.ucsh.edu.mm/"><i class="fa fa-link"></i></a>
+                                <a href="http://lms.ucsh.edu.mm/">
+                                    <abbr title="ucsh.edu.mm">
+                                        <i class="fa fa-link"></i>
+                                    </abbr>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -129,52 +148,18 @@
                         <h5 class="title">We're Here to Help</h5>
                         <ul class="links-list">
                             <li>
-                                <a href="#0">Your Account</a>
+                                <a href="{{ route('about-us') }}#help">
+                                    User guide
+                                </a>
                             </li>
                             <li>
-                                <a href="#0">Safe and Secure</a>
-                            </li>
-                            <li>
-                                <a href="#0">Shipping Information</a>
+                                <a href="{{ route('register') }}">Your Account</a>
                             </li>
                             <li>
                                 <a href="{{ route('contact-us') }}">Contact Us</a>
                             </li>
                             <li>
-                                <a href="{{ route('faq') }}">Help & FAQ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1800">
-                    <div class="footer-widget widget-follow">
-                        <h5 class="title">Follow Us</h5>
-                        <ul class="links-list">
-                            <li>
-                                <a href="#0"><i class="fas fa-phone-alt"></i>(646) 663-4575</a>
-                            </li>
-                            <li>
-                                <a href="#0"><i class="fas fa-blender-phone"></i>(646) 968-0608</a>
-                            </li>
-                            <li>
-                                <a href="#0"><i class="fas fa-envelope-open-text"></i><span class="__cf_email__" data-cfemail="9ff7faf3efdffaf1f8f0ebf7faf2fab1fcf0f2">[email&#160;protected]</span></a>
-                            </li>
-                            <li>
-                                <a href="#0"><i class="fas fa-location-arrow"></i>1201 Broadway Suite</a>
-                            </li>
-                        </ul>
-                        <ul class="social-icons">
-                            <li>
-                                <a href="#0" class="active"><i class="fab fa-facebook-f"></i></a>
-                            </li>
-                            <li>
-                                <a href="#0"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#0"><i class="fab fa-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#0"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="{{ route('faq') }}">FAQ</a>
                             </li>
                         </ul>
                     </div>
@@ -186,25 +171,11 @@
         <div class="container">
             <div class="copyright-area">
                 <div class="footer-bottom-wrapper">
-                    <!-- <div class="logo">
-                        <a href="index.html"><img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo"></a>
+                <div class="copyright">
+                        <p>University of Computer Studies, Hinthada</p>
                     </div>
-                    <ul class="gateway-area">
-                        <li>
-                            <a href="#0"><img src="{{ asset('assets/images/paypal.png') }}" alt="footer"></a>
-                        </li>
-                        <li>
-                            <a href="#0"><img src="{{ asset('assets/images/visa.png') }}" alt="footer"></a>
-                        </li>
-                        <li>
-                            <a href="#0"><img src="{{ asset('assets/images/discover.png') }}" alt="footer"></a>
-                        </li>
-                        <li>
-                            <a href="#0"><img src="{{ asset('assets/images/mastercard.png') }}" alt="footer"></a>
-                        </li>
-                    </ul> -->
                     <div class="copyright">
-                        <p>&copy; Copyright 2024
+                        <p>&copy; Copyright 2024 </p>
                     </div>
                 </div>
             </div>
