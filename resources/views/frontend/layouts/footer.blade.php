@@ -69,19 +69,18 @@
                 <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1300">
                     <div class="footer-widget widget-links">
                        <h5 class="title">Auction Categories</h5>
-                       <h5 class="title">Auction Categories</h5>
                         <ul class="links-list">
                             @php
                                 $categories = App\Models\Category::limit(8)->get(['id', 'name']);
                             @endphp
                             @foreach ($categories as $key => $category)
                             <li>
-                                <a href="#0">Ending Now</a>
+                                <a href="{{ route('product.index') }}">{{ $category->name }}</a>
                             </li>
+                            @if (($key + 1) == count($categories))
                             <li>
-                                <a href="#0">Art</a>
+                                <a href="{{ route('product.index') }}">See all</a>
                             </li>
-                        </ul>
                             @endif
                             @endforeach
                         </ul>
