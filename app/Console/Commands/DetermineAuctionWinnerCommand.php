@@ -27,23 +27,21 @@ class DetermineAuctionWinnerCommand extends Command
      */
     public function handle()
     {
-        // $now = Carbon::now()->format('Y-m-d H:i:s');
-        $now = '2024-08-09 00:00:00';
-
-        $this->info($now);
+        $now = Carbon::now()->format('Y-m-d H:i:s');
+        // $now = '2024-08-10 00:00:00';
 
         Product::approved()->where('end_datetime', $now)->chunk(100, function ($products) use ($now) {
             foreach ($products as $key => $product) {
-                \Log::info($product->auctions()->get());
+                $winner = $product->auctions()->orderBy('amount', 'desc')->first();
 
-                // $product->update([
-                //     'winner_id' => '',
-                //     'won_amount' => '',
-                //     'won_datetime' => $now,
-                // ]);
+                $product->update([
+                    'winner_id' => $winner->id,
+                    'won_amount' => $winner->pivot->amount,
+                    'won_datetime' => $now,
+                ]);
             }
         });
 
-        $this->info('Determine auction winner');
+        $this->info('Determine auction winners at ' . $now . '.');
     }
 }
