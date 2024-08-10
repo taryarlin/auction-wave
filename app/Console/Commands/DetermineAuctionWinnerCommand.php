@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Carbon\Carbon;
 use App\Models\Product;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class DetermineAuctionWinnerCommand extends Command
 {
@@ -44,6 +45,8 @@ class DetermineAuctionWinnerCommand extends Command
                     ]);
                 }
             });
+
+        Log::info('Determine auction winners at ' . $now . '.');
 
         $this->info('Determine auction winners at ' . $now . '.');
     }
