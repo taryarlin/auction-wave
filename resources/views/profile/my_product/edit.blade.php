@@ -67,11 +67,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="startDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="date" placeholder="Start Datetime" name="start_datetime" value="{{ Carbon\Carbon::parse($product->start_datetime)->format('Y-m-d') }}" id="startDatetime">
+                                                <input type="datetime-local" placeholder="Start Datetime" name="start_datetime" value="{{ Carbon\Carbon::parse($product->start_datetime)->format('Y-m-d H:i:s') }}" id="startDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="endDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="date" placeholder="end Datetime" name="end_datetime" value="{{ Carbon\Carbon::parse($product->end_datetime)->format('Y-m-d') }}" id="endDatetime">
+                                                <input type="datetime-local" placeholder="end Datetime" name="end_datetime" value="{{ Carbon\Carbon::parse($product->end_datetime)->format('Y-m-d H:i:s') }}" id="endDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="buyerPremiumPercent"><i class="fas fa-percent"></i></label>

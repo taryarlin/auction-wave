@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use Carbon\Carbon;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Customer;
@@ -147,8 +148,8 @@ class ProfileController extends Controller
                 'customer_id' => $auth_user->id,
                 'starting_price' => $request->starting_price,
                 'fixed_price' => $request->fixed_price,
-                'start_datetime' => $request->start_datetime,
-                'end_datetime' => $request->end_datetime,
+                'start_datetime' => Carbon::parse($request->start_datetime)->format('Y-m-d H:i:s'),
+                'end_datetime' => Carbon::parse($request->end_datetime)->format('Y-m-d H:i:s'),
                 'buyer_premium_percent' => $request->buyer_premium_percent,
                 'bid_increment' => $request->bid_increment,
                 'images' => $file_names_ary,
@@ -210,8 +211,8 @@ class ProfileController extends Controller
                 'category_id' => $request->category_id,
                 'starting_price' => $request->starting_price,
                 'fixed_price' => $request->fixed_price,
-                'start_datetime' => $request->start_datetime,
-                'end_datetime' => $request->end_datetime,
+                'start_datetime' => Carbon::parse($request->start_datetime)->format('Y-m-d H:i:s'),
+                'end_datetime' => Carbon::parse($request->end_datetime)->format('Y-m-d H:i:s'),
                 'buyer_premium_percent' => $request->buyer_premium_percent,
                 'bid_increment' => $request->bid_increment,
                 'images' => $file_names_ary ? $file_names_ary : $product->images,

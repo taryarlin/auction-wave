@@ -34,7 +34,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="date_of_birth"><i class="fas fa-calendar"></i></label>
-                                                <input type="date" placeholder="Date of Birth" name="date_of_birth" value="{{ $auth_user->date_of_birth }}" id="date_of_birth">
+                                                <input type="date" placeholder="Date of Birth" name="date_of_birth" value="{{ $auth_user->date_of_birth ? Carbon\Carbon::parse($auth_user->date_of_birth)->format('Y-m-d') : '' }}" id="date_of_birth">
                                             </div>
                                             <div class="form-group">
                                                 <label for="address" class="address"><i class="far fa-envelope"></i></label>
