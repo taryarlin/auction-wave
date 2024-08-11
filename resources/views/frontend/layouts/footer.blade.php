@@ -123,7 +123,7 @@
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/">
-                                    <abbr title="Twitter">
+                                    <abbr title="Instagram">
                                         <i class="fab fa-instagram"></i>
                                     </abbr>
                                 </a>
