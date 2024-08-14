@@ -84,7 +84,10 @@ class ProductResource extends Resource
 
                 RichEditor::make('description')->columnSpan(2)->required(),
 
-                RichEditor::make('delivery_description')->columnSpan(2)->required(),
+                RichEditor::make('delivery_option')
+                ->columnSpan(2)
+                ->required()
+                ->label('Delivery Description'),
             ]);
     }
 
