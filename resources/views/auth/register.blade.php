@@ -1,6 +1,14 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+    @php
+    $breadcrumb = [
+        [
+            'name' => 'Register',
+            'route' => ''
+        ]
+    ];
+    @endphp
     @include('frontend.layouts.hero_section')
 
     <section class="account-section padding-bottom">
