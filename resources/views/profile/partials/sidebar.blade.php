@@ -8,8 +8,9 @@
                 <div class="thumb border border-secondary">
                     <img src="{{ $auth_user->profile }}" alt="{{ $auth_user->name }}">
                 </div>
-                <label for="profile-pic" class="profile-pic-edit bg-secondary"><i class="flaticon-pencil"></i></label>
-                <input type="file" id="profile-pic" class="d-none">
+                <label for="profile-pic" class="profile-pic-edit bg-secondary">
+                    <a href="{{ route('profile.personal.profile-image.edit') }}" class="text-white"><i class="flaticon-pencil"></i></a>
+                </label>
             </div>
             <div class="content">
                 <h5 class="title"><a href="#0">{{ $auth_user->name }}</a></h5>

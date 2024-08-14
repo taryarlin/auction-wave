@@ -98,6 +98,43 @@ class ProfileController extends Controller
         }
     }
 
+    public function personalProfileImageEdit()
+    {
+        $auth_user = Auth::guard('customer')->user();
+        return view('profile.personal.profile_image_edit', compact('auth_user'));
+    }
+
+    public function personalProfileImageUpdate(Request $request)
+    {
+        try {
+            $request->validate([
+                'profile' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            $auth_user = Auth::guard('customer')->user();
+
+            if ($request->hasFile('profile')) {
+                if ($auth_user->profile) {
+                    if (Storage::exists('public/' . $auth_user->profile)) {
+                        Storage::delete('public/' . $auth_user->profile);
+                    }
+                }
+
+                $file_name = 'customer-images/' . time() . '_' . uniqid() . '.' . str_replace(' ', '', $request->profile->getClientOriginalName());
+                $request->profile->storeAs('public/', $file_name);
+            }
+
+            Customer::where('id', $auth_user->id)->update([
+                'profile' => $file_name
+            ]);
+
+            return redirect()->route('profile.personal.index')->with('success', 'Profile Image updated successfully');
+
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
     public function myProduct()
     {
         $auth_user = auth()->guard('customer')->user();
