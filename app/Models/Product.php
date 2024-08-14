@@ -17,7 +17,7 @@ class Product extends Model
 
     protected $dates = ['date'];
 
-    const STATUS = ['pending', 'approved', 'rejected'];
+    const STATUS = ['pending', 'approved', 'rejected', 'finished'];
     const PENDING = self::STATUS[0];
     const APPROVED = self::STATUS[1];
     const REJECTED = self::STATUS[2];
