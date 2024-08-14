@@ -43,19 +43,21 @@
                         </div>
                         <ul class="price-table mb-30">
                             @if (auth()->guard('customer')->check())
-                            <li>
-                                <span class="details">Owner Name</span>
-                                <h5 class="info">{{ $product->customer->name }}</h5>
-                            </li>
-                            <li>
-                                <span class="details">Owner Email</span>
-                                <h5 class="info">{{ $product->customer->email }}</h5>
-                            </li>
-                            <li>
-                                <span class="details">Owner Phone</span>
-                                <h5 class="info">{{ $product->customer->phone }}</h5>
-                            </li>
-                            <hr>
+                                @if ($product->customer)
+                                <li>
+                                    <span class="details">Owner Name</span>
+                                    <h5 class="info">{{ $product->customer->name }}</h5>
+                                </li>
+                                <li>
+                                    <span class="details">Owner Email</span>
+                                    <h5 class="info">{{ $product->customer->email }}</h5>
+                                </li>
+                                <li>
+                                    <span class="details">Owner Phone</span>
+                                    <h5 class="info">{{ $product->customer->phone }}</h5>
+                                </li>
+                                <hr>
+                                @endif
                             @endif
                             <li class="header">
                                 <h5 class="current">Current Price</h5>
