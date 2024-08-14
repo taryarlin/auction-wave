@@ -23,7 +23,6 @@
                             <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                                 <div class="auction-thumb">
                                     <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
-                                    <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="{{ route('product.detail', $product->id) }}" class="bid"><i class="flaticon-auction"></i></a>
                                 </div>
                                 <div class="auction-content">

@@ -31,9 +31,6 @@
             <li>
                 <a href="{{ route('profile.winning-bid.index') }}" class="{{ $current_route == request()->routeIs('profile.winning-bid.*') ? 'active' : '' }}"><i class="flaticon-best-seller"></i>Winning Bids</a>
             </li>
-            <li>
-                <a href="favorite.php"><i class="flaticon-star"></i>My Favorites</a>
-            </li>
         </ul>
     </div>
 </div>

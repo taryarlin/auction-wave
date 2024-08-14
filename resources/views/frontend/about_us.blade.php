@@ -35,8 +35,8 @@
                 </div>
             </div>
         </div>
-    </section> 
-    
+    </section>
+
     <section class="overview-section padding-top" style="padding-bottom:120px;">
         <div class="container mw-lg-100 p-lg-0">
             <div class="row m-0">
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
 
     <section class="client-section padding-top padding-bottom">
         <div class="container">
@@ -103,9 +103,9 @@
                 <h2 class="title">Our Profile!</h2>
                 <!-- <p>Our hard work is paying off. Great reviews from amazing customers.</p> -->
             </div>
-            <!-- <div class="container mw-lg-100 p-lg-0 mx-auto p-2"> -->
+            <div class="container mw-lg-100 p-lg-0 mx-auto p-2">
                 <div class="row">
-                <div class="col-md-6">
+                    <div class="col-md-6 d-flex justify-content-end mb-1">
                         <div class="card" style="width: 18rem;">
                             <img src="./assets/images/girl1.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -120,7 +120,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-flex justify-content-start mb-1">
                         <div class="card" style="width: 18rem;">
                             <img src="./assets/images/girl2.png" class="card-img-top" alt="...">
                             <div class="card-body">
@@ -136,15 +136,13 @@
                         </div>
                     </div>
                 </div>
-            <!-- </div> -->
+            </div>
         </div>
     </section>
 
     <section class="about-section">
         <div class="container">
-            <div class="footer-top-shape">
-                <img src="{{ asset('assets/images/footer-top-shape.png') }}" alt="css">
-            </div>
+
             <div class="anime-wrapper">
                 <div class="anime-1 plus-anime">
                     <img src="{{ asset('assets/images/p1.png') }}" alt="footer">
