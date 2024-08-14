@@ -53,7 +53,7 @@
     {{-- <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script> --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
 
     @include('frontend.layouts.page_info')
 

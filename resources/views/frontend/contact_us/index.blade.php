@@ -1,6 +1,18 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+    @php
+        $breadcrumb = [
+            [
+                'name' => 'Home',
+                'route' => '/'
+            ],
+            [
+                'name' => 'Contact Us',
+                'route' => ''
+            ]
+        ];
+    @endphp
     @include('frontend.layouts.hero_section')
 
     <section class="contact-section padding-bottom">

@@ -1,6 +1,22 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+    @php
+        $breadcrumb = [
+            [
+                'name' => 'Home',
+                'route' => '/'
+            ],
+            [
+                'name' => 'Profile Personal',
+                'route' => '/profile'
+            ],
+            [
+                'name' => 'Change Password',
+                'route' => ''
+            ]
+        ];
+    @endphp
     @include('frontend.layouts.hero_section')
 
     <section class="dashboard-section padding-bottom mt--240 mt-lg--325 pos-rel">
@@ -12,7 +28,7 @@
                         <div class="col-12">
                             <div class="dash-pro-item mb-30 dashboard-widget">
                                 <div class="header">
-                                    <h4 class="title">Personal Details Edit</h4>
+                                    <h4 class="title">Change Password</h4>
                                     <span class="edit"><a href="{{ route('profile.personal.index') }}"><i class="flaticon-left-arrow"></i> Back</a></span>
                                 </div>
                                 <div class="row">

@@ -1,6 +1,22 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+    @php
+        $breadcrumb = [
+            [
+                'name' => 'Home',
+                'route' => '/'
+            ],
+            [
+                'name' => 'Profile',
+                'route' => '/profile'
+            ],
+            [
+                'name' => 'Winning Bids',
+                'route' => ''
+            ]
+        ];
+    @endphp
     @include('frontend.layouts.hero_section')
 
     <section class="dashboard-section padding-bottom mt--240 mt-lg--325 pos-rel">

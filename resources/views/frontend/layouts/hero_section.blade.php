@@ -1,13 +1,11 @@
 <div class="hero-section style-2">
     <div class="container">
         <ul class="breadcrumb">
+            @foreach ($breadcrumb as $item)
             <li>
-                <a href="/">Home<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
+                <a href="{{ $item['route'] }}">{{ $item['name'] }} {!! $item['route'] != '' ? '<i class="fa fa-arrow-right mx-3"></i>' : '' !!}</a>
             </li>
-
-            <li>
-                <a href="/auctions">Pages<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
-            </li>
+            @endforeach
 
             @if (!auth()->guard('customer')->check())
                 <li>
