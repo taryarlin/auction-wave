@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use Carbon\Carbon;
 use App\Models\Product;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 
 class DetermineAuctionWinnerCommand extends Command
 {
@@ -31,22 +30,17 @@ class DetermineAuctionWinnerCommand extends Command
         $now = Carbon::now()->format('Y-m-d H:i:s');
         // $now = '2024-08-10 00:00:00';
 
-        Product::approved()->where('end_datetime', $now)
-            ->whereNull(['winner_id', 'won_amount', 'won_datetime'])
-            ->chunk(100, function ($products) use ($now) {
-                foreach ($products as $key => $product) {
-                    $winner = $product->auctions()->orderBy('amount', 'desc')->first();
+        Product::approved()->where('end_datetime', $now)->chunk(100, function ($products) use ($now) {
+            foreach ($products as $key => $product) {
+                $winner = $product->auctions()->orderBy('amount', 'desc')->first();
 
-                    $product->update([
-                        'winner_id' => $winner->id,
-                        'won_amount' => $winner->pivot->amount,
-                        'won_datetime' => $now,
-                        'status' => Product::FINISHED
-                    ]);
-                }
-            });
-
-        Log::info('Determine auction winners at ' . $now . '.');
+                $product->update([
+                    'winner_id' => $winner->id,
+                    'won_amount' => $winner->pivot->amount,
+                    'won_datetime' => $now,
+                ]);
+            }
+        });
 
         $this->info('Determine auction winners at ' . $now . '.');
     }

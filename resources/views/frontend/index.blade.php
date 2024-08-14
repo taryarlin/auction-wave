@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="amount-content">
                                             <div class="current">Current Bid</div>
-                                            <div class="amount">{{ number_format($popular_product->current_bid) }} MMK</div>
+                                            <div class="amount">{{ $popular_product->current_bid }} MMK</div>
                                         </div>
                                     </div>
                                     <div class="bids-area">

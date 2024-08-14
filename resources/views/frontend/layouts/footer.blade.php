@@ -73,7 +73,7 @@
                             </li>
                             @endif
                             @endforeach
-                        </ul>  
+                        </ul>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-down" data-aos-duration="1300">
@@ -111,7 +111,7 @@
                                 <a href="https://www.facebook.com/">
                                     <abbr title="Facebook">
                                         <i class="fab fa-facebook-f"></i>
-                                    </abbr>                                    
+                                    </abbr>
                                 </a>
                             </li>
                             <li>
@@ -123,7 +123,7 @@
                             </li>
                             <li>
                                 <a href="https://www.instagram.com/">
-                                    <abbr title="Twitter">
+                                    <abbr title="Instagram">
                                         <i class="fab fa-instagram"></i>
                                     </abbr>
                                 </a>

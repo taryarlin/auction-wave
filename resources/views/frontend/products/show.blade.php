@@ -31,7 +31,6 @@
                         </div>
                         <ul class="price-table mb-30">
                             @if (auth()->guard('customer')->check())
-                            @if ($product->customer)
                             <li>
                                 <span class="details">Owner Name</span>
                                 <h5 class="info">{{ $product->customer->name }}</h5>
@@ -46,7 +45,6 @@
                             </li>
                             <hr>
                             @endif
-                            @endif
                             <li class="header">
                                 <h5 class="current">Current Price</h5>
                                 <h3 class="price">{{ number_format($product->current_bid) }} MMK</h3>
@@ -58,11 +56,11 @@
                             </li>
                             <li>
                                 <span class="details">Bid Increment</span>
-                                <h5 class="info">{{ number_format($product->bid_increment) }} MMK</h5>
+                                <h5 class="info">{{ $product->bid_increment }} MMK</h5>
                             </li>
                             <li>
                                 <span class="details">Latest Total Bid Price</span>
-                                <h5 class="info">{{ number_format($product->current_bid + $product->bid_increment) }} MMK</h5>
+                                <h5 class="info">{{ $product->current_bid + $product->bid_increment }} MMK</h5>
                             </li>
                         </ul>
                         @if (auth()->guard('customer')->check())

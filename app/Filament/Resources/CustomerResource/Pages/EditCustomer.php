@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\CustomerResource\Pages;
 
-use App\Filament\Resources\CustomerResource;
 use Filament\Actions;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
+use App\Filament\Resources\CustomerResource;
 
 class EditCustomer extends EditRecord
 {
@@ -15,5 +16,13 @@ class EditCustomer extends EditRecord
         return [
             Actions\DeleteAction::make(),
         ];
+    }
+    protected function getSavedNotification(): ?Notification
+    {
+        return Notification::make()
+            ->success()
+            ->title('Customer updated')
+            ->body('The customer has been saved successfully.')
+            ->sendToDatabase(\auth()->user());
     }
 }

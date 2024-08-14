@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\ProductResource\Pages;
 
-use App\Filament\Resources\ProductResource;
 use Filament\Actions;
+use Filament\Support\Enums\IconPosition;
+use App\Filament\Exports\ProductExporter;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\ProductResource;
 
 class ListProducts extends ListRecords
 {
@@ -13,7 +15,18 @@ class ListProducts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+                ->color('primary')
+                ->outlined()
+                ->icon('heroicon-m-folder-plus', IconPosition::Before),
+            Actions\ExportAction::make()
+                ->exporter(ProductExporter::class)
+                ->label("Export Excel")
+                ->color('primary')
+                ->outlined()
+                ->columnMapping(false)
+                ->fileName(fn() => date('d-M-Y') . '-export-products')
+                ->icon('heroicon-m-arrow-down-tray', IconPosition::Before)
         ];
     }
 }
