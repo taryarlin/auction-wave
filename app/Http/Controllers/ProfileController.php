@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use Carbon\Carbon;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Customer;
@@ -97,6 +98,43 @@ class ProfileController extends Controller
         }
     }
 
+    public function personalProfileImageEdit()
+    {
+        $auth_user = Auth::guard('customer')->user();
+        return view('profile.personal.profile_image_edit', compact('auth_user'));
+    }
+
+    public function personalProfileImageUpdate(Request $request)
+    {
+        try {
+            $request->validate([
+                'profile' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            $auth_user = Auth::guard('customer')->user();
+
+            if ($request->hasFile('profile')) {
+                if ($auth_user->profile) {
+                    if (Storage::exists('public/' . $auth_user->profile)) {
+                        Storage::delete('public/' . $auth_user->profile);
+                    }
+                }
+
+                $file_name = 'customer-images/' . time() . '_' . uniqid() . '.' . str_replace(' ', '', $request->profile->getClientOriginalName());
+                $request->profile->storeAs('public/', $file_name);
+            }
+
+            Customer::where('id', $auth_user->id)->update([
+                'profile' => $file_name
+            ]);
+
+            return redirect()->route('profile.personal.index')->with('success', 'Profile Image updated successfully');
+
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
     public function myProduct()
     {
         $auth_user = auth()->guard('customer')->user();
@@ -147,8 +185,8 @@ class ProfileController extends Controller
                 'customer_id' => $auth_user->id,
                 'starting_price' => $request->starting_price,
                 'fixed_price' => $request->fixed_price,
-                'start_datetime' => $request->start_datetime,
-                'end_datetime' => $request->end_datetime,
+                'start_datetime' => Carbon::parse($request->start_datetime)->format('Y-m-d H:i:s'),
+                'end_datetime' => Carbon::parse($request->end_datetime)->format('Y-m-d H:i:s'),
                 'buyer_premium_percent' => $request->buyer_premium_percent,
                 'bid_increment' => $request->bid_increment,
                 'images' => $file_names_ary,
@@ -210,8 +248,8 @@ class ProfileController extends Controller
                 'category_id' => $request->category_id,
                 'starting_price' => $request->starting_price,
                 'fixed_price' => $request->fixed_price,
-                'start_datetime' => $request->start_datetime,
-                'end_datetime' => $request->end_datetime,
+                'start_datetime' => Carbon::parse($request->start_datetime)->format('Y-m-d H:i:s'),
+                'end_datetime' => Carbon::parse($request->end_datetime)->format('Y-m-d H:i:s'),
                 'buyer_premium_percent' => $request->buyer_premium_percent,
                 'bid_increment' => $request->bid_increment,
                 'images' => $file_names_ary ? $file_names_ary : $product->images,
@@ -262,6 +300,13 @@ class ProfileController extends Controller
         })->latest()->paginate(4);
 
         return view('profile.my_bid.index', compact('products'));
+    }
+
+    public function winningBid()
+    {
+        $products = Product::where('winner_id', auth()->guard('customer')->user()->id)->finished()->whereNotNull(['won_amount', 'won_datetime'])->latest()->paginate(4);
+
+        return view('profile.winning_bid.index', compact('products'));
     }
 
     /**

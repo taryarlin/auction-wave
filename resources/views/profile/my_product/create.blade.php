@@ -67,11 +67,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="startDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="date" placeholder="Start Datetime" name="start_datetime" value="{{ old('start_datetime') }}" id="startDatetime">
+                                                <input type="datetime-local" placeholder="Start Datetime" name="start_datetime" value="{{ old('start_datetime') }}" id="startDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="endDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="date" placeholder="end Datetime" name="end_datetime" value="{{ old('end_datetime') }}" id="endDatetime">
+                                                <input type="datetime-local" placeholder="end Datetime" name="end_datetime" value="{{ old('end_datetime') }}" id="endDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="buyerPremiumPercent"><i class="fas fa-percent"></i></label>

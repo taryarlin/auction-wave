@@ -72,6 +72,7 @@ class ProductResource extends Resource
                         'pending' => 'Pending',
                         'approved' => 'Approved',
                         'rejected' => 'Rejected',
+                        'finished' => 'Finished',
                     ])
                     ->required(),
 
@@ -84,9 +85,7 @@ class ProductResource extends Resource
 
                 RichEditor::make('description')->columnSpan(2)->required(),
 
-                RichEditor::make('delivery_option')
-                ->columnSpan(2)
-                ->required()
+                RichEditor::make('delivery_option')->columnSpan(2)->required()
                 ->label('Delivery Description'),
             ]);
     }
@@ -108,6 +107,10 @@ class ProductResource extends Resource
                             $color = 'rgb(220 38 38)';
                         }
 
+                        if($record->status == 'finished') {
+                            $color = 'rgb(0, 179, 255)';
+                        }
+
                         return '<span class="inline-block w-3 h-3 me-3 rounded-full" style="background: ' . $color . ';"></span> ' . $record->name;
                     })
                     ->html(),
@@ -117,6 +120,7 @@ class ProductResource extends Resource
                         'pending' => 'Pending',
                         'approved' => 'Approved',
                         'rejected' => 'Rejected',
+                        'finished' => 'Finished',
                     ])
                     ->selectablePlaceholder(false),
 
@@ -149,6 +153,7 @@ class ProductResource extends Resource
                         'pending' => 'Pending',
                         'approved' => 'Approved',
                         'rejected' => 'Rejected',
+                        'finished' => 'Finished',
                     ])
             ])
             ->actions([

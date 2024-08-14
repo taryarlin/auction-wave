@@ -17,10 +17,11 @@ class Product extends Model
 
     protected $dates = ['date'];
 
-    const STATUS = ['pending', 'approved', 'rejected'];
+    const STATUS = ['pending', 'approved', 'rejected', 'finished'];
     const PENDING = self::STATUS[0];
     const APPROVED = self::STATUS[1];
     const REJECTED = self::STATUS[2];
+    const FINISHED = self::STATUS[3];
 
     public static function boot()
     {
@@ -65,6 +66,11 @@ class Product extends Model
     public function scopeRejected($query)
     {
         return $query->where('status', self::REJECTED);
+    }
+
+    public function scopeFinished($query)
+    {
+        return $query->where('status', self::FINISHED);
     }
 
     public static function generateUniqueListingId()

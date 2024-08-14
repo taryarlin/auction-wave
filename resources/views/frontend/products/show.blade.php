@@ -47,7 +47,7 @@
                             @endif
                             <li class="header">
                                 <h5 class="current">Current Price</h5>
-                                <h3 class="price">{{ $product->current_bid }} MMK</h3>
+                                <h3 class="price">{{ number_format($product->current_bid) }} MMK</h3>
                             </li>
 
                             <li>
@@ -224,7 +224,7 @@
                                                 </td>
                                                 <td data-history="date">{{ $auction->pivot->created_at }}</td>
                                                 <td data-history="time">{{ $auction->pivot->created_at->diffForHumans() }}</td>
-                                                <td data-history="unit price">{{ $auction->pivot->amount }} MMK</td>
+                                                <td data-history="unit price">{{ number_format($auction->pivot->amount) }} MMK</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

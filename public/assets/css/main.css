@@ -5,7 +5,7 @@ Template URI: http://pixner.net/sbidu/
 Author: uiaxis
 Author URI: https://themeforest.net/user/uiaxis
 Version: 1.0.0
-Text Domain: 
+Text Domain:
 */
 /*
 ///// CSS Index \\
@@ -3178,7 +3178,7 @@ div[class*=auction] .custom-button {
   margin-bottom: 5px;
 }
 .auction-item-2 .auction-content .bid-area .bid-amount .amount-content .amount {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 20px;
   color: #171d1c;
 }
@@ -3187,7 +3187,7 @@ div[class*=auction] .custom-button {
     max-width: calc(100% - 25px);
   }
   .auction-item-2 .auction-content .bid-area .bid-amount .amount-content .amount {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .auction-item-2 .auction-content .bid-area .bid-amount::before {
@@ -3223,7 +3223,7 @@ div[class*=auction] .custom-button {
     padding-left: 15px;
   }
   .auction-item-2 .auction-content .bid-area .bid-amount .amount-content .amount {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 .auction-item-2 .auction-content .countdown-area {

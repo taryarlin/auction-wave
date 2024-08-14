@@ -32,6 +32,8 @@ Route::middleware('auth:customer')->group(function () {
         Route::put('/personal/update', [ProfileController::class, 'personalUpdate'])->name('personal.update');
         Route::get('/personal/change-password', [ProfileController::class, 'personalChangePassword'])->name('personal.change-password');
         Route::patch('/personal/update-password', [ProfileController::class, 'personalUpdatePassword'])->name('personal.update-password');
+        Route::get('/personal/profile-image/edit', [ProfileController::class, 'personalProfileImageEdit'])->name('personal.profile-image.edit');
+        Route::patch('/personal/profile-image/update', [ProfileController::class, 'personalProfileImageUpdate'])->name('personal.profile-image.update');
 
         Route::get('/my-product', [ProfileController::class, 'myProduct'])->name('my-product.index');
         Route::get('/my-product/create', [ProfileController::class, 'myProductCreate'])->name('my-product.create');
@@ -41,5 +43,7 @@ Route::middleware('auth:customer')->group(function () {
         Route::delete('/my-product/{product}/delete', [ProfileController::class, 'myProductDelete'])->name('my-product.delete');
 
         Route::get('/my-bid', [ProfileController::class, 'myBid'])->name('my-bid.index');
+
+        Route::get('/winning-bid', [ProfileController::class, 'winningBid'])->name('winning-bid.index');
     });
 });
