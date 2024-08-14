@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\ProductResource\Pages;
 
-use App\Filament\Resources\ProductResource;
 use App\Models\Product;
 use App\Models\ProductImage;
+use Filament\Notifications\Notification;
 use Filament\Resources\Pages\CreateRecord;
+use App\Filament\Resources\ProductResource;
 
 class CreateProduct extends CreateRecord
 {
@@ -21,6 +22,14 @@ class CreateProduct extends CreateRecord
         return $data;
     }
 
+    protected function getCreatedNotification(): ?Notification
+    {
+        return Notification::make()
+            ->success()
+            ->title('Product created')
+            ->body('The product has been created successfully.')
+            ->sendToDatabase(\auth()->user());
+    }
     // protected function handleRecordCreation(array $data): Product
     // {
     //     $saveable = collect($data)->except('images')->toArray();

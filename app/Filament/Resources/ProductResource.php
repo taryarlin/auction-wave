@@ -84,7 +84,7 @@ class ProductResource extends Resource
 
                 RichEditor::make('description')->columnSpan(2)->required(),
 
-                RichEditor::make('delivery_option')->columnSpan(2)->required(),
+                RichEditor::make('delivery_description')->columnSpan(2)->required(),
             ]);
     }
 
@@ -125,7 +125,9 @@ class ProductResource extends Resource
 
                 TextColumn::make('starting_price')
                     ->numeric()
-                    ->money('MMK'),
+                    ->money('MMK')
+                    ->badge()
+                    ->color("success"),
 
                 ImageColumn::make('images')
                     ->circular()
@@ -133,6 +135,9 @@ class ProductResource extends Resource
 
                 TextColumn::make('created_at')
                     ->since()
+                    ->badge()
+                    ->color("info")
+                    ->dateTime('d-M,y')
             ])
             ->filters([
                 SelectFilter::make('status')
