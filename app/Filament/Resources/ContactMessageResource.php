@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ContactMessageResource extends Resource
 {
+    protected static ?int $navigationSort = 5;
     protected static ?string $model = ContactMessage::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
@@ -25,10 +26,13 @@ class ContactMessageResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('user_id')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('subject')
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('body')
+                Forms\Components\TextInput::make('email')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('message')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\DateTimePicker::make('received_at'),
@@ -42,19 +46,29 @@ class ContactMessageResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('user_id')
                     ->label('User')
-                    ->formatStateUsing(fn ($state) => '-')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('subject')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('body')
+                    ->searchable()
+                    ->hidden(),
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Name')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable()
+                    ->badge()
+                    ->color('warning')
+                    ->formatStateUsing(fn (string $state) => strtolower($state)),
+                Tables\Columns\TextColumn::make('message')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('received_at')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->hidden(),
                 Tables\Columns\TextColumn::make('read_at')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->hidden(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Received On')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -67,13 +81,15 @@ class ContactMessageResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                // Tables\Actions\EditAction::make(),
                 Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                Tables\Actions\DeleteBulkAction::make('delete'),
+                Tables\Actions\ExportBulkAction::make('export')->label('Export Messages')->color('success'),
+                ])
+                ->label('Actions'),
             ]);
     }
 
@@ -89,8 +105,8 @@ class ContactMessageResource extends Resource
         return [
             'index' => Pages\ListContactMessages::route('/'),
             'create' => Pages\CreateContactMessage::route('/create'),
-            'edit' => Pages\EditContactMessage::route('/{record}/edit'),
-            'view' => Pages\ViewContactMessage::route('/{record}'),
+            // 'edit' => Pages\EditContactMessage::route('/{record}/edit'),
+            // 'view' => Pages\ViewContactMessage::route('/{record}'),
         ];
     }
 }

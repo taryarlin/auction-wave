@@ -25,4 +25,8 @@ class EditCategory extends EditRecord
             ->body('The category has been saved successfully.')
             ->sendToDatabase(\auth()->user());
     }
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');  // Redirects to the customer list
+    }
 }

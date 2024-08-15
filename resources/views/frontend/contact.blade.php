@@ -25,18 +25,19 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">
-                        <form class="contact-form" id="contact_form">
+                        <form  action="{{ route('contact.store') }}" method="POST" class="contact-form" id="contact_form">
+                            @csrf
                             <div class="form-group">
                                 <label for="name"><i class="far fa-user"></i></label>
-                                <input type="text" placeholder="Your Name" name="name" id="name">
+                                <input type="text" placeholder="Your Name" name="name" id="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="name"><i class="fas fa-envelope-open-text"></i></label>
-                                <input type="text" placeholder="Enter Your Email ID" name="email" id="email">
+                                <input type="text" placeholder="Enter Your Email ID" name="email" id="email" required>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="message"><i class="far fa-envelope"></i></label>
-                                <textarea name="message" id="message" placeholder="Type Your Message"></textarea>
+                                <textarea name="message" id="message" placeholder="Type Your Message" required></textarea>
                             </div>
                             <div class="form-group text-center mb-0">
                                 <button type="submit" class="custom-button">Send Message</button>

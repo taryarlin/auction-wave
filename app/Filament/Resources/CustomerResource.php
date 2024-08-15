@@ -26,6 +26,7 @@ use Filament\Tables\Actions\ExportBulkAction;
 
 class CustomerResource extends Resource
 {
+    protected static ?int $navigationSort = 2;
     protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
@@ -46,13 +47,13 @@ class CustomerResource extends Resource
                     ->required()
                     ->password()
                     ->minLength(8)
-                    ->rules([
-                        'min:8',           // At least 8 characters
-                        'mixedCase',       // Upper and lower case letters
-                        'letters',         // At least one letter
-                        'numbers',         // At least one number
-                        'symbols',         // At least one symbol
-                    ])
+                    // ->rules([
+                    //     'min:8',           // At least 8 characters
+                    //     'mixedCase',       // Upper and lower case letters
+                    //     'letters',         // At least one letter
+                    //     'numbers',         // At least one number
+                    //     'symbols',         // At least one symbol
+                    // ])
                     ->dehydrateStateUsing(fn($state) => Hash::make($state)),
 
                 TextInput::make('address')

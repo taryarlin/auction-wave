@@ -30,6 +30,10 @@ class CreateProduct extends CreateRecord
             ->body('The product has been created successfully.')
             ->sendToDatabase(\auth()->user());
     }
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');  // Redirects to the customer list
+    }
     // protected function handleRecordCreation(array $data): Product
     // {
     //     $saveable = collect($data)->except('images')->toArray();

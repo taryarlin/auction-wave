@@ -1,4 +1,4 @@
-<footer class="bg_img padding-top oh" data-background="{{ asset('assets/images/footer-bg.jpg') }}" style="background-image: url({{ asset('assets/images/footer-bg.jpg') }});">
+<footer class="bg_img padding-top oh" data-background="{{ asset('assets/images/footer-bg.jpg') }}" style="background-image: url('{{ asset("assets/images/footer-bg.jpg") }}');">
     <div class="footer-top-shape">
         <img src="{{ asset('assets/images/footer-top-shape.png') }}" alt="css">
     </div>
@@ -35,7 +35,7 @@
                         <!-- <p>ကျွန်ုပ်တို့ရဲ့ နောက်ဆုံးရ သတင်းတွေကို ပုံမှန် ကျွန်ုပ်တို့၏စနစ်တွင် စစ်ဆေးပြီး နေ့စဉ် နေ့တိုင်း အဆက်မပြတ် ရယူနိုင်ပါသည်။</p> -->
                     </div>
                     <form class="subscribe-form">
-                        <a href="{{ route('contact-us') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">Contact</a>
+                        <a href="{{ route('contact.store') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">Contact</a>
                         <!-- <input type="text" placeholder="Enter Your Email" name="email">
                         <button type="submit" class="custom-button">Contact us</button> -->
                     </form>
@@ -158,7 +158,7 @@
                                 <a href="{{ route('register') }}">Your Account</a>
                             </li>
                             <li>
-                                <a href="{{ route('contact-us') }}">Contact Us</a>
+                                <a href="{{ route('contact.store') }}">Contact Us</a>
                             </li>
                             <li>
                                 <a href="{{ route('faq') }}">FAQ</a>

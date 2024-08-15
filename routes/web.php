@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ContactMessageController;
 
 require __DIR__.'/auth.php';
 
@@ -15,7 +16,9 @@ Route::get('auctions', [ProductController::class, 'index'])->name('product.index
 Route::get('auctions/{product}', [ProductController::class, 'show'])->name('product.detail');
 
 Route::post('make-bid', [BIDController::class, 'makeBid'])->name('make-bid');
-Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+// Route::get('contact-us', [ContactMessageController::class, 'index'])->name('contact-us');
+Route::get('contact', [ContactMessageController::class, 'create'])->name('contact.create');
+Route::post('contact', [ContactMessageController::class, 'store'])->name('contact.store');
 Route::get('faq', [PageController::class, 'faq'])->name('faq');
 Route::get('about-us', [PageController::class, 'aboutUs'])->name('about-us');
 

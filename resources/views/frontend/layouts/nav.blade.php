@@ -118,7 +118,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ route('contact-us') }}">Contact</a>
+                        <a href="{{ route('contact.store') }}">Contact</a>
                     </li>
                 </ul>
                 <form class="search-form">

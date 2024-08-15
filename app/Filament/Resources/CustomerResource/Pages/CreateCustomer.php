@@ -23,4 +23,8 @@ class CreateCustomer extends CreateRecord
             ->body('The user has been created successfully.')
             ->sendToDatabase(\auth()->user());
     }
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');  // Redirects to the customer list
+    }
 }

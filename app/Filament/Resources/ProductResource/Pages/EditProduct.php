@@ -25,4 +25,8 @@ class EditProduct extends EditRecord
             ->body('The product has been saved successfully.')
             ->sendToDatabase(\auth()->user());
     }
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');  // Redirects to the customer list
+    }
 }
