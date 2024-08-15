@@ -45,6 +45,14 @@ class CustomerResource extends Resource
                 TextInput::make('password')
                     ->required()
                     ->password()
+                    ->minLength(8)
+                    ->rules([
+                        'min:8',           // At least 8 characters
+                        'mixedCase',       // Upper and lower case letters
+                        'letters',         // At least one letter
+                        'numbers',         // At least one number
+                        'symbols',         // At least one symbol
+                    ])
                     ->dehydrateStateUsing(fn($state) => Hash::make($state)),
 
                 TextInput::make('address')

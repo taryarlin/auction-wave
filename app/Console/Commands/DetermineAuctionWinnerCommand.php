@@ -28,7 +28,7 @@ class DetermineAuctionWinnerCommand extends Command
     public function handle()
     {
         $now = Carbon::now()->format('Y-m-d H:i:s');
-        // $now = '2024-08-10 00:00:00';
+        // $now = '2024-08-15 00:00:00';
 
         Product::approved()->where('end_datetime', $now)->chunk(100, function ($products) use ($now) {
             foreach ($products as $key => $product) {
