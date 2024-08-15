@@ -16,8 +16,8 @@
             <div class="account-wrapper mt--100 mt-lg--440">
                 <div class="left-side">
                     <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
-                        <h2 class="title">HI, THERE</h2>
-                        <p>You can log in to your Sbidu account here.</p>
+                        <h2 class="title">ကြိုဆိုပါတယ်</h2>
+                        <p>သင့်ရဲ့အကောင့်အား ယခုနေရာကနေဝင်ရောက်နိုင်ပါတယ်</p>
                     </div>
 
                     @include('frontend.layouts.page_info')
@@ -43,8 +43,8 @@
                 </div>
                 <div class="right-side cl-white">
                     <div class="section-header mb-0">
-                        <h3 class="title mt-0">NEW HERE?</h3>
-                        <p>Sign up and create your Account</p>
+                        <h3 class="title mt-0">ယခုမှ အသစ်လား?</h3>
+                        <p>စာရင်းပေးသွင်းပြီး အကောင့်သစ်တစ်ခုဖန်တီးပါ</p>
                         <a href="{{ route('register') }}" class="custom-button transparent">Sign Up</a>
                     </div>
                 </div>

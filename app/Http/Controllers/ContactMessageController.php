@@ -28,6 +28,6 @@ class ContactMessageController extends Controller
         // Insert the data into the database
         ContactMessage::create($data);
 
-        return redirect()->back()->with('success', 'Message sent successfully!');;
+        return redirect()->back()->with('success', 'Message sent successfully!');
     }
 }

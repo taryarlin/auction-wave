@@ -64,7 +64,8 @@
             <div class="section-header cl-white" data-aos="fade-down" data-aos-duration="1000">
                 <span class="cate">Closing Within 24 Hours</span>
                 <h2 class="title" data-aos="fade-down" data-aos-duration="1500">Popular Auctions</h2>
-                <p>Bid and win great deals,Our auction process is simple, efficient, and transparent.</p>
+                <p>ပစ္စည်းများအား ယခုပဲလေလံဆွဲပါ။ ကျွန်ုပ်တို့၏ လုပ်ငန်းစဥ်များသည် ရိုးရှင်းသည်။ ထိရောက်ပြီး ပွင့်လင်းမြင်သာမှုရှိသည်။
+                </p>
             </div>
             <div class="popular-auction-wrapper">
                 <div class="row justify-content-center mb-30-none">

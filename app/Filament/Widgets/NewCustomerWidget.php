@@ -22,17 +22,17 @@ class NewCustomerWidget extends BaseWidget
             Stat::make('All Customers', Customer::count())
             ->description('All customers that have joined.')
             ->descriptionIcon('heroicon-m-user-group', IconPosition::Before)
-            ->chart([0,3,6,9,12,15,18,27,30,33,36,38])
+            ->chart([7, 2, 10, 3, 15, 4, 17])
             ->color('primary'),
             Stat::make('All Products', Product::count())
             ->description('Available products')
             ->descriptionIcon('heroicon-m-inbox-stack', IconPosition::Before)
-            ->chart([0,5,10,15,20,25,30,35,40])
+            ->chart([15,20,25,2,5,10,30,35,40])
             ->color('success'),
             Stat::make('Pending Products', $pending)
             ->description('Products that are still pending')
             ->descriptionIcon('heroicon-m-folder-arrow-down', IconPosition::Before)
-            ->chart([0,3,6,9,12,15,18,27,30,33,36,38])
+            ->chart([2,5,10,30,35,40,7, 2, 10, 20,25])
             ->color('warning'),
         ];
     }

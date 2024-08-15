@@ -49,6 +49,6 @@ class RegisteredUserController extends Controller
 
         Auth::guard('customer')->login($user);
 
-        return redirect(route('frontpage', absolute: false));
+        return redirect(route('frontpage', absolute: false))->with('success', 'Registered successfully!');
     }
 }

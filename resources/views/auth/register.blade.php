@@ -16,8 +16,8 @@
             <div class="account-wrapper mt--100 mt-lg--440">
                 <div class="left-side">
                     <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
-                        <h2 class="title">SIGN UP</h2>
-                        <p>We're happy you're here!</p>
+                        <h2 class="title">အကောင့်ဖွင့်ရန်</h2>
+                        <p>ပစ္စည်းများကို လေလံဆွဲနိုင်ရန် အကောင့်ဖွင့်ပါ!</p>
                     </div>
                     @include('frontend.layouts.page_info')
                     <form class="login-form" action="{{ route('register') }}" method="POST">
@@ -60,8 +60,8 @@
                 </div>
                 <div class="right-side cl-white">
                     <div class="section-header mb-0">
-                        <h3 class="title mt-0">ALREADY HAVE AN ACCOUNT?</h3>
-                        <p>Log in and go to your Dashboard.</p>
+                        <h3 class="title mt-0">အကောင့်ရှိပြီးသားလား?</h3>
+                        <p>အကောင့်ထဲဝင်ပြီး လေလံဆွဲခြင်းစတင်ပါ</p>
                         <a href="login.php" class="custom-button transparent">Login</a>
                     </div>
                 </div>

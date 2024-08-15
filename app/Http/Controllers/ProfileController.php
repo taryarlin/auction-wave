@@ -56,7 +56,8 @@ class ProfileController extends Controller
                 'address' => $request->address,
             ]);
 
-            return redirect()->route('profile.personal.index')->with('success', 'Profile updated successfully');
+        
+        return redirect()->route('profile.personal.index')->with('success', 'Profile updated successfully');
 
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
