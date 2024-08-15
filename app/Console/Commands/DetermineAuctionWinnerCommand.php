@@ -38,6 +38,7 @@ class DetermineAuctionWinnerCommand extends Command
                     'winner_id' => $winner->id,
                     'won_amount' => $winner->pivot->amount,
                     'won_datetime' => $now,
+                    'status' => Product::FINISHED,
                 ]);
             }
         });
