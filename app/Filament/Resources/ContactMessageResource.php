@@ -2,16 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ContactMessageResource\Pages;
-use App\Filament\Resources\ContactMessageResource\RelationManagers;
-use App\Models\ContactMessage;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Customer;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\ContactMessage;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ContactMessageResource\Pages;
+use App\Filament\Resources\ContactMessageResource\RelationManagers;
 
 class ContactMessageResource extends Resource
 {
@@ -24,8 +25,13 @@ class ContactMessageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('user_id')
-                    ->maxLength(255),
+                Forms\Components\Select::make('user_id')
+                    ->options(function (): array {
+                        return Customer::all()->pluck('name', 'id')->all();
+                    })
+                    ->required()
+                    ->label('User (Our Customer)')
+                    ->searchable(),
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),

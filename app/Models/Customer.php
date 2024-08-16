@@ -68,4 +68,19 @@ class Customer extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Product::class);
     }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function winning_bids()
+    {
+        return $this->hasMany(Product::class, 'winner_id', 'id')->finished();
+    }
+
+    public function active_bids()
+    {
+        return $this->auctions();
+    }
 }

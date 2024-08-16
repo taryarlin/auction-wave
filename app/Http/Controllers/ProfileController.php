@@ -20,7 +20,13 @@ class ProfileController extends Controller
 {
     public function dashboard()
     {
-        return view('profile.dashboard');
+        $auth_user = auth()->guard('customer')->user();
+
+        $my_products = $auth_user->products()->paginate(10);
+        $active_bids = $auth_user->active_bids()->paginate(10);
+        $winning_bids = $auth_user->winning_bids()->paginate(10);
+
+        return view('profile.dashboard', compact('my_products', 'active_bids', 'winning_bids'));
     }
 
     public function personal()
@@ -56,7 +62,7 @@ class ProfileController extends Controller
                 'address' => $request->address,
             ]);
 
-        
+
         return redirect()->route('profile.personal.index')->with('success', 'Profile updated successfully');
 
         } catch (Exception $e) {
