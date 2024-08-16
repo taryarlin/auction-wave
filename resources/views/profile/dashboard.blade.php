@@ -58,7 +58,7 @@
                                         <img src="../assets/images/icon3.png" alt="dashboard">
                                     </div>
                                     <div class="content">
-                                        <h2 class="title"><span class="counter">{{ $my_products->count() }}</span></h2>
+                                        <h2 class="title"><span class="counter">{{ $my_products->total() }}</span></h2>
                                         <h6 class="info">My Products</h6>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                         <img src="../assets/images/icon4.png" alt="dashboard">
                                     </div>
                                     <div class="content">
-                                        <h2 class="title"><span class="counter">{{ $active_bids->count() }}</span></h2>
+                                        <h2 class="title"><span class="counter">{{ $active_bids->total() }}</span></h2>
                                         <h6 class="info">Active Bids</h6>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                         <img src="../assets/images/icon5.png" alt="dashboard">
                                     </div>
                                     <div class="content">
-                                        <h2 class="title"><span class="counter">{{ $winning_bids->count() }}</span></h2>
+                                        <h2 class="title"><span class="counter">{{ $winning_bids->total() }}</span></h2>
                                         <h6 class="info">Winning Bids</h6>
                                     </div>
                                 </div>
