@@ -47,13 +47,10 @@ class CustomerResource extends Resource
                     ->required()
                     ->password()
                     ->minLength(8)
-                    // ->rules([
-                    //     'min:8',           // At least 8 characters
-                    //     'mixedCase',       // Upper and lower case letters
-                    //     'letters',         // At least one letter
-                    //     'numbers',         // At least one number
-                    //     'symbols',         // At least one symbol
-                    // ])
+                    ->rule('regex:/[a-z]/')
+                    ->rule('regex:/[A-Z]/')
+                    ->rule('regex:/[0-9]/')
+                    ->rule('regex:/[@$!%*?&]/')
                     ->dehydrateStateUsing(fn($state) => Hash::make($state)),
 
                 TextInput::make('address')

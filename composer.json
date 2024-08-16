@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "beyondcode/laravel-er-diagram-generator": "^3.0",
         "filament/filament": "^3.2",
         "filament/forms": "^3.2",
         "filament/notifications": "^3.2",
