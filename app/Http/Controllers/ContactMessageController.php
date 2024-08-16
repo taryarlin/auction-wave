@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\ContactMessage;
+use Illuminate\Support\Facades\Log;
 
 class ContactMessageController extends Controller
 {
@@ -15,18 +16,20 @@ class ContactMessageController extends Controller
 
     public function store(Request $request)
     {
-        Log::info($request->all());
-
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string',
         ]);
 
-        $data = $request->except('_token');
-
         // Insert the data into the database
-        ContactMessage::create($data);
+        ContactMessage::create([
+            'user_id' => auth()->guard('customer')->check() ? auth()->guard('customer')->user()->id : null,
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
+            'received_at' => Carbon::parse($request->received_at)->format('Y-m-d H:i:s')
+        ]);
 
         return redirect()->back()->with('success', 'Message sent successfully!');
     }

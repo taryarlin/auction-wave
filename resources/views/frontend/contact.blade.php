@@ -29,11 +29,11 @@
                             @csrf
                             <div class="form-group">
                                 <label for="name"><i class="far fa-user"></i></label>
-                                <input type="text" placeholder="Your Name" name="name" id="name" required>
+                                <input type="text" placeholder="Your Name" name="name" id="name" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->name : '' }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="fas fa-envelope-open-text"></i></label>
-                                <input type="text" placeholder="Enter Your Email ID" name="email" id="email" required>
+                                <label for="email"><i class="fas fa-envelope-open-text"></i></label>
+                                <input type="text" placeholder="Enter Your Email ID" name="email" id="email" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->email : '' }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="message"><i class="far fa-envelope"></i></label>
