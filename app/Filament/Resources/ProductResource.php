@@ -179,11 +179,15 @@ class ProductResource extends Resource
                 Tables\Actions\EditAction::make()->label('ပြင်ဆင်ရန်'),
                 Tables\Actions\DeleteAction::make()->label('ဖျက်ရန်'),
                 Tables\Actions\ViewAction::make()->label('ကြည့်ရှုရန်'),
+                Tables\Actions\Action::make('viewProductBidHistories')
+                    ->label('လေလံမှတ်တမ်း')
+                    ->icon('heroicon-o-queue-list')
+                    ->url(fn (Product $record) => route('filament.resources.product-resource.pages.view-product-bid-history', ['record' => $record->id]))
             ])
             ->bulkActions([
-                // Tables\Actions\BulkActionGroup::make([
-                //     Tables\Actions\DeleteBulkAction::make(),
-                // ]),
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
             ]);
     }
 
@@ -200,6 +204,7 @@ class ProductResource extends Resource
             'index' => Pages\ListProducts::route('/'),
             'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
+            'view' => Pages\ViewProduct::route('/{record}'),
         ];
     }
 }

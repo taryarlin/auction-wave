@@ -15,7 +15,7 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        $auctions = $product->auctions()->latest()->paginate(20);
+        $auctions = $product->auctions()->orderBy('amount', 'desc')->orderBy('created_at', 'desc')->paginate(20);
 
         return view('frontend.products.show', compact('product', 'auctions'));
     }

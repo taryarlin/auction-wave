@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ContactMessageController;
+use App\Filament\Resources\ProductResource\Pages\ViewProductBidHistory;
 
 require __DIR__.'/auth.php';
 
@@ -50,3 +51,5 @@ Route::middleware('auth:customer')->group(function () {
         Route::get('/winning-bid', [ProfileController::class, 'winningBid'])->name('winning-bid.index');
     });
 });
+
+Route::get('/admin/products/view-product-bid-history/{record}', ViewProductBidHistory::class)->name('filament.resources.product-resource.pages.view-product-bid-history');
