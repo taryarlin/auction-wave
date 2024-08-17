@@ -11,6 +11,8 @@ class CreateCategory extends CreateRecord
 {
     protected static string $resource = CategoryResource::class;
 
+    protected static ?string $title = "အမျိုးအစား အသစ်ထည့်ရန်";
+
     protected function getCreatedNotification(): ?Notification
     {
         return Notification::make()

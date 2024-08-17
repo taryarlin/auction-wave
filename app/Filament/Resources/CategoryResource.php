@@ -17,6 +17,8 @@ class CategoryResource extends Resource
     protected static ?int $navigationSort = 3;
     protected static ?string $model = Category::class;
 
+    protected static ?string $label = "အမျိုးအစားများ";
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -26,13 +28,15 @@ class CategoryResource extends Resource
                 TextInput::make('name')
                     ->required()
                     ->maxLength(255)
-                    ->columnSpan(2),
+                    ->columnSpan(2)
+                    ->label('အမည်'),
 
                 FileUpload::make('image')
                     ->required()
                     ->directory('project')
                     ->imageEditor()
-                    ->columnSpan(2),
+                    ->columnSpan(2)
+                    ->label('ပုံထည့်ရန်'),
             ]);
     }
 
@@ -40,14 +44,15 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
+                TextColumn::make('name')
+                ->label('အမည်'),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make()->label('ပြင်ဆင်ရန်'),
+                Tables\Actions\DeleteAction::make()->label('ဖျက်ရန်'),
             ])
             ->bulkActions([
                 // Tables\Actions\BulkActionGroup::make([

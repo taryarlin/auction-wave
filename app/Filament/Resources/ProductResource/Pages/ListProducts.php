@@ -17,6 +17,7 @@ class ListProducts extends ListRecords
         return [
             Actions\CreateAction::make()
                 ->color('primary')
+                ->label('ပစ္စည်းများအသစ်ထည့်ရန်')
                 ->outlined()
                 ->icon('heroicon-m-folder-plus', IconPosition::Before),
             Actions\ExportAction::make()

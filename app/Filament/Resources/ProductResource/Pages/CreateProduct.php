@@ -12,7 +12,8 @@ class CreateProduct extends CreateRecord
 {
     protected static string $resource = ProductResource::class;
 
-    protected static bool $canCreateAnother = false;
+    protected static bool $canCreateAnother = false; 
+    protected static ?string $title = "ပစ္စည်းများ အသစ်ထည့်ရန်";
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {

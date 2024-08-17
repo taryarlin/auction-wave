@@ -14,6 +14,7 @@ class CreateCustomer extends CreateRecord
 {
     protected static string $resource = CustomerResource::class;
 
+    protected static ?string $title = "ဝယ်ယူသူအသစ်ထည့်ရန်";
  
     protected function getCreatedNotification(): ?Notification
     {

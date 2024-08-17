@@ -27,21 +27,27 @@ use Filament\Tables\Actions\ExportBulkAction;
 class CustomerResource extends Resource
 {
     protected static ?int $navigationSort = 2;
+
+    protected static ?string $label = "ဝယ်ယူသူများ";
+    
     protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     public static function form(Form $form): Form
     {
+        
         return $form
             ->schema([
                 TextInput::make('name')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->label('အမည်'),
 
                 TextInput::make('email')
                     ->required()
-                    ->email(),
+                    ->email()
+                    ->label('အီးမေးလ်'),
 
                 TextInput::make('password')
                     ->required()
@@ -51,23 +57,28 @@ class CustomerResource extends Resource
                     ->rule('regex:/[A-Z]/')
                     ->rule('regex:/[0-9]/')
                     ->rule('regex:/[@$!%*?&]/')
-                    ->dehydrateStateUsing(fn($state) => Hash::make($state)),
+                    ->dehydrateStateUsing(fn($state) => Hash::make($state))
+                    ->label('စကားဝှက်'),
 
                 TextInput::make('address')
-                    ->required(),
+                    ->required()
+                    ->label('လိပ်စာ'),
 
                 TextInput::make('phone')
-                    ->required(),
+                    ->required()
+                    ->label('ဖုန်း'),
 
                 DatePicker::make('date_of_birth')
                     ->maxDate(now())
                     ->closeOnDateSelection()
-                    ->native(false),
+                    ->native(false)
+                    ->label('မွေးနေ့'),
 
                 FileUpload::make('profile')
                     ->image()
                     ->maxFiles(1)
-                    ->directory('customer-images'),
+                    ->directory('customer-images')
+                    ->label('ပုံထည့်ရန်'),
             ]);
     }
 
@@ -79,15 +90,15 @@ class CustomerResource extends Resource
                 //     ->circular()
                 //     ->defaultImageUrl(url('/images/placeholder.png')),
 
-                TextColumn::make('name')->searchable()->sortable(),
+                TextColumn::make('name')->searchable()->sortable()->label('အမည်'),
 
-                TextColumn::make('email')->searchable(),
+                TextColumn::make('email')->searchable()->label('အီးမေးလ်'),
 
-                TextColumn::make('phone')->searchable(),
+                TextColumn::make('phone')->searchable()->label('ဖုန်း'),
 
                 TextColumn::make('address')
                     ->searchable()
-                    ->label('address')
+                    ->label('လိပ်စာ')
                     ->badge()
                     ->color(function ($state) {
                         if (in_array($state, ['Yangon', 'Mandalay', 'Naypyitaw' , 'Nay Pyi Taw'])) {
@@ -97,6 +108,7 @@ class CustomerResource extends Resource
                     }),
 
                 TextColumn::make('created_at')
+                ->label('လွန်ခဲ့သောအချိန်က')
                     ->since()
                     ->badge()
                     ->color("info")
@@ -105,9 +117,9 @@ class CustomerResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\EditAction::make()->label('ပြင်ဆင်ရန်'),
+                Tables\Actions\DeleteAction::make()->label('ဖျက်ရန်'),
+                Tables\Actions\ViewAction::make()->label('ကြည့်ရှုရန်'),
             ])
             ->bulkActions([
                 ]);

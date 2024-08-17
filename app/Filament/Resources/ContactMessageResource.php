@@ -19,6 +19,8 @@ class ContactMessageResource extends Resource
     protected static ?int $navigationSort = 5;
     protected static ?string $model = ContactMessage::class;
 
+    protected static ?string $label = "မက်ဆေ့ခ်ျများ";
+
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
 
     public static function form(Form $form): Form
@@ -55,15 +57,17 @@ class ContactMessageResource extends Resource
                     ->searchable()
                     ->hidden(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Name')
+                    ->label('အမည်')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable()
+                    ->label('အီးမေးလ်')
                     ->badge()
                     ->color('warning')
                     ->formatStateUsing(fn (string $state) => strtolower($state)),
                 Tables\Columns\TextColumn::make('message')
+                    ->label('မက်ဆေ့ခ်ျများ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('received_at')
                     ->dateTime()
@@ -88,14 +92,14 @@ class ContactMessageResource extends Resource
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\ViewAction::make()->label('ကြည့်ရှုရန်'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-                Tables\Actions\DeleteBulkAction::make('delete'),
+                Tables\Actions\DeleteBulkAction::make('delete')->label('ဖျက်ရန်'),
                 Tables\Actions\ExportBulkAction::make('export')->label('Export Messages')->color('success'),
                 ])
-                ->label('Actions'),
+                ->label('လုပ်ဆောင်ချက်များ'),
             ]);
     }
 

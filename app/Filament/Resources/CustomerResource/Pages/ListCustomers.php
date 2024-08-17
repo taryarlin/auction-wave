@@ -11,13 +11,14 @@ use App\Filament\Resources\CustomerResource;
 class ListCustomers extends ListRecords
 {
     protected static string $resource = CustomerResource::class;
-
+    
     protected function getHeaderActions(): array
     {
         return [
             Actions\CreateAction::make()
                 ->color('primary')
                 ->outlined()
+                ->label("ဝယ်ယူသူအသစ်ထည့်ရန်")
                 ->icon('heroicon-m-user-plus', IconPosition::Before),
             Actions\ExportAction::make()
                 ->exporter(UserExporter::class)

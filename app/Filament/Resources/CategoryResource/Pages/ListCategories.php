@@ -13,7 +13,8 @@ class ListCategories extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()
+            ->label('အမျိုးအစားအသစ်ထည့်ရန်'),
         ];
     }
 }

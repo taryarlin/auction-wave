@@ -19,18 +19,18 @@ class NewCustomerWidget extends BaseWidget
         $pending = Product::where('status','pending')->count();
          
         return [
-            Stat::make('All Customers', Customer::count())
-            ->description('All customers that have joined.')
+            Stat::make('ဝယ်ယူသူများ', Customer::count())
+            ->description('ဝယ်ယူသူများစုစုပေါင်းအရေအတွက်')
             ->descriptionIcon('heroicon-m-user-group', IconPosition::Before)
             ->chart([7, 2, 10, 3, 15, 4, 17])
             ->color('primary'),
-            Stat::make('All Products', Product::count())
-            ->description('Available products')
+            Stat::make('ပစ္စည်းများ', Product::count())
+            ->description('ရရှိနိုင်သောပစ္စည်းများအားလုံးစုစုပေါင်းအရေအတွက်')
             ->descriptionIcon('heroicon-m-inbox-stack', IconPosition::Before)
             ->chart([15,20,25,2,5,10,30,35,40])
             ->color('success'),
-            Stat::make('Pending Products', $pending)
-            ->description('Products that are still pending')
+            Stat::make('ပစ္စည်းများ', $pending)
+            ->description('ဆိုင်းငံ့ထားသောပစ္စည်းများအရေအတွက်')
             ->descriptionIcon('heroicon-m-folder-arrow-down', IconPosition::Before)
             ->chart([2,5,10,30,35,40,7, 2, 10, 20,25])
             ->color('warning'),

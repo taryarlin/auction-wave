@@ -6,9 +6,12 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
+use Filament\Facades\Filament;
 // use App\Filament\Widgets\PageViewsChart;
 // use App\Filament\Widgets\VisitStatsChart;
+use Illuminate\Contracts\View\View;
+use Filament\Navigation\MenuItem;
+use Filament\Support\Colors\Color;
 use Filament\Http\Middleware\Authenticate;
 use App\Filament\Widgets\CustomerCityChart;
 use App\Filament\Widgets\NewCustomerWidget;
@@ -21,14 +24,13 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use App\Filament\Widgets\TodayRegisteredCustomersChart;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Navigation\MenuItem;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
-    {
+    {           
         return $panel
             ->default()
             ->id('admin')
@@ -44,7 +46,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->userMenuItems([
                 MenuItem::make()
-                ->label('User Dashboard')
+                ->label('အသုံးပြုသူ ဒက်ရှ်ဘုတ်')
                 ->icon('heroicon-o-user-circle')
                 ->url('/'),
             ])
