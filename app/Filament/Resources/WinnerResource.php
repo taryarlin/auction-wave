@@ -21,7 +21,11 @@ class WinnerResource extends Resource
 {
     protected static ?string $model = Customer::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?string $label = "လေလံအောင်မြင်သူများ";
+
+    protected static ?string $navigationLabel = "လေလံအောင်မြင်သူများ";
+    
+    protected static ?string $navigationIcon = 'heroicon-o-users'; 
 
     public static function form(Form $form): Form
     {
@@ -35,35 +39,37 @@ class WinnerResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->searchable(),
+                TextColumn::make('name')->label('အမည်'),
 
-                TextColumn::make('email')->searchable(),
+                TextColumn::make('email')->label('အီးမေးလ်')->badge()->color('success'),
 
-                TextColumn::make('phone')->searchable(),
+                TextColumn::make('phone')->label('ဖုန်း')->badge()->color('danger'),
 
                 TextColumn::make('product_name')
                     ->label('Product Name')
                     ->getStateUsing(function (Customer $record) {
                         return $record->won_product->name;
                     })
-                    ->searchable()
-                    ->sortable(),
+                    // ->searchable()
+                    ->sortable()
+                    ->label('ပစ္စည်းအမည်'),
 
                 TextColumn::make('won_amount')
                     ->label('Won Amount')
                     ->getStateUsing(function (Customer $record) {
                         return number_format($record->won_product->won_amount) . ' MMK';
                     })
-                    ->searchable()
-                    ->sortable(),
+                    // ->searchable()
+                    ->label('လေလံအနိုင်ရသည့်စျေး')
+                    ->badge()->color('warning'),
 
                 TextColumn::make('won_datetime')
                     ->label('Won Datetime')
                     ->getStateUsing(function (Customer $record) {
                         return $record->won_product->won_datetime;
                     })
-                    ->searchable()
-                    ->sortable(),
+                    // ->searchable()
+                    ->label('လေလံအနိုင်ရသည့်အချိန်'),
             ])
             ->filters([
                 //

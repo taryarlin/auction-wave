@@ -27,8 +27,9 @@ use Filament\Tables\Actions\ExportBulkAction;
 class CustomerResource extends Resource
 {
     protected static ?int $navigationSort = 2;
-
     protected static ?string $label = "ဝယ်ယူသူများ";
+
+    protected static ?string $navigationLabel = "ဝယ်ယူသူများ";
     
     protected static ?string $model = Customer::class;
 

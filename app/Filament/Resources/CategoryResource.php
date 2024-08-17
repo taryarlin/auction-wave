@@ -19,6 +19,8 @@ class CategoryResource extends Resource
 
     protected static ?string $label = "အမျိုးအစားများ";
 
+    protected static ?string $navigationLabel = "အမျိုးအစားများ";
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form

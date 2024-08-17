@@ -9,9 +9,11 @@ use Filament\PanelProvider;
 use Filament\Facades\Filament;
 // use App\Filament\Widgets\PageViewsChart;
 // use App\Filament\Widgets\VisitStatsChart;
-use Illuminate\Contracts\View\View;
 use Filament\Navigation\MenuItem;
 use Filament\Support\Colors\Color;
+use Illuminate\Contracts\View\View;
+use Filament\Navigation\NavigationItem;
+use Filament\Navigation\NavigationGroup;
 use Filament\Http\Middleware\Authenticate;
 use App\Filament\Widgets\CustomerCityChart;
 use App\Filament\Widgets\NewCustomerWidget;
@@ -50,6 +52,8 @@ class AdminPanelProvider extends PanelProvider
                 ->icon('heroicon-o-user-circle')
                 ->url('/'),
             ])
+            ->sidebarCollapsibleOnDesktop()
+            ->sidebarWidth('15rem')
             ->font('Poppins')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

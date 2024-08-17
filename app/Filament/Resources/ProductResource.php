@@ -26,6 +26,7 @@ class ProductResource extends Resource
 
     protected static ?string $label = "ပစ္စည်းများ";
 
+    protected static ?string $navigationLabel = "ပစ္စည်းများ";
 
     protected static ?string $navigationIcon = 'heroicon-o-cube';
 

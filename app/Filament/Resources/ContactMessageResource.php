@@ -21,6 +21,8 @@ class ContactMessageResource extends Resource
 
     protected static ?string $label = "မက်ဆေ့ခ်ျများ";
 
+    protected static ?string $navigationLabel = "မက်ဆေ့ခ်ျများ";
+
     protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-bottom-center-text';
 
     public static function form(Form $form): Form
