@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Product;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
@@ -82,5 +83,20 @@ class Customer extends Authenticatable implements MustVerifyEmail
     public function active_bids()
     {
         return $this->auctions();
+    }
+
+    public function winners()
+    {
+        return $this->hasMany(self::class, 'winner_id', 'id');
+    }
+
+    public function won_product()
+    {
+        return $this->hasOne(Product::class, 'winner_id', 'id');
+    }
+
+    public function getWinnerNameAttribute()
+    {
+        return $this->winner_id ? $this->name : '-';
     }
 }
