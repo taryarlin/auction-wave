@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Product;
+use App\Models\ContactMessage;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
@@ -98,5 +99,9 @@ class Customer extends Authenticatable implements MustVerifyEmail
     public function getWinnerNameAttribute()
     {
         return $this->winner_id ? $this->name : '-';
+    }
+    public function contactMessages()
+    {
+        return $this->hasMany(ContactMessage::class);
     }
 }

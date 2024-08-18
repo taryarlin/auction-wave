@@ -1,13 +1,13 @@
 <x-filament-panels::page>
     <div class="table-container">
         <table class="filament-table">
-            <h3 class="text-xl font-bold mb-4">Total Bid: {{ $bid_histories_total }} </h3>
+            <h3 class="text-xl font-bold mb-4">လေလံစုစုပေါင်း: {{ $bid_histories_total }} </h3>
             <tbody>
                 <tr>
-                    <td><b>Bidder</b></td>
-                    <td><b>Bid Datetime</b></td>
-                    <td><b>Since</b></td>
-                    <td><b>Bid Amount</b></td>
+                    <td><b>လေလံဆွဲသူများ</b></td>
+                    <td><b>လေလံပြီးဆုံးချိန်</b></td>
+                    <td><b>အချိန်</b></td>
+                    <td><b>လေလံပမာဏ</b></td>
                 </tr>
                 @forelse ($bid_histories as $bid_history)
                 <tr>

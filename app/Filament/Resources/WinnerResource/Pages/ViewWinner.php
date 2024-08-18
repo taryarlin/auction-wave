@@ -8,5 +8,6 @@ use Filament\Resources\Pages\ViewRecord;
 
 class ViewWinner extends ViewRecord
 {
+    
     protected static string $resource = WinnerResource::class;
 }

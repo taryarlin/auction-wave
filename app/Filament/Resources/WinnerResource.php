@@ -8,10 +8,14 @@ use App\Models\Winner;
 use App\Models\Customer;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Mail\AuctionWinnerMail;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\Action;
+use Illuminate\Support\Facades\Mail;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\ButtonAction;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\WinnerResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -37,6 +41,7 @@ class WinnerResource extends Resource
 
     public static function table(Table $table): Table
     {
+        // $winner = Customer::where('id', $record->id)->first();
         return $table
             ->columns([
                 TextColumn::make('name')->label('အမည်'),
@@ -75,8 +80,7 @@ class WinnerResource extends Resource
                 //
             ])
             ->actions([
-                // Tables\Actions\EditAction::make(),
-                // Tables\Actions\ViewAction::make(),
+                // Tables\Actions\Action::make('sendEmail')
             ])
             ->bulkActions([
                 // Tables\Actions\BulkActionGroup::make([
@@ -99,6 +103,7 @@ class WinnerResource extends Resource
             // 'create' => Pages\CreateWinner::route('/create'),
             // 'edit' => Pages\EditWinner::route('/{record}/edit'),
             'edit' => Pages\ViewWinner::route('/{record}'),
+            // 'mail' => Pages\ViewWinner::route(''),
         ];
     }
 

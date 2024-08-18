@@ -3,8 +3,10 @@
 namespace App\Filament\Resources\ProductResource\Pages;
 
 use App\Models\Product;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Pages\Page;
 use App\Filament\Resources\ProductResource;
+use Filament\Infolists\Components\TextEntry;
 
 class ViewProductBidHistory extends Page
 {
@@ -23,4 +25,5 @@ class ViewProductBidHistory extends Page
         $this->bid_histories = $auctions->orderBy('amount', 'desc')->orderBy('created_at', 'desc')->limit(20)->get();
         $this->bid_histories_total = $auctions->count();
     }
+
 }

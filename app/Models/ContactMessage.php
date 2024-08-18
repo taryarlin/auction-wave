@@ -12,4 +12,8 @@ class ContactMessage extends Model
     protected $table = 'contact_messages';
 
     protected $fillable = ['name', 'email', 'message'];
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }
