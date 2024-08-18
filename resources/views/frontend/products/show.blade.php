@@ -33,35 +33,35 @@
                             @if (auth()->guard('customer')->check())
                             @if ($product->customer)
                             <li>
-                                <span class="details">Owner Name</span>
+                                <span class="details">ပိုင်ရှင်အမည်</span>
                                 <h5 class="info">{{ $product->customer->name }}</h5>
                             </li>
                             <li>
-                                <span class="details">Owner Email</span>
+                                <span class="details">ပိုင်ရှင်၏အီးမေးလ်</span>
                                 <h5 class="info">{{ $product->customer->email }}</h5>
                             </li>
                             <li>
-                                <span class="details">Owner Phone</span>
+                                <span class="details">ပိုင်ရှင်၏ဖုန်း</span>
                                 <h5 class="info">{{ $product->customer->phone }}</h5>
                             </li>
                             <hr>
                             @endif
                             @endif
                             <li class="header">
-                                <h5 class="current">Current Price</h5>
+                                <h5 class="current">လက်ရှိဈေးနှုန်း</h5>
                                 <h3 class="price">{{ number_format($product->current_bid) }} MMK</h3>
                             </li>
 
                             <li>
-                                <span class="details">Buyer's Premium</span>
+                                <span class="details">၀ယ်သူ၏ပရီမီယံ</span>
                                 <h5 class="info">{{ $product->buyer_premium_percent }}%</h5>
                             </li>
                             <li>
-                                <span class="details">Bid Increment</span>
+                                <span class="details">လေလံအတိုး</span>
                                 <h5 class="info">{{ number_format($product->bid_increment) }} MMK</h5>
                             </li>
                             <li>
-                                <span class="details">Latest Total Bid Price</span>
+                                <span class="details">နောက်ဆုံးစုစုပေါင်းလေလံဈေးနှုန်း</span>
                                 <h5 class="info">{{ number_format($product->current_bid + $product->bid_increment) }} MMK</h5>
                             </li>
                         </ul>
@@ -75,8 +75,8 @@
                                             <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
                                         </div>
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <input type="number" name="amount" placeholder="Enter you bid amount">
-                                        <button type="submit" class="custom-button">Submit a bid</button>
+                                        <input type="number" name="amount" placeholder="ပေးချင်သောပမာဏကိုရိုက်ထည့်ပါ">
+                                        <button type="submit" class="custom-button">လေလံဆွဲရန်၀င်ရောက်ပါ</button>
                                     </form>
                                 </div>
                                 @endif
@@ -87,15 +87,15 @@
                                 <div class="search-icon">
                                     <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
                                 </div>
-                                <input type="number" name="amount" placeholder="Enter you bid amount" disabled>
-                                <a href="{{ route('login') }}" class="custom-button">Login to bid</a>
+                                <input type="number" name="amount" placeholder="ပေးချင်သောပမာဏကိုရိုက်ထည့်ပါ" disabled>
+                                <a href="{{ route('login') }}" class="custom-button">လေလံဆွဲရန်လော့အင်၀င်ပါ</a>
                             </form>
                         </div>
                         @endif
                         <div class="buy-now-area">
-                            <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
+                            <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> အကြိုက်ဆုံးစာရင်းထဲကိုထည့်ပါ</a>
                             <div class="share-area">
-                                <span>Share to:</span>
+                                <span>မျှဝေပါ</span>
                                 <ul>
                                     <li>
                                         <a href="#0"><i class="fab fa-facebook-f"></i></a>
@@ -117,7 +117,7 @@
                 <div class="col-lg-4">
                     <div class="product-sidebar-area">
                         <div class="product-single-sidebar mb-3">
-                            <h6 class="title">This Auction Ends in:</h6>
+                            <h6 class="title">လေလံပွဲပြီးပါပြီ</h6>
                             <div class="countdown">
                                 <div id="product_bid_counter" data-end-date="{{ \Carbon\Carbon::parse($product->end_datetime)->format('Y/m/d') }}"></div>
                             </div>
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="content">
                                         <h3 class="count-title"><span class="counter">{{ $product->auctions->groupBy('id')->count() }}</span></h3>
-                                        <p>Active Bidders</p>
+                                        <p>လေလံတွင်ပါ၀င်သူများ</p>
                                     </div>
                                 </div>
 
@@ -138,7 +138,9 @@
                                     </div>
                                     <div class="content">
                                         <h3 class="count-title"><span class="counter">{{ $product->auctions->count() }}</span></h3>
-                                        <p>Total Bids</p>
+                                        <p>စုစုပေါင်းအရေအတွက်
+                                            
+                                        </p>
                                     </div>
                                 </div>
                             </div>

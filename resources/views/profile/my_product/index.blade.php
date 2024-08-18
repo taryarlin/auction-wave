@@ -41,7 +41,7 @@
                         <div class="col-12">
                             <div class="dash-pro-item mb-30 dashboard-widget">
                                 <div class="header">
-                                    <h4 class="title">My Products</h4>
+                                    <h4 class="title">ကျွန်ုပ်၏ထုတ်ကုန်များ</h4>
                                     <span class=""><a href="{{ route('profile.my-product.create') }}"><i class="fas fa-plus"></i> Create</a></span>
                                 </div>
                             </div>
@@ -66,8 +66,8 @@
                                                 <i class="flaticon-auction"></i>
                                             </div>
                                             <div class="amount-content">
-                                                <div class="current">Current Bid</div>
-                                                <div class="amount">{{ number_format($product->starting_price) }} MMK</div>
+                                                <div class="current">လက်ရှိလေလံဈေးနှုန်း</div>
+                                                <div class="amount">{{ number_format($product->starting_price) }} ကျပ်</div>
                                             </div>
                                         </div>
                                         <div class="bid-amount">
@@ -75,8 +75,8 @@
                                                 <i class="flaticon-money"></i>
                                             </div>
                                             <div class="amount-content">
-                                                <div class="current">Buy Now</div>
-                                                <div class="amount">{{ number_format($product->fixed_price) }} MMK</div>
+                                                <div class="current">ယခု၀ယ်‌ဈေးနှုန်း</div>
+                                                <div class="amount">{{ number_format($product->fixed_price) }} ကျပ်</div>
                                             </div>
                                         </div>
                                     </div>

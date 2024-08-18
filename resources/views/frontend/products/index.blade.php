@@ -6,7 +6,7 @@
     <section class="featured-auction-section padding-bottom mt--240 mt-lg--440 pos-rel">
         <div class="container">
             <div class="section-header cl-white mw-100 left-style">
-                <h3 class="title">Bid on These Featured Auctions!</h3>
+                <h3 class="title">ဤနေရာတွင်လူကြီးမင်းကြိုက်နှစ်သက်ရာကိုလေလံဆွဲနိုင်ပါသည်။</h3>
             </div>
             <div class="row justify-content-center mb-30-none">
                 @foreach ($products as $product)
@@ -45,7 +45,7 @@
                                         <i class="flaticon-auction"></i>
                                     </div>
                                     <div class="amount-content">
-                                        <div class="current">Current Bid</div>
+                                        <div class="current">လက်ရှိလေလံဈေးနှုန်း</div>
                                         <div class="amount">${{ $product->starting_price }}</div>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                         <i class="flaticon-money"></i>
                                     </div>
                                     <div class="amount-content">
-                                        <div class="current">Buy Now</div>
+                                        <div class="current">ယခု၀ယ်ရန်</div>
                                         <div class="amount">${{ $product->fixed_price }}</div>
                                     </div>
                                 </div>
@@ -66,7 +66,7 @@
                                 <span class="total-bids">{{ $product->AuctionList->count() }} Bids</span>
                             </div>
                             <div class="text-center">
-                                <a href="#0" class="custom-button">Submit a bid</a>
+                                <a href="#0" class="custom-button">လေလံဆွဲရန်၀င်ရောက်ပါ</a>
                             </div>
                         </div>
                     </div>

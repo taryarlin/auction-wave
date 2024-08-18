@@ -7,7 +7,7 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner-content cl-white">
-                        <h5 class="cate" data-aos="fade-down" data-aos-duration="1000">Online Auction System</h5>
+                        <h5 class="cate" data-aos="fade-down" data-aos-duration="1000">အွန်လိုင်းလေလံစနစ်</h5>
                         <!-- <h3 class="title" data-aos="zoom-out-up" data-aos-duration="1200"><span class="d-xl-block">သင့်ရဲ့ ကြွယ်ဝမှုကို </span> လေလံပွဲတွင် ပြသလေ့ရှိပါသလား?</h3> -->
                         <p class="pras" data-aos="zoom-out-down" data-aos-duration="1300">
                         အွန်လိုင်းလေလံစနစ်တွင်ပါဝင်ပြီး ဒစ်ဂျစ်တယ်စျေးကွက်အား မြှင့်တင်နိုင်ရန် မတူညီသော ပစ္စည်းများအား ယခုပဲ ဝင်ရောက်ကြည့်ရှုလိုက်ပါ။
@@ -62,9 +62,9 @@
         <div class="popular-bg bg_img" data-background="{{ asset('assets/images/popular-bg.png') }}"></div>
         <div class="container">
             <div class="section-header cl-white" data-aos="fade-down" data-aos-duration="1000">
-                <span class="cate">Closing Within 24 Hours</span>
-                <h2 class="title" data-aos="fade-down" data-aos-duration="1500">Popular Auctions</h2>
-                <p>Bid and win great deals,Our auction process is simple, efficient, and transparent.</p>
+                <!-- <span class="cate">Closing Within 24 Hours</span> -->
+                <h2 class="title" data-aos="fade-down" data-aos-duration="1500">လူကြိုက်များသောလေလံပွဲများ</h2>
+                <p>လေလံပွဲတွင်ပါ၀င်ပြီးအကောင်းဆုံးတွေကိုရယူလိုက်ပါ။ကျွန်ုပ်တို့၏လေလံလုပ်ငန်းစဉ်သည် ရိုးရှင်းသည်၊ထိရောက်ပြီးပွင့်လင်းသည်။</p>
             </div>
             <div class="popular-auction-wrapper">
                 <div class="row justify-content-center mb-30-none">
@@ -84,12 +84,12 @@
                                             <i class="flaticon-auction"></i>
                                         </div>
                                         <div class="amount-content">
-                                            <div class="current">Current Bid</div>
-                                            <div class="amount">{{ number_format($popular_product->current_bid) }} MMK</div>
+                                            <div class="current">လက်ရှိလေလံဈေးနှုန်း</div>
+                                            <div class="amount">{{ number_format($popular_product->current_bid) }} ကျပ်</div>
                                         </div>
                                     </div>
                                     <div class="bids-area">
-                                        Total Bids : <span class="total-bids">{{ $popular_product->auctions->count() }} Bids</span>
+                                    စုစုပေါင်းလေလံ : <span class="total-bids">{{ $popular_product->auctions->count() }} </span>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
                     <h3 class="title">အခမဲ့စာရင်းသွင်းပြီး ယခုပဲ လေလံဆွဲခြင်း စတင်ပါ!</h3>
                     <p>ပစ္စည်းအမျိုးအစားများစွာအား ကြည့်ရှုနိုင်ပါတယ်။</p>
                 </div>
-                <a href="{{ route('register') }}" class="custom-button white">Register</a>
+                <a href="{{ route('register') }}" class="custom-button white">စာရင်းသွင်းပါ</a>
             </div>
         </div>
     </section>

@@ -2,16 +2,16 @@
     <div class="container">
         <ul class="breadcrumb">
             <li>
-                <a href="/">Home<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
+                <a href="/">ပင်မစာမျက်နှာ<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
             </li>
 
             <li>
-                <a href="/auctions">Pages<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
+                <a href="/auctions">စာမျက်နှာများ<i class="fa-solid fa-arrow-right" style="padding-left:20px;padding-right:20px;"></i></a>
             </li>
 
             @if (!auth()->guard('customer')->check())
                 <li>
-                    <a href="{{ route('login') }}">Sign in</a>
+                    <a href="{{ route('login') }}">စာရင်းသွင်းပါ</a>
                 </li>
             @endif
         </ul>

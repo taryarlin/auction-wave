@@ -34,9 +34,9 @@
                         <div class="col-12">
                             <div class="dash-pro-item mb-30 dashboard-widget">
                                 <div class="header">
-                                    <h4 class="title">Product Create</h4>
+                                    <h4 class="title">ထုတ်ကုန်ဖန်တီးပါ။</h4>
                                     <a href="{{ route('profile.my-product.index') }}">
-                                        <span class="edit"><i class="flaticon-left-arrow"></i> Back</span>
+                                        <span class="edit"><i class="flaticon-left-arrow"></i> နောက်သို့</span>
                                     </a>
                                 </div>
                                 <div class="row">
@@ -46,12 +46,12 @@
 
                                             <div class="form-group">
                                                 <label for="name"><i class="far fa-user"></i></label>
-                                                <input type="text" placeholder="Name" name="name" value="{{ old('name') }}" id="name">
+                                                <input type="text" placeholder="ထုတ်ကုန်အမည်" name="name" value="{{ old('name') }}" id="name">
                                             </div>
                                             <div class="form-group">
                                                 <label for="categoryId"><i class="fas fa-list"></i></label>
                                                 <select name="category_id" id="categoryId">
-                                                    <option value="">--- Select Category ---</option>
+                                                    <option value="">--- အမျိုးအစားကိုရွေးပါ ---</option>
                                                     @foreach ($categories as $category)
                                                         <option value="{{ $category->id }}" {{ $category->id == old('category_id') ? 'selected' : '' }}>{{ $category->name }}</option>
                                                     @endforeach
@@ -59,31 +59,31 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="startingPrice"><i class="fas fa-tag"></i></label>
-                                                <input type="number" placeholder="Starting Price" name="starting_price" value="{{ old('starting_price') }}" id="startingPrice">
+                                                <input type="number" placeholder="စတင်ဈေးနှုန်း" name="starting_price" value="{{ old('starting_price') }}" id="startingPrice">
                                             </div>
                                             <div class="form-group">
                                                 <label for="fixedPrice"><i class="fas fa-tag"></i></label>
-                                                <input type="number" placeholder="Fixed Price" name="fixed_price" value="{{ old('fixed_price') }}" id="fixedPrice">
+                                                <input type="number" placeholder="ပုံသေဈေးနှုန်း" name="fixed_price" value="{{ old('fixed_price') }}" id="fixedPrice">
                                             </div>
                                             <div class="form-group">
                                                 <label for="startDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="datetime-local" placeholder="Start Datetime" name="start_datetime" value="{{ old('start_datetime') }}" id="startDatetime">
+                                                <input type="datetime-local" placeholder="လေလံစတင်ချိန်" name="start_datetime" value="{{ old('start_datetime') }}" id="startDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="endDatetime"><i class="fas fa-calendar"></i></label>
-                                                <input type="datetime-local" placeholder="end Datetime" name="end_datetime" value="{{ old('end_datetime') }}" id="endDatetime">
+                                                <input type="datetime-local" placeholder="လေလံပြီးဆုံးချိန်" name="end_datetime" value="{{ old('end_datetime') }}" id="endDatetime">
                                             </div>
                                             <div class="form-group">
                                                 <label for="buyerPremiumPercent"><i class="fas fa-percent"></i></label>
-                                                <input type="number" placeholder="Buyer Premium Percent" name="buyer_premium_percent" value="{{ old('buyer_premium_percent') }}" id="buyerPremiumPercent">
+                                                <input type="number" placeholder="၀ယ်သူ၏ပရီမီယံရာခိုင်နှုန်း" name="buyer_premium_percent" value="{{ old('buyer_premium_percent') }}" id="buyerPremiumPercent">
                                             </div>
                                             <div class="form-group">
                                                 <label for="bidIncrement"><i class="fas fa-chart-line"></i></label>
-                                                <input type="number" placeholder="Bid Increment" name="bid_increment" value="{{ old('bid_increment') }}" id="bidIncrement">
+                                                <input type="number" placeholder="လေလံအတိုး" name="bid_increment" value="{{ old('bid_increment') }}" id="bidIncrement">
                                             </div>
                                             <div class="form-group">
                                                 <label for="images"><i class="fas fa-images"></i></label>
-                                                <input type="file" placeholder="Images" name="images[]" class="images-input" multiple id="images">
+                                                <input type="file" placeholder="ပုံရွေးချယ်ပါ" name="images[]" class="images-input" multiple id="images">
                                                 <div class="mt-1">
                                                     <div class="preview-container">
 
@@ -92,15 +92,15 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="description" class="description"><i class="fas fa-align-left"></i></label>
-                                                <textarea name="description" id="description" placeholder="Description">{{ old('description') }}</textarea>
+                                                <textarea name="description" id="description" placeholder="ဖော်ပြချင်သောအကြောင်းအရာရေးပါ။">{{ old('description') }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label for="deliveryOption" class="description"><i class="fas fa-truck-loading"></i></label>
-                                                <textarea name="delivery_option" id="deliveryOption" placeholder="Delivery Option">{{ old('delivery_option') }}</textarea>
+                                                <textarea name="delivery_option" id="deliveryOption" placeholder="ပိုဆောင်မှုကိုရွေးချယ်ပါ">{{ old('delivery_option') }}</textarea>
                                             </div>
 
                                             <div class="form-group text-center mb-0">
-                                                <button type="submit" class="custom-button">Create</button>
+                                                <button type="submit" class="custom-button">ဖန်တီးပါ။</button>
                                             </div>
                                         </form>
                                     </div>

@@ -100,7 +100,7 @@
     <section class="client-section padding-top padding-bottom">
         <div class="container">
             <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
-                <h2 class="title">Our Profile!</h2>
+                <h2 class="title">ကျွန်ုပ်တို့၏ပရိုဖိုင်</h2>
                 <!-- <p>Our hard work is paying off. Great reviews from amazing customers.</p> -->
             </div>
             <!-- <div class="container mw-lg-100 p-lg-0 mx-auto p-2"> -->
@@ -110,12 +110,11 @@
                             <img src="./assets/images/girl1.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <p class="card-text">
-                                    Name - Thae Su Aye <br>
-                                    Roll No - 5CS-21 <br>
-                                    Section - Frontend <br>
-                                    Phone - 09691385060 <br>
-                                    E-mail - thaesuaye@ucsh.edu.mm <br>
-                                    Address - University of Computer Studies, Hinthada
+                                အမည် - မသဲစုအေး <br>
+                                ခုံအမှတ်- 5CS-21 <br>
+                                ဖုန်း - ၀၉၆၇၆၅၉၈၆၀၃ <br>
+                                အီးမေးလ် - thaesuaye@ucsh.edu.mm <br>
+                                လိပ်စာ - ကွန်ပျူတာတက္ကသိုလ်၊ဟင်္သာတ။
                                 </p>
                             </div>
                         </div>
@@ -125,12 +124,11 @@
                             <img src="./assets/images/girl2.png" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <p class="card-text">
-                                    Name - Khaing Khaing Soe <br>
-                                    Roll No - 5CS-7 <br>
-                                    Section - Backend <br>
-                                    Phone - 09400752917 <br>
-                                    E-mail - khinekhinesoe@ucsh.edu.mm <br>
-                                    Address - University of Computer Studies, Hinthada
+                                အမည် - မခိုင်ခိုင်စိုး <br>
+                                ခုံအမှတ် - 5CS-7 <br>
+                                ဖုန်း - ၀၉၄၀၀၇၅၂၉၁၇ <br>
+                                အီးမေးလ် - khinekhinesoe@ucsh.edu.mm <br>
+                                လိပ်စာ - ကွန်ပျူတာတက္ကသိုလ်၊ဟင်္သာတ။
                                 </p>
                             </div>
                         </div>

@@ -12,28 +12,28 @@
                         <div class="col-12">
                             <div class="dash-pro-item mb-30 dashboard-widget">
                                 <div class="header">
-                                    <h4 class="title">Personal Details</h4>
+                                    <h4 class="title">ကိုယ်ရေးအကျဉ်း</h4>
                                     <span class="edit"><a href="{{ route('profile.personal.edit') }}"><i class="flaticon-edit"></i> Edit</a></span>
                                 </div>
                                 <ul class="dash-pro-body">
                                     <li>
-                                        <div class="info-name">Name</div>
+                                        <div class="info-name">အမည်</div>
                                         <div class="info-value">{{ $auth_user->name }}</div>
                                     </li>
                                     <li>
-                                        <div class="info-name">Email</div>
+                                        <div class="info-name">အီးမေးလ်</div>
                                         <div class="info-value">{{ $auth_user->email }}</div>
                                     </li>
                                     <li>
-                                        <div class="info-name">Phone</div>
+                                        <div class="info-name">ဖုန်းနံပါတ်</div>
                                         <div class="info-value">{{ $auth_user->phone }}</div>
                                     </li>
                                     <li>
-                                        <div class="info-name">Date of Birth</div>
+                                        <div class="info-name">မွေးသက္ကရာဇ်</div>
                                         <div class="info-value">{{ $auth_user->date_of_birth }}</div>
                                     </li>
                                     <li>
-                                        <div class="info-name">Address</div>
+                                        <div class="info-name">လိပ်စာ</div>
                                         <div class="info-value">{{ $auth_user->address }}</div>
                                     </li>
                                 </ul>
@@ -42,12 +42,12 @@
                         <div class="col-12">
                             <div class="dash-pro-item dashboard-widget">
                                 <div class="header">
-                                    <h4 class="title">Security</h4>
+                                    <h4 class="title">လုံခြုံမှု</h4>
                                     <span class="edit"><a href="{{ route('profile.personal.change-password') }}"><i class="flaticon-edit"></i> Edit</a></span>
                                 </div>
                                 <ul class="dash-pro-body">
                                     <li>
-                                        <div class="info-name">Password</div>
+                                        <div class="info-name">စကားဝှက်</div>
                                         <div class="info-value">xxxxxxxxxxxxxxxx</div>
                                     </li>
                                 </ul>
