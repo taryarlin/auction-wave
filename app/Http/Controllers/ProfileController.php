@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
-use Carbon\Carbon;
-use App\Models\Product;
+use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\Category;
 use App\Models\Customer;
-use Illuminate\View\View;
+use App\Models\Product;
+use Carbon\Carbon;
+use Exception;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
-use App\Http\Requests\ProfileUpdateRequest;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
@@ -32,12 +32,14 @@ class ProfileController extends Controller
     public function personal()
     {
         $auth_user = Auth::guard('customer')->user();
+
         return view('profile.personal.index', compact('auth_user'));
     }
 
     public function personalEdit()
     {
         $auth_user = Auth::guard('customer')->user();
+
         return view('profile.personal.edit', compact('auth_user'));
     }
 
@@ -63,7 +65,7 @@ class ProfileController extends Controller
             ]);
 
 
-        return redirect()->route('profile.personal.index')->with('success', 'Profile updated successfully');
+            return redirect()->route('profile.personal.index')->with('success', 'Profile updated successfully');
 
         } catch (Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
@@ -108,6 +110,7 @@ class ProfileController extends Controller
     public function personalProfileImageEdit()
     {
         $auth_user = Auth::guard('customer')->user();
+
         return view('profile.personal.profile_image_edit', compact('auth_user'));
     }
 
@@ -153,6 +156,7 @@ class ProfileController extends Controller
     public function myProductCreate()
     {
         $categories = Category::get();
+
         return view('profile.my_product.create', compact('categories'));
     }
 
@@ -211,6 +215,7 @@ class ProfileController extends Controller
     public function myProductEdit(Product $product, Request $request)
     {
         $categories = Category::get();
+
         return view('profile.my_product.edit', compact('product', 'categories'));
     }
 
@@ -274,7 +279,9 @@ class ProfileController extends Controller
     public function myProductDelete(Product $product, Request $request)
     {
         try {
-            if (!$request->ajax()) Exception('Invalid Request!');
+            if (!$request->ajax()) {
+                Exception('Invalid Request!');
+            }
 
             if ($product->images) {
                 foreach($product->images as $image) {

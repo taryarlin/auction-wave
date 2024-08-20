@@ -5,12 +5,12 @@
         $breadcrumb = [
             [
                 'name' => 'Home',
-                'route' => '/'
+                'route' => '/',
             ],
             [
                 'name' => 'Auction',
-                'route' => ''
-            ]
+                'route' => '',
+            ],
         ];
     @endphp
     @include('frontend.layouts.hero_section')
@@ -44,19 +44,19 @@
                         <ul class="price-table mb-30">
                             @if (auth()->guard('customer')->check())
                                 @if ($product->customer)
-                                <li>
-                                    <span class="details">Owner Name</span>
-                                    <h5 class="info">{{ $product->customer->name }}</h5>
-                                </li>
-                                <li>
-                                    <span class="details">Owner Email</span>
-                                    <h5 class="info">{{ $product->customer->email }}</h5>
-                                </li>
-                                <li>
-                                    <span class="details">Owner Phone</span>
-                                    <h5 class="info">{{ $product->customer->phone }}</h5>
-                                </li>
-                                <hr>
+                                    <li>
+                                        <span class="details">Owner Name</span>
+                                        <h5 class="info">{{ $product->customer->name }}</h5>
+                                    </li>
+                                    <li>
+                                        <span class="details">Owner Email</span>
+                                        <h5 class="info">{{ $product->customer->email }}</h5>
+                                    </li>
+                                    <li>
+                                        <span class="details">Owner Phone</span>
+                                        <h5 class="info">{{ $product->customer->phone }}</h5>
+                                    </li>
+                                    <hr>
                                 @endif
                             @endif
                             <li class="header">
@@ -80,29 +80,29 @@
                         @if (auth()->guard('customer')->check())
                             @if (auth()->guard('customer')->user()->id != $product->customer_id)
                                 @if ($product->isExpired())
-                                <div class="product-bid-area">
-                                    <form action="{{ route('make-bid') }}" method="POST" class="product-bid-form">
-                                        @csrf
-                                        <div class="search-icon">
-                                            <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
-                                        </div>
-                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                        <input type="number" name="amount" placeholder="Enter you bid amount">
-                                        <button type="submit" class="custom-button">Submit a bid</button>
-                                    </form>
-                                </div>
+                                    <div class="product-bid-area">
+                                        <form action="{{ route('make-bid') }}" method="POST" class="product-bid-form">
+                                            @csrf
+                                            <div class="search-icon">
+                                                <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
+                                            </div>
+                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                            <input type="number" name="amount" placeholder="Enter you bid amount">
+                                            <button type="submit" class="custom-button">Submit a bid</button>
+                                        </form>
+                                    </div>
                                 @endif
                             @endif
                         @else
-                        <div class="product-bid-area">
-                            <form class="product-bid-form">
-                                <div class="search-icon">
-                                    <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
-                                </div>
-                                <input type="number" name="amount" placeholder="Enter you bid amount" disabled>
-                                <a href="{{ route('login') }}" class="custom-button">Login to bid</a>
-                            </form>
-                        </div>
+                            <div class="product-bid-area">
+                                <form class="product-bid-form">
+                                    <div class="search-icon">
+                                        <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
+                                    </div>
+                                    <input type="number" name="amount" placeholder="Enter you bid amount" disabled>
+                                    <a href="{{ route('login') }}" class="custom-button">Login to bid</a>
+                                </form>
+                            </div>
                         @endif
                         <div class="buy-now-area">
                             <a href="#0" class="rating custom-button active border"><i class="fas fa-star"></i> Add to Wishlist</a>
@@ -131,7 +131,7 @@
                         <div class="product-single-sidebar mb-3">
                             <h6 class="title">This Auction Ends in:</h6>
                             <div class="countdown">
-                                <div id="product_bid_counter" data-end-date="{{ \Carbon\Carbon::parse($product->end_datetime)->format('Y/m/d') }}"></div>
+                                <div id="product_bid_counter" data-end-date="{{ \Carbon\Carbon::parse($product->end_datetime)->format('Y-m-d h:m') }}"></div>
                             </div>
                             <div class="side-counter-area">
                                 <div class="side-counter-item">
