@@ -10,6 +10,7 @@ use Filament\Tables\Table;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Wizard;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\ImageColumn;
@@ -32,54 +33,68 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-cube';
 
+    protected static ?string $maxWidth = '1000px';
+
+    // protected int | string | array $rowSpan = 2;
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                TextInput::make('name')
-                    ->required()
-                    ->maxLength(255)
-                    ->label('အမည်'),
+                Wizard::make([
+                    Wizard\Step::make('Fill Name')
+                    ->schema([
 
-                Select::make('category_id')
-                    ->options(function (): array {
-                        return Category::all()->pluck('name', 'id')->all();
-                    })
-                    ->required()
-                    ->label('အမျိုးအစားများ')
-                    ->searchable(),
+                        TextInput::make('name')
+                            ->required()
+                            ->maxLength(255)
+                            ->label('အမည်'),
 
-                TextInput::make('starting_price')
-                    ->required()
-                    ->numeric()
-                    ->label('စတင်မည့်စျေး'),
+                        Select::make('category_id')
+                            ->options(function (): array {
+                                return Category::all()->pluck('name', 'id')->all();
+                            })
+                            ->required()
+                            ->label('အမျိုးအစားများ')
+                            ->searchable(),
+                        ]),
+                    Wizard\Step::make('Make Price')
+                    ->schema([
+                        TextInput::make('starting_price')
+                            ->required()
+                            ->numeric()
+                            ->label('စတင်မည့်စျေး'),
 
-                // TextInput::make('fixed_price')
-                //     ->required()
-                //     ->numeric()
-                //     ->label('ပုံသေစျေး'),
+                        TextInput::make('fixed_price')
+                            ->required()
+                            ->numeric()
+                            ->label('ပုံသေစျေး'),
 
-                DateTimePicker::make('start_datetime')
-                    ->seconds(false)
-                    ->closeOnDateSelection()
-                    ->minDate(now())
-                    ->required()
-                    ->native(false)
-                    ->label('စတင်ရန် အချိန်'),
+                        TextInput::make('buyer_premium_percent')->required()->numeric(),
 
-                DateTimePicker::make('end_datetime')
-                    ->seconds(false)
-                    ->closeOnDateSelection()
-                    ->minDate(now())
-                    ->required()
-                    ->native(false)
-                    ->label('ပြီးဆုံးမည့်အချိန်'),
+                        TextInput::make('bid_increment')->required()->numeric()->label('လေလံတိုးနှုန်း'),
+                    ]),
+                    Wizard\Step::make('Time')
+                    ->schema([
+                        DateTimePicker::make('start_datetime')
+                        ->seconds(false)
+                        ->closeOnDateSelection()
+                        ->minDate(now())
+                        ->required()
+                        ->native(false)
+                        ->label('စတင်ရန် အချိန်'),
 
-                TextInput::make('buyer_premium_percent')->required()->numeric(),
-
-                TextInput::make('bid_increment')->required()->numeric()->label('လေလံတိုးနှုန်း'),
-
-                Select::make('status')
+                        DateTimePicker::make('end_datetime')
+                            ->seconds(false)
+                            ->closeOnDateSelection()
+                            ->minDate(now())
+                            ->required()
+                            ->native(false)
+                            ->label('ပြီးဆုံးမည့်အချိန်'),
+                    ]),
+                    Wizard\Step::make('Operation')
+                    ->schema([
+                        Select::make('status')
                     ->options([
                         'pending' => 'Pending',
                         'approved' => 'Approved',
@@ -88,19 +103,26 @@ class ProductResource extends Resource
                     ])
                     ->required()
                     ->label('လုပ်ဆောင်ချက်'),
+                    ]),
+                    Wizard\Step::make('Details')
+                    ->schema([
+                        FileUpload::make('images')
+                            ->multiple()
+                            ->image()
+                            ->maxFiles(10)
+                            ->directory('product-images')
+                            ->columnSpan('full')
+                            ->label('ပုံထည့်ရန်'),
 
-                FileUpload::make('images')
-                    ->multiple()
-                    ->image()
-                    ->maxFiles(10)
-                    ->directory('product-images')
-                    ->columnSpan('full')
-                    ->label('ပုံထည့်ရန်'),
+                        RichEditor::make('description')->columnSpan(2)->required()->label('ဖော်ပြချက်'),
 
-                RichEditor::make('description')->columnSpan(2)->required()->label('ဖော်ပြချက်'),
-
-                RichEditor::make('delivery_option')->columnSpan(2)->required()
-                ->label('ပို့ဆောင်မှုများ'),
+                        RichEditor::make('delivery_option')->columnSpan(2)->required()
+                        ->label('ပို့ဆောင်မှုများ'),
+                    ]),
+                
+                ])
+                ->columnSpan(2)
+                ->skippable(),
             ]);
     }
 
@@ -191,6 +213,13 @@ class ProductResource extends Resource
                 //     Tables\Actions\DeleteBulkAction::make(),
                 // ]),
             ]);
+    }
+
+    protected function getForm(): \Filament\Forms\Form
+    {
+        return parent::getForm()
+            ->columnSpan('full') // Full-width single column
+            ->width('full'); // Full-width
     }
 
     public static function getRelations(): array
