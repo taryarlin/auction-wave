@@ -42,29 +42,29 @@
 </div>
 
 @push('script')
-<script>
-    $(document).ready(function () {
-        const product_id = "{{ $product->id }}";
-        if ($("#product_bid_counter" + product_id).length) {
+    <script>
+        $(document).ready(function() {
+            const product_id = "{{ $product->id }}";
+            if ($("#product_bid_counter" + product_id).length) {
 
-            let endDate = $("#product_bid_counter" + product_id).data('end-date');
+                let endDate = $("#product_bid_counter" + product_id).data('end-date');
 
-            let counterElement = document.querySelector("#product_bid_counter" + product_id);
-            let myCountDown = new ysCountDown(endDate, function(remaining, finished) {
-                let message = "";
-                if (finished) {
-                    message = "Expired";
-                } else {
-                    var re_days = remaining.totalDays;
-                    var re_hours = remaining.hours;
-                    message += re_days + "d  : ";
-                    message += re_hours + "h  : ";
-                    message += remaining.minutes + "m  : ";
-                    message += remaining.seconds + "s";
-                }
-                counterElement.textContent = message;
-            });
-        }
-    });
-</script>
+                let counterElement = document.querySelector("#product_bid_counter" + product_id);
+                let myCountDown = new ysCountDown(endDate, function(remaining, finished) {
+                    let message = "";
+                    if (finished) {
+                        message = "Expired";
+                    } else {
+                        var re_days = remaining.totalDays;
+                        var re_hours = remaining.hours;
+                        message += re_days + "d  : ";
+                        message += re_hours + "h  : ";
+                        message += remaining.minutes + "m  : ";
+                        message += remaining.seconds + "s";
+                    }
+                    counterElement.textContent = message;
+                });
+            }
+        });
+    </script>
 @endpush

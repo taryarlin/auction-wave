@@ -5,12 +5,12 @@
         $breadcrumb = [
             [
                 'name' => 'Home',
-                'route' => '/'
+                'route' => '/',
             ],
             [
                 'name' => 'Auction',
-                'route' => ''
-            ]
+                'route' => '',
+            ],
         ];
     @endphp
     @include('frontend.layouts.hero_section')
