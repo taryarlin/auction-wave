@@ -5,8 +5,8 @@
             <tbody>
                 <tr>
                     <td><b>လေလံဆွဲသူများ</b></td>
-                    <td><b>လေလံပြီးဆုံးချိန်</b></td>
-                    <td><b>အချိန်</b></td>
+                    <td><b>လေလံဆွဲချိန်</b></td>
+                    <td><b>လွန်ခဲ့သောအချိန်က</b></td>
                     <td><b>လေလံပမာဏ</b></td>
                 </tr>
                 @forelse ($bid_histories as $bid_history)

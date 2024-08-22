@@ -48,7 +48,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->userMenuItems([
                 MenuItem::make()
-                ->label('အသုံးပြုသူ ဒက်ရှ်ဘုတ်')
+                ->label('အသုံးပြုသူ စာမျက်နှာ')
                 ->icon('heroicon-o-user-circle')
                 ->url('/'),
             ])

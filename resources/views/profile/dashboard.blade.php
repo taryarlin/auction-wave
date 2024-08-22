@@ -49,20 +49,20 @@
                 <div class="col-lg-8">
                     <div class="dashboard-widget mb-40">
                         <div class="dashboard-title mb-30">
-                            <h5 class="title">My Activity</h5>
+                            <h5 class="title">လုပ်ဆောင်ချက်များ</h5>
                         </div>
                         <div class="row justify-content-center mb-30-none">
-                            <div class="col-md-4 col-sm-6">
+                            <!-- <div class="col-md-4 col-sm-6">
                                 <div class="dashboard-item">
                                     <div class="thumb">
                                         <img src="../assets/images/icon3.png" alt="dashboard">
                                     </div>
                                     <div class="content">
                                         <h2 class="title"><span class="counter">{{ $my_products->total() }}</span></h2>
-                                        <h6 class="info">My Products</h6>
+                                        <h6 class="info">ကျွန်ုပ်၏ပစ္စည်းများ</h6>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-md-4 col-sm-6">
                                 <div class="dashboard-item">
                                     <div class="thumb">
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="content">
                                         <h2 class="title"><span class="counter">{{ $active_bids->total() }}</span></h2>
-                                        <h6 class="info">Active Bids</h6>
+                                        <h6 class="info">လက်ရှိလေလံများ</h6>
                                     </div>
                                 </div>
                             </div>
@@ -81,24 +81,24 @@
                                     </div>
                                     <div class="content">
                                         <h2 class="title"><span class="counter">{{ $winning_bids->total() }}</span></h2>
-                                        <h6 class="info">Winning Bids</h6>
+                                        <h6 class="info">အနိုင်ရသောလေလံများ</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="dashboard-widget">
-                        <h5 class="title mb-10">Bid History</h5>
+                        <h5 class="title mb-10">လေလံမှတ်တမ်း</h5>
                         <div class="dashboard-purchasing-tabs">
                             <ul class="nav-tabs nav">
+                                <!-- <li>
+                                    <a href="#myProduct" class="{{ request()->tag ? (request()->tag == 'my-product' ? 'active' : '') : 'active' }}" data-toggle="tab">ကျွန်ုပ်၏ပစ္စည်းများ</a>
+                                </li> -->
                                 <li>
-                                    <a href="#myProduct" class="{{ request()->tag ? (request()->tag == 'my-product' ? 'active' : '') : 'active' }}" data-toggle="tab">My Products</a>
+                                    <a href="#activeBid" class="{{ request()->tag == 'active-bid' ? 'active' : '' }}" data-toggle="tab">လက်ရှိလေလံများ</a>
                                 </li>
                                 <li>
-                                    <a href="#activeBid" class="{{ request()->tag == 'active-bid' ? 'active' : '' }}" data-toggle="tab">Active Bids</a>
-                                </li>
-                                <li>
-                                    <a href="#WinningBid" class="{{ request()->tag == 'winning-bid' ? 'active' : '' }}" data-toggle="tab">Winning Bids</a>
+                                    <a href="#WinningBid" class="{{ request()->tag == 'winning-bid' ? 'active' : '' }}" data-toggle="tab">အနိုင်ရသောလေလံများ</a>
                                 </li>
                             </ul>
                             <div class="tab-content">

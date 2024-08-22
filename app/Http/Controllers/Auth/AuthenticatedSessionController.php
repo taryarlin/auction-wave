@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('frontpage', absolute: false));
+        return redirect()->intended(route('frontpage', absolute: false))->with('success', 'Login Successfully!');
     }
 
     /**

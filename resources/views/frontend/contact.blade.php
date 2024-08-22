@@ -29,18 +29,18 @@
                             @csrf
                             <div class="form-group">
                                 <label for="name"><i class="far fa-user"></i></label>
-                                <input type="text" placeholder="Your Name" name="name" id="name" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->name : '' }}" required>
+                                <input type="text" placeholder="နာမည်ဖြည့်ပါ" name="name" id="name" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->name : '' }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="fas fa-envelope-open-text"></i></label>
-                                <input type="text" placeholder="Enter Your Email ID" name="email" id="email" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->email : '' }}" required>
+                                <input type="text" placeholder="အီးမေးလ်ဖြည့်ပါ" name="email" id="email" value="{{ auth()->guard('customer')->check() ? auth()->guard('customer')->user()->email : '' }}" required>
                             </div>
                             <div class="form-group">
                                 <label for="message" class="message"><i class="far fa-envelope"></i></label>
-                                <textarea name="message" id="message" placeholder="Type Your Message" required></textarea>
+                                <textarea name="message" id="message" placeholder="သင်ပြောလိုသောအကြောင်းအရာကိုရေးပါ" required></textarea>
                             </div>
                             <div class="form-group text-center mb-0">
-                                <button type="submit" class="custom-button">Send Message</button>
+                                <button type="submit" class="custom-button">စာပို့ရန်</button>
                             </div>
                         </form>
                     </div>

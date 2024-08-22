@@ -4,6 +4,7 @@ namespace App\Filament\Resources\WinnerResource\Pages;
 
 use Filament\Actions;
 use App\Models\Product;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Resources\Pages\ListRecords;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\WinnerResource;
@@ -21,8 +22,6 @@ class ListWinners extends ListRecords
 
     protected function getTableQuery(): ?Builder
     {
-        $winner_ids_ary = Product::whereNotNull(['winner_id', 'won_amount', 'won_datetime'])->distinct()->pluck('winner_id');
-
-        return parent::getTableQuery()->whereIn('id', $winner_ids_ary);
-    }
+        return parent::getTableQuery()->whereNotNull(['winner_id', 'won_amount', 'won_datetime']);
+    }   
 }

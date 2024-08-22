@@ -20,11 +20,11 @@ class BIDController extends Controller
         $last_auction_amount = !is_null($last_auction) ? $last_auction->pivot->amount : 0;
 
         if( $last_auction_amount >= $request->amount) {
-            return back()->with('error', 'Your bid must be higher than the previous bid amount');
+            return back()->with('error', 'Your bid price must higher than final bid price.');
         }
 
         if($product->bid_increment && ($last_auction_amount + $product->bid_increment) >= $request->amount) {
-            return back()->with('error', 'Your bid must be higher than the last bid amount plus the bid increment');
+            return back()->with('error', 'Your bid price must higher than final bid price.');
         }
 
         $this->customer()->auctions()->attach($request->product_id, [
@@ -33,6 +33,6 @@ class BIDController extends Controller
             'updated_at' => now(),
         ]);
 
-        return back()->with('success', 'Your BID is successfully placed');
+        return back()->with('success', 'Your bid price have been placed successfully.');
     }
 }

@@ -22,17 +22,17 @@ class NewCustomerWidget extends BaseWidget
             Stat::make('ဝယ်ယူသူများ', Customer::count())
             ->description('ဝယ်ယူသူများစုစုပေါင်းအရေအတွက်')
             ->descriptionIcon('heroicon-m-user-group', IconPosition::Before)
-            ->chart([7, 2, 10, 3, 15, 4, 17])
+            ->chart([1,1,1,1,1])
             ->color('primary'),
             Stat::make('ပစ္စည်းများ', Product::count())
             ->description('ရရှိနိုင်သောပစ္စည်းများအားလုံးစုစုပေါင်းအရေအတွက်')
             ->descriptionIcon('heroicon-m-inbox-stack', IconPosition::Before)
-            ->chart([15,20,25,2,5,10,30,35,40])
+            ->chart([1,1,1,1,1])
             ->color('success'),
             Stat::make('ပစ္စည်းများ', $pending)
             ->description('ဆိုင်းငံ့ထားသောပစ္စည်းများအရေအတွက်')
             ->descriptionIcon('heroicon-m-folder-arrow-down', IconPosition::Before)
-            ->chart([2,5,10,30,35,40,7, 2, 10, 20,25])
+            ->chart([1,1,1,1,1])
             ->color('warning'),
         ];
     }

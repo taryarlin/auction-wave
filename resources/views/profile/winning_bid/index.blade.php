@@ -45,7 +45,7 @@
                                     <h6 class="title">
                                         <a href="{{ route('product.detail', $product->id) }}">{{ $product->name }}</a>
                                     </h6>
-                                    <div class="bid-area">
+                                    <!-- <div class="bid-area">
                                         <div class="bid-amount">
                                             <div class="icon">
                                                 <i class="flaticon-auction"></i>
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="text-center">
                                         <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

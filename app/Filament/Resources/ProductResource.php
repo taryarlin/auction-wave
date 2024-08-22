@@ -54,10 +54,10 @@ class ProductResource extends Resource
                     ->numeric()
                     ->label('စတင်မည့်စျေး'),
 
-                TextInput::make('fixed_price')
-                    ->required()
-                    ->numeric()
-                    ->label('ပုံသေစျေး'),
+                // TextInput::make('fixed_price')
+                //     ->required()
+                //     ->numeric()
+                //     ->label('ပုံသေစျေး'),
 
                 DateTimePicker::make('start_datetime')
                     ->seconds(false)
@@ -87,7 +87,7 @@ class ProductResource extends Resource
                         'finished' => 'Finished',
                     ])
                     ->required()
-                    ->label('အခြေအနေ'),
+                    ->label('လုပ်ဆောင်ချက်'),
 
                 FileUpload::make('images')
                     ->multiple()
@@ -137,7 +137,7 @@ class ProductResource extends Resource
                         'rejected' => 'Rejected',
                         'finished' => 'Finished',
                     ])
-                    ->label('အခြေအနေ')
+                    ->label('လုပ်ဆောင်ချက်')
                     ->selectablePlaceholder(false),
 
                 TextColumn::make('start_datetime')

@@ -19,7 +19,7 @@
     <section class="featured-auction-section padding-bottom mt--240 mt-lg--440 pos-rel">
         <div class="container">
             <div class="section-header cl-white mw-100 left-style">
-                <h3 class="title">Bid on These Featured Auctions!</h3>
+                <h3 class="title">လေလံပစ္စည်းများတွင် လေလံပမာဏတိုးပြီး လေလံဆွဲပါ!</h3>
             </div>
             <div class="row justify-content-center mb-30-none">
                 @foreach ($products as $product)

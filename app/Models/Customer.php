@@ -93,6 +93,7 @@ class Customer extends Authenticatable implements MustVerifyEmail
 
     public function won_product()
     {
+        // return $this->hasOne(Product::class, 'winner_id', 'id');
         return $this->hasOne(Product::class, 'winner_id', 'id');
     }
 

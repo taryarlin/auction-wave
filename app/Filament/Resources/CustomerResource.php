@@ -59,21 +59,25 @@ class CustomerResource extends Resource
                     ->rule('regex:/[0-9]/')
                     ->rule('regex:/[@$!%*?&]/')
                     ->dehydrateStateUsing(fn($state) => Hash::make($state))
-                    ->label('စကားဝှက်'),
+                    ->label('စကားဝှက်')
+                    ->helperText('The password have at least 8 characters.'),
 
                 TextInput::make('address')
                     ->required()
-                    ->label('လိပ်စာ'),
+                    ->label('မြို့'),
 
                 TextInput::make('phone')
                     ->required()
-                    ->label('ဖုန်း'),
+                    ->label('ဖုန်း')
+                    ->required()
+                    ->regex('/^09(9|42|25|67|69|68|96|40|45|77|75|94|66|74|78|97|44|26|76|79|98)\d{7}$/')
+                    ->helperText('The phone number must start with 09 and follow exactly 9 digits.'),
 
-                DatePicker::make('date_of_birth')
-                    ->maxDate(now())
-                    ->closeOnDateSelection()
-                    ->native(false)
-                    ->label('မွေးနေ့'),
+                // DatePicker::make('date_of_birth')
+                //     ->maxDate(now())
+                //     ->closeOnDateSelection()
+                //     ->native(false)
+                //     ->label('မွေးနေ့'),
 
                 FileUpload::make('profile')
                     ->image()
@@ -99,10 +103,10 @@ class CustomerResource extends Resource
 
                 TextColumn::make('address')
                     ->searchable()
-                    ->label('လိပ်စာ')
+                    ->label('မြို့')
                     ->badge()
                     ->color(function ($state) {
-                        if (in_array($state, ['Yangon', 'Mandalay', 'Naypyitaw' , 'Nay Pyi Taw'])) {
+                        if (in_array($state, ['Yangon', 'Mandalay', 'Naypyitaw' , 'Nay Pyi Taw','ရန်ကုန်','မန္တလေး','နေပြည်တော်'])) {
                             return 'success';
                         }
                         return 'danger'; // or return a default color if needed

@@ -105,4 +105,10 @@ class Product extends Model
     {
         return Carbon::now()->lt(Carbon::parse($this->end_datetime));
     }
+
+    public function winner()
+    {
+        return $this->belongsTo(Customer::class, 'winner_id', 'id');
+    }
+
 }

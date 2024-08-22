@@ -31,4 +31,6 @@ class CustomerRegisterRequest extends FormRequest
             'date_of_birth' => 'nullable',
         ];
     }
+
+    
 }

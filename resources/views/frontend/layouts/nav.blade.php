@@ -16,7 +16,7 @@
                     <li class="cmn-support-text">
                         <a href="#0" class="mr-3">
                             <i class="fas fa-phone-alt"></i>
-                            <span class="ml-2 d-none d-sm-inline-block">အကူအညီ (+၉၅၉) ၄၀၀ ၇၅၂ ၉၁၇</span></a>
+                            <span class="ml-2 d-none d-sm-inline-block"><a href="tel:+95400752917">အကူအညီ (+၉၅၉) ၄၀၀ ၇၅၂ ၉၁၇</a></span></a>
                     </li>
                 </ul>
                 <ul class="cart-button-area">
@@ -34,11 +34,11 @@
                             </form>
                         @else
                             <a href="{{ route('login') }}" style="color: white;">
-                                Login
+                            အကောင့်၀င်ပါ
                             </a>
                             |
                             <a href="{{ route('register') }}" style="color: white;">
-                                Register
+                            စာရင်းသွင်းပါ
                             </a>
                         @endif
                     </li>
@@ -56,13 +56,13 @@
                 </div>
                 <ul class="menu ml-auto">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/">ပင်မစာမျက်နှာ</a>
                     </li>
                     <li>
-                        <a href="{{ route('product.index') }}">Auction</a>
+                        <a href="{{ route('product.index') }}">လေလံပစ္စည်းများ</a>
                     </li>
                     <li>
-                        <a href="#">Pages</a>
+                        <a href="#">စာမျက်နှာများ</a>
                         <ul class="submenu">
                             {{-- <li>
                                 <a href="#0">Product</a>
@@ -76,17 +76,17 @@
                                 </ul>
                             </li> --}}
                             <li>
-                                <a href="#0">My Account</a>
+                                <a href="#0">ကျွန်ုပ်အကောင့်</a>
                                 <ul class="submenu">
                                     <li>
-                                        <a href="{{ route('register') }}">Sign Up</a>
+                                        <a href="{{ route('register') }}">စာရင်းသွင်းပါ</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('login') }}">Sign In</a>
+                                        <a href="{{ route('login') }}">အကောင့်၀င်ပါ</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#0">Dashboard</a>
                                 <ul class="submenu">
                                     <li>
@@ -108,17 +108,17 @@
                                         <a href="./fovorite.php">My Favorites</a>
                                     </li>
                                 </ul>
+                            </li> -->
+                            <li>
+                                <a href="{{ route('about-us') }}">ကျွန်ုပ်တို့အကြောင်း</a>
                             </li>
                             <li>
-                                <a href="{{ route('about-us') }}">About Us</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('faq') }}">Faqs</a>
+                                <a href="{{ route('faq') }}">မေးလေ့ရှိသောမေးခွန်းများ</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ route('contact.store') }}">Contact</a>
+                        <a href="{{ route('contact.store') }}">ဆက်သွယ်ပါ</a>
                     </li>
                 </ul>
                 <form class="search-form">

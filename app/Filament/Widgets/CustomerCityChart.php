@@ -14,11 +14,14 @@ class CustomerCityChart extends ChartWidget
     {
         $customers = Customer::selectRaw("
             CASE
-                WHEN address = 'Yangon' THEN 'Yangon'
-                WHEN address = 'Naypyitaw' THEN 'Naypyitaw'
-                WHEN address = 'Nay Pyi Taw' THEN 'Naypyitaw'
-                WHEN address = 'Mandalay' THEN 'Mandalay'
-                ELSE 'Others'
+                WHEN address = 'Yangon' THEN 'ရန်ကုန်'
+                WHEN address = 'ရန်ကုန်' THEN 'ရန်ကုန်'
+                WHEN address = 'Naypyitaw' THEN 'နေပြည်တော်'
+                WHEN address = 'နေပြည်တော်' THEN 'နေပြည်တော်'
+                WHEN address = 'Nay Pyi Taw' THEN 'နေပြည်တော်'
+                WHEN address = 'Mandalay' THEN 'မန္တလေး'
+                WHEN address = 'မန္တလေး' THEN 'မန္တလေး'
+                ELSE 'အခြားမြို့များ'
             END as city_group,
             COUNT(*) as count
         ")

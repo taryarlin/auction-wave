@@ -35,7 +35,7 @@
                         <!-- <p>ကျွန်ုပ်တို့ရဲ့ နောက်ဆုံးရ သတင်းတွေကို ပုံမှန် ကျွန်ုပ်တို့၏စနစ်တွင် စစ်ဆေးပြီး နေ့စဉ် နေ့တိုင်း အဆက်မပြတ် ရယူနိုင်ပါသည်။</p> -->
                     </div>
                     <form class="subscribe-form">
-                        <a href="{{ route('contact.store') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">Contact</a>
+                        <a href="{{ route('contact.store') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">ဆက်သွယ်ရန်</a>
                         <!-- <input type="text" placeholder="Enter Your Email" name="email">
                         <button type="submit" class="custom-button">Contact us</button> -->
                     </form>
@@ -48,7 +48,7 @@
             <div class="row mb--60">
                 <div class="col-sm-6 col-lg-2" data-aos="fade-down" data-aos-duration="1000">
                     <div class="footer-widget widget-links">
-                        <h5 class="title"><p>Online Auction </p>System</h5>
+                        <h5 class="title"><p>အွန်လိုင်းလေလံစနစ်</h5>
                         <div class="logo">
                             <a href="/">
                                 <img src="{{ asset('assets/images/pg-logo.png') }}" alt="logo" width="300" height="100">
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1300">
                     <div class="footer-widget widget-links">
-                       <h5 class="title">Auction Categories</h5>
+                       <h5 class="title">လေလံအမျိုးအစားများ</h5>
                         <ul class="links-list">
                             @php
                                 $categories = App\Models\Category::limit(8)->get(['id', 'name']);
@@ -69,7 +69,7 @@
                             </li>
                             @if (($key + 1) == count($categories))
                             <li>
-                                <a href="{{ route('product.index') }}">See all</a>
+                                <a href="{{ route('product.index') }}">အားလုံးကိုကြည့်ရန်</a>
                             </li>
                             @endif
                             @endforeach
@@ -78,7 +78,7 @@
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-down" data-aos-duration="1300">
                     <div class="footer-widget widget-links">
-                        <h5 class="title">Contact Us</h5>
+                        <h5 class="title">ဆက်သွယ်ရန်</h5>
                         <ul class="links-list">
                             <!-- <li>
                                 <a href="{{ route('about-us') }}">About us</a>
@@ -89,20 +89,20 @@
                                 </a>
                             </li> -->
                             <li>
-                                <a href="#0"><i class="fas fa-phone-alt"></i>(+959) 400 752 917</a>
+                                <a href="tel:+959400752917"><i class="fas fa-phone-alt"></i>၀၉-၄၀၀၇၅၂၉၁၇</a>
                             </li>
                             <li>
-                                <a href="#0"><i class="fas fa-blender-phone"></i>(+959) 679 016 500</a>
+                                <a href="tel:+959 676598603"><i class="fas fa-blender-phone"></i>၀၉-၆၇၆၅၉၈၆၀၃</a>
                             </li>
                             <li>
-                                <a href="#0"><i class="fas fa-envelope-open-text"></i>khinekhinesoe@ucsh.edu.mm</a>
+                                <a href="mailto:khinekhinesoe@ucsh.edu.mm"><i class="fas fa-envelope-open-text"></i>khinekhinesoe@ucsh.edu.mm</a>
                             </li>
                             <li>
-                                <a href="#0"><i class="fas fa-envelope-open-text"></i>thaesuaye@ucsh.edu.mm</a>
+                                <a href="mailto:thaesuaye@ucsh.edu.mm"><i class="fas fa-envelope-open-text"></i>thaesuaye@ucsh.edu.mm</a>
                             </li>
                             <li>
                                 <a href="#0"><i class="fas fa-location-arrow"></i>
-                                <abbr title="University of Computer Studies, Hinthada" class="text-decoration-none">UCSH</abbr>
+                                <abbr title="University of Computer Studies, Hinthada" class="text-decoration-none">ကွန်ပျူတာတက္ကသိုလ်၊ဟင်္သာတ။</abbr>
                                 </a>
                             </li>
                         </ul>
@@ -147,21 +147,21 @@
                 </div>
                 <div class="col-sm-6 col-lg-3" data-aos="fade-down" data-aos-duration="1600">
                     <div class="footer-widget widget-links">
-                        <h5 class="title">We're Here to Help</h5>
+                        <h5 class="title">အကူအညီရယူရန်</h5>
                         <ul class="links-list">
                             <li>
                                 <a href="{{ route('about-us') }}#help">
-                                    User guide
+                                အသုံးပြုသူလမ်းညွှန်
                                 </a>
                             </li>
+                            <!-- <li>
+                                <a href="{{ route('register') }}">သင့်အကောင့်</a>
+                            </li> -->
                             <li>
-                                <a href="{{ route('register') }}">Your Account</a>
+                                <a href="{{ route('contact.store') }}">ကျွန်ုပ်တိုကိုဆက်သွယ်ရန်</a>
                             </li>
                             <li>
-                                <a href="{{ route('contact.store') }}">Contact Us</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('faq') }}">FAQ</a>
+                                <a href="{{ route('faq') }}">မေးလေ့ရှိသောမေးခွန်းများ</a>
                             </li>
                         </ul>
                     </div>
@@ -174,10 +174,10 @@
             <div class="copyright-area">
                 <div class="footer-bottom-wrapper">
                 <div class="copyright">
-                        <p>University of Computer Studies, Hinthada</p>
+                        <p>ကွန်ပျူတာတက္ကသိုလ်၊ဟင်္သာတ</p>
                     </div>
                     <div class="copyright">
-                        <p>&copy; Copyright 2024 </p>
+                        <p>&copy; မူပိုင်ခွင့် ၂၀၂၄ </p>
                     </div>
                 </div>
             </div>

@@ -7,10 +7,10 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner-content cl-white">
-                        <h5 class="cate" data-aos="fade-down" data-aos-duration="1000">Online Auction System</h5>
+                        <h5 class="cate" data-aos="fade-down" data-aos-duration="1000">အွန်လိုင်းလေလံစနစ်</h5>
                         <!-- <h3 class="title" data-aos="zoom-out-up" data-aos-duration="1200"><span class="d-xl-block">သင့်ရဲ့ ကြွယ်ဝမှုကို </span> လေလံပွဲတွင် ပြသလေ့ရှိပါသလား?</h3> -->
                         <p class="pras" data-aos="zoom-out-down" data-aos-duration="1300">
-                        အွန်လိုင်းလေလံစနစ်တွင်ပါဝင်ပြီး ဒစ်ဂျစ်တယ်စျေးကွက်အား မြှင့်တင်နိုင်ရန် မတူညီသော ပစ္စည်းများအား ယခုပဲ ဝင်ရောက်ကြည့်ရှုလိုက်ပါ။
+                        အွန်လိုင်းလေလံစနစ်တွင်ပါဝင်ပြီး ဒစ်ဂျစ်တယ်စျေးကွက်အား မြှင့်တင်နိုင်ရန် မတူညီသော ပစ္စည်းများအား ယခုပဲ ဝင်ရောက်ကြည့်ရှု၍ လေလံဆွဲနိုင်ပါသည်။
                         </p>
                         <a href="{{ route('register') }}" class="custom-button yellow btn-large" data-aos="zoom-out-up" data-aos-duration="1500">စတင်လိုက်ပါ</a>
                     </div>
@@ -40,10 +40,10 @@
                         </div>
                         <div class="title-area">
                             <h2 class="title">{{ $category->name }}</h2>
-                            <p>We offer affordable {{ $category->name }}</p>
+                            <p>လေလံအမျိုးအစားများ- {{ $category->name }}</p> 
                         </div>
                     </div>
-                    <a href="{{ route('product.index') }}" class="normal-button">View All</a>
+                    <a href="{{ route('product.index') }}" class="normal-button">အားလုံးကိုကြည့်ရန်</a>
                 </div>
                 <div class="row justify-content-center mb-30-none">
                     @foreach ($category->products as $product)
@@ -62,8 +62,8 @@
         <div class="popular-bg bg_img" data-background="{{ asset('assets/images/popular-bg.png') }}"></div>
         <div class="container">
             <div class="section-header cl-white" data-aos="fade-down" data-aos-duration="1000">
-                <span class="cate">Closing Within 24 Hours</span>
-                <h2 class="title" data-aos="fade-down" data-aos-duration="1500">Popular Auctions</h2>
+                <!-- <span class="cate">Closing Within 24 Hours</span> -->
+                <h2 class="title" data-aos="fade-down" data-aos-duration="1500">လူကြိုက်များသောလေလံပစ္စည်းများ</h2>
                 <p>ပစ္စည်းများအား ယခုပဲလေလံဆွဲပါ။ ကျွန်ုပ်တို့၏ လုပ်ငန်းစဥ်များသည် ရိုးရှင်းသည်။ ထိရောက်ပြီး ပွင့်လင်းမြင်သာမှုရှိသည်။
                 </p>
             </div>
@@ -85,12 +85,12 @@
                                             <i class="flaticon-auction"></i>
                                         </div>
                                         <div class="amount-content">
-                                            <div class="current">Current Bid</div>
-                                            <div class="amount">{{ $popular_product->current_bid }} MMK</div>
+                                            <div class="current">လက်ရှိလေလံဈေးနှုန်း</div>
+                                            <div class="amount">{{ $popular_product->current_bid }} ကျပ်</div>
                                         </div>
                                     </div>
                                     <div class="bids-area">
-                                        Total Bids : <span class="total-bids">{{ $popular_product->auctions->count() }} Bids</span>
+                                    စုစုပေါင်းလေလံ : <span class="total-bids">{{ $popular_product->auctions->count() }} ခု</span>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                     <h3 class="title">အခမဲ့စာရင်းသွင်းပြီး ယခုပဲ လေလံဆွဲခြင်း စတင်ပါ!</h3>
                     <p>ပစ္စည်းအမျိုးအစားများစွာအား ကြည့်ရှုနိုင်ပါတယ်။</p>
                 </div>
-                <a href="{{ route('register') }}" class="custom-button white">Register</a>
+                <a href="{{ route('register') }}" class="custom-button white">စာရင်းသွင်းပါ</a>
             </div>
         </div>
     </section>

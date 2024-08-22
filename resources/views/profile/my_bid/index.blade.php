@@ -28,7 +28,7 @@
                         <div class="col-12">
                             <div class="dash-pro-item mb-30 dashboard-widget">
                                 <div class="header">
-                                    <h4 class="title">My Bids</h4>
+                                    <h4 class="title">ကျွန်ုပ်၏လေလံများ</h4>
                                 </div>
                             </div>
                         </div>
@@ -51,8 +51,8 @@
                                                 <i class="flaticon-auction"></i>
                                             </div>
                                             <div class="amount-content">
-                                                <div class="current">Current Bid</div>
-                                                <div class="amount">{{ number_format($product->starting_price) }} MMK</div>
+                                                <div class="current">လက်ရှိလေလံ</div>
+                                                <div class="amount">{{ number_format($product->starting_price) }} ကျပ်</div>
                                             </div>
                                         </div>
                                         <div class="bid-amount">
@@ -60,8 +60,8 @@
                                                 <i class="flaticon-money"></i>
                                             </div>
                                             <div class="amount-content">
-                                                <div class="current">Buy Now</div>
-                                                <div class="amount">{{ number_format($product->fixed_price) }} MMK</div>
+                                                <div class="current">ဝယ်ရန်</div>
+                                                <div class="amount">{{ number_format($product->fixed_price) }} ကျပ်</div>
                                             </div>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                         <span class="total-bids">{{ $product->auctions()->count() }} Bids</span>
                                     </div>
                                     <div class="text-center">
-                                        <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>
+                                        <a href="{{ route('product.detail', $product->id) }}" class="custom-button">လေလံဆွဲပါ</a>
                                     </div>
                                 </div>
                             </div>

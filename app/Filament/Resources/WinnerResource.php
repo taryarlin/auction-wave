@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Winner;
+use App\Models\Product;
 use App\Models\Customer;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
@@ -23,11 +24,11 @@ use App\Filament\Resources\WinnerResource\RelationManagers;
 
 class WinnerResource extends Resource
 {
-    protected static ?string $model = Customer::class;
+    protected static ?string $model = Product::class;
 
     protected static ?string $label = "လေလံအောင်မြင်သူများ";
 
-    protected static ?string $navigationLabel = "လေလံအောင်မြင်သူများ";
+    protected static ?string $navigationLabel = "အောင်မြင်သူများ";
     
     protected static ?string $navigationIcon = 'heroicon-o-users'; 
 
@@ -41,46 +42,51 @@ class WinnerResource extends Resource
 
     public static function table(Table $table): Table
     {
-        // $winner = Customer::where('id', $record->id)->first();
         return $table
             ->columns([
-                TextColumn::make('name')->label('အမည်'),
-
-                TextColumn::make('email')->label('အီးမေးလ်')->badge()->color('success'),
-
-                TextColumn::make('phone')->label('ဖုန်း')->badge()->color('danger'),
-
-                TextColumn::make('product_name')
-                    ->label('Product Name')
-                    ->getStateUsing(function (Customer $record) {
-                        return $record->won_product->name;
+                TextColumn::make('winner_name')
+                    ->label('လေလံအနိုင်အရသူ အမည်')
+                    ->getStateUsing(function (Product $record) {
+                        return $record->winner->name;
                     })
-                    // ->searchable()
+                    ->sortable(),
+
+                TextColumn::make('winner_phone')
+                    ->label('လေလံအနိုင်အရသူ ဖုန်း')
+                    ->getStateUsing(function (Product $record) {
+                        return $record->winner->phone;
+                    })
                     ->sortable()
-                    ->label('ပစ္စည်းအမည်'),
+                    ->badge()->color('danger'),
 
-                TextColumn::make('won_amount')
-                    ->label('Won Amount')
-                    ->getStateUsing(function (Customer $record) {
-                        return number_format($record->won_product->won_amount) . ' MMK';
+                TextColumn::make('winner_email')
+                    ->label('လေလံအနိုင်အရသူ အီးမေးလ်')
+                    ->getStateUsing(function (Product $record) {
+                        return $record->winner->email;
                     })
-                    // ->searchable()
+                    ->sortable()
+                    ->badge()->color('success'),
+
+                TextColumn::make('name')
+                    ->label('ပစ္စည်းအမည်')
+                    ->searchable()->sortable(),
+                TextColumn::make('won_amount')
+                    ->getStateUsing(function (Product $record) {
+                        return number_format($record->won_amount) . ' MMK';
+                    })
+                    ->searchable()
                     ->label('လေလံအနိုင်ရသည့်စျေး')
                     ->badge()->color('warning'),
-
                 TextColumn::make('won_datetime')
-                    ->label('Won Datetime')
-                    ->getStateUsing(function (Customer $record) {
-                        return $record->won_product->won_datetime;
-                    })
-                    // ->searchable()
-                    ->label('လေလံအနိုင်ရသည့်အချိန်'),
+                    ->label('လေလံအနိုင်ရသည့်အချိန်')
+                    ->searchable()->sortable(),
             ])
             ->filters([
                 //
             ])
             ->actions([
-                // Tables\Actions\Action::make('sendEmail')
+                // Tables\Actions\EditAction::make(),
+                // Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 // Tables\Actions\BulkActionGroup::make([

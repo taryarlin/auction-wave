@@ -18,19 +18,19 @@
         </div>
         <ul class="dashboard-menu">
             <li>
-                <a href="{{ route('profile.dashboard') }}" class="{{ $current_route == request()->routeIs('profile.dashboard') ? 'active' : '' }}"><i class="flaticon-dashboard"></i>Dashboard</a>
+                <a href="{{ route('profile.dashboard') }}" class="{{ $current_route == request()->routeIs('profile.dashboard') ? 'active' : '' }}"><i class="flaticon-dashboard"></i>အသုံးပြုသူမှတ်တမ်း</a>
             </li>
             <li>
-                <a href="{{ route('profile.personal.index') }}" class="{{ $current_route == request()->routeIs('profile.personal.*') ? 'active' : '' }}"><i class="flaticon-user"></i>Personal Profile </a>
+                <a href="{{ route('profile.personal.index') }}" class="{{ $current_route == request()->routeIs('profile.personal.*') ? 'active' : '' }}"><i class="flaticon-user"></i>ကိုယ်ရေးအကျဥ်း</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="{{ route('profile.my-product.index') }}" class="{{ $current_route == request()->routeIs('profile.my-product.*') ? 'active' : '' }}"><i class="flaticon-bag"></i>My Products</a>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                 <a href="{{ route('profile.my-bid.index') }}" class="{{ $current_route == request()->routeIs('profile.my-bid.*') ? 'active' : '' }}"><i class="flaticon-auction"></i>My Bids</a>
-            </li>
+            </li> -->
             <li>
-                <a href="{{ route('profile.winning-bid.index') }}" class="{{ $current_route == request()->routeIs('profile.winning-bid.*') ? 'active' : '' }}"><i class="flaticon-best-seller"></i>Winning Bids</a>
+                <a href="{{ route('profile.winning-bid.index') }}" class="{{ $current_route == request()->routeIs('profile.winning-bid.*') ? 'active' : '' }}"><i class="flaticon-best-seller"></i>အနိုင်ရှိသော လေလံများ</a>
             </li>
         </ul>
     </div>

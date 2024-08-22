@@ -7,34 +7,36 @@
         <h6 class="title">
             <a href="{{ route('product.detail', $product->id) }}">{{ $product->name }}</a>
         </h6>
-        <div class="bid-area">
-            <div class="bid-amount">
-                <div class="icon">
-                    <i class="flaticon-auction"></i>
-                </div>
-                <div class="amount-content">
-                    <div class="current">Current Bid</div>
-                    <div class="amount">{{ number_format($product->starting_price) }} MMK</div>
+        <div class="text-center text-success">
+            <div class="row">
+                    
+                <div class="bid-amount">
+                    <div class="amount-content">
+                        <div class="current"><i class="fas fa-tag"></i>စတင်သည့်စျေးနှုန်း</div>
+                        <div class="amount">{{ number_format($product->starting_price) }} ကျပ်</div>
+                    </div>
                 </div>
             </div>
-            <div class="bid-amount">
+            
+        </div>
+            <!-- <div class="bid-amount">
                 <div class="icon">
                     <i class="flaticon-money"></i>
                 </div>
                 <div class="amount-content">
-                    <div class="current">Buy Now</div>
-                    <div class="amount">{{ number_format($product->fixed_price) }} MMK</div>
+                    <div class="current">ဝယ်ရန်</div>
+                    <div class="amount">{{ number_format($product->fixed_price) }} ကျပ်</div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        
         <div class="countdown-area">
             <div class="countdown">
-                <div id="product_bid_counter{{ $product->id }}" data-product-id="{{ $product->id }}" data-end-date="{{ \Carbon\Carbon::parse($product->end_datetime)->format('Y/m/d') }}"></div>
+                <div id="product_bid_counter{{ $product->id }}" data-product-id="{{ $product->id }}" data-end-date="{{ $product->end_datetime }}"></div>
             </div>
-            <span class="total-bids">{{ $product->auctions()->count() }} Bids</span>
+            <span class="total-bids">{{ $product->auctions()->count() }}ခု</span>
         </div>
         <div class="text-center">
-            <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid</a>
+            <a href="{{ route('product.detail', $product->id) }}" class="custom-button">လေလံပမာဏဖြည့်ပါ </a>
         </div>
     </div>
 </div>
