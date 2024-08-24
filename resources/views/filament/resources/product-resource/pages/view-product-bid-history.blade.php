@@ -2,6 +2,14 @@
     <div class="table-container">
         <table class="filament-table">
             <h3 class="text-xl font-bold mb-4">လေလံစုစုပေါင်း: {{ $bid_histories_total }} </h3>
+            <div class="product-info mb-4"style="display: flex; align-items: center; justify-content: center; text-align: center;">
+                <p class="product-name" style="margin-right: 100px; font-family: 'Arial', sans-serif; font-weight: bold; font-style: italic; font-size: 30px; color: #333;">{{ $product_name }}</p>
+                <div class="product-images">
+                @foreach ($product_images as $image)
+                    <img src="{{ asset('storage/'.$image) }}" alt="product" style="width: 400px; height: auto;">
+                @endforeach
+            </div>
+            </div>
             <tbody>
                 <tr>
                     <td><b>လေလံဆွဲသူများ</b></td>
@@ -10,6 +18,7 @@
                     <td><b>လေလံပမာဏ</b></td>
                 </tr>
                 @forelse ($bid_histories as $bid_history)
+                
                 <tr>
                     <td>{{ $bid_history->name }}</td>
                     <td>{{ $bid_history->pivot->created_at }}</td>

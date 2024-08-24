@@ -111,4 +111,18 @@ class Product extends Model
         return $this->belongsTo(Customer::class, 'winner_id', 'id');
     }
 
+    public function isWinner()
+    {
+        $highestBid = $this->auctions()->max('amount');
+
+        // Assuming the 'auctions' relationship exists and links to a table where bids are stored
+        $userBid = $this->auctions()
+                        ->where('customer_product.product_id', $this->id)
+                        ->where('customers.id', auth()->id())  // Specify the 'customers.id' to avoid ambiguity
+                        ->max('amount');
+
+        return $userBid === $highestBid;
+    }
+
+
 }

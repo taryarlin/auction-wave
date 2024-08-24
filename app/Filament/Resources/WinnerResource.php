@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use Carbon\Carbon;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Winner;
@@ -12,12 +13,16 @@ use Filament\Tables\Table;
 use App\Mail\AuctionWinnerMail;
 use Filament\Resources\Resource;
 use Filament\Tables\Actions\Action;
+use Filament\Tables\Filters\Filter;
 use Illuminate\Support\Facades\Mail;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Actions\ButtonAction;
+use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Filters\DateRangeFilter;
 use App\Filament\Resources\WinnerResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\WinnerResource\RelationManagers;
@@ -82,7 +87,30 @@ class WinnerResource extends Resource
                     ->searchable()->sortable(),
             ])
             ->filters([
-                //
+                Filter::make('Daily')
+                ->query(fn (Builder $query) => $query->whereDate('won_datetime', Carbon::today()))
+                ->label('Today'),
+
+                Filter::make('Monthly')
+                    ->query(fn (Builder $query) => $query->whereMonth('won_datetime', Carbon::now()->month))
+                    ->label('This Month'),
+
+                Filter::make('Yearly')
+                    ->query(fn (Builder $query) => $query->whereYear('won_datetime', Carbon::now()->year))
+                    ->label('This Year'),
+
+                Filter::make('Custom Date')
+                    ->form([
+                        DatePicker::make('date')
+                            ->label('Select Date')
+                            ->required()
+                            ->default(Carbon::today())
+                            ->afterStateUpdated(fn ($state, $set) => $set('date', $state)),
+                    ])
+                    ->query(fn (Builder $query, array $data) => 
+                        $query->whereDate('won_datetime', $data['date'] ?? Carbon::today())
+                    )
+                    ->label('Custom Date'),
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),

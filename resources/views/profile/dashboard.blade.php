@@ -119,7 +119,9 @@
                                                 <td data-purchase="bid price">{{ number_format($my_product->bid_increment) }} MMK</td>
                                                 <td data-purchase="highest bid">{{ number_format($my_product->auctions()->max('amount')) }} MMK</td>
                                                 <td data-purchase="lowest bid">{{ number_format($my_product->auctions()->min('amount')) }} MMK</td>
-                                                <td data-purchase="status"><span class="rating status status-{{ $my_product->status }}">{{ ucfirst($my_product->status) }}</span></td>
+                                                <td data-purchase="status">
+                                                    <span class="rating status status-{{ $my_product->status }}">{{ ucfirst($my_product->status) }}</span>
+                                                </td>
                                                 <td data-purchase="expire datetime">{{ $my_product->end_datetime }}</td>
                                             </tr>
                                             @endforeach
@@ -148,7 +150,13 @@
                                                 <td data-purchase="bid price">{{ number_format($active_bid->bid_increment) }} MMK</td>
                                                 <td data-purchase="highest bid">{{ number_format($active_bid->auctions()->max('amount')) }} MMK</td>
                                                 <td data-purchase="lowest bid">{{ number_format($active_bid->auctions()->min('amount')) }} MMK</td>
-                                                <td data-purchase="status"><span class="rating status status-{{ $active_bid->status }}">{{ ucfirst($active_bid->status) }}</span></td>
+                                                <td data-purchase="status">
+                                                @if ($active_bid->isWinner())
+                                                    <span class="rating status status-win">Continue</span>
+                                                @else
+                                                    <span class="rating status status-failed">Failed</span>
+                                                @endif
+                                                </td>
                                                 <td data-purchase="expire datetime">{{ $active_bid->end_datetime }}</td>
                                             </tr>
                                             @endforeach

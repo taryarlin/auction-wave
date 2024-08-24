@@ -12,7 +12,7 @@
                     
                 <div class="bid-amount">
                     <div class="amount-content">
-                        <div class="current"><i class="fas fa-tag"></i>စတင်သည့်စျေးနှုန်း</div>
+                        <div class="current"><i class="fas fa-tag"></i>Start Price</div>
                         <div class="amount">{{ number_format($product->starting_price) }} ကျပ်</div>
                     </div>
                 </div>
@@ -33,10 +33,10 @@
             <div class="countdown">
                 <div id="product_bid_counter{{ $product->id }}" data-product-id="{{ $product->id }}" data-end-date="{{ $product->end_datetime }}"></div>
             </div>
-            <span class="total-bids">{{ $product->auctions()->count() }}ခု</span>
+            <span class="total-bids">{{ $product->auctions()->count() }}Bids</span>
         </div>
         <div class="text-center">
-            <a href="{{ route('product.detail', $product->id) }}" class="custom-button">လေလံပမာဏဖြည့်ပါ </a>
+            <a href="{{ route('product.detail', $product->id) }}" class="custom-button">Submit a bid </a>
         </div>
     </div>
 </div>

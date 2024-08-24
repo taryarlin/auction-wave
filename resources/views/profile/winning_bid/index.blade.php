@@ -39,12 +39,55 @@
                             <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                                 <div class="auction-thumb">
                                     <a href="{{ route('product.detail', $product->id) }}"><img src="{{ $product->acsr_images ? $product->acsr_images[0] : asset('assets/images/no-product-image.png') }}" class="" style="width: 100%; height: 300px; object-fit: cover" alt="product"></a>
-                                    <a href="{{ route('product.detail', $product->id) }}" class="bid"><i class="flaticon-auction"></i></a>
+                                    <!-- <a href="{{ route('product.detail', $product->id) }}" class="bid"><i class="flaticon-auction"></i></a> -->
                                 </div>
                                 <div class="auction-content">
                                     <h6 class="title">
-                                        <a href="{{ route('product.detail', $product->id) }}">{{ $product->name }}</a>
+                                        <!-- <a href="{{ route('product.detail', $product->id) }}"> -->
+                                        {{ $product->name }}
+                                    <!-- </a> -->
                                     </h6>
+                                    <div class="bid-area">
+                                        <div class="bid-amount">
+                                            <div class="icon">
+                                                <i class="flaticon-trophy"></i>
+                                            </div>
+                                            <div class="amount-content">
+                                                <div class="current">Winning Bid Amount</div>
+                                                <div class="amount">{{ number_format($product->current_bid) }} MMK</div>
+                                            </div>
+                                        </div>
+                                        <div class="bid-amount">
+                                            <div class="icon">
+                                                <i class="flaticon-money"></i>
+                                            </div>
+                                            <div class="amount-content">
+                                                <div class="current">Starting Price</div>
+                                                <div class="amount">{{ number_format($product->starting_price) }} MMK</div>
+                                            </div>
+                                        </div>
+                                        <div class="bid-amount">
+                                            <div class="icon">
+                                                <i class="flaticon-percent"></i>
+                                            </div>                                           
+                                            
+                                            <div class="amount-content">
+                                                <div class="current">  
+                                                Buyer Premium Percent</div>
+                                                <div class="amount">{{ $product->buyer_premium_percent ?? 0 }}%</div>
+                                            </div>
+                                        </div>
+                                        <div class="bid-amount">
+                                            <div class="icon">
+                                                <i class="flaticon-money"></i>
+                                            </div>
+                                            <div class="amount-content">
+                                                <div class="current">Total Price</div>
+                                                <div class="amount">{{ number_format(($product->current_bid) * (1 + ($product->buyer_premium_percent) / 100)) }} MMK</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <!-- <div class="bid-area">
                                         <div class="bid-amount">
                                             <div class="icon">

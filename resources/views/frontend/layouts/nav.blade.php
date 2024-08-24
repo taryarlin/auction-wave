@@ -60,6 +60,21 @@
                     </li>
                     <li>
                         <a href="{{ route('product.index') }}">လေလံပစ္စည်းများ</a>
+                        <ul class="submenu">
+                            @php
+                                $categories = App\Models\Category::limit(8)->get(['id', 'name']);
+                            @endphp
+                            @foreach ($categories as $key => $category)
+                            <li>
+                                <a href="{{ route('product.index') }}">{{ $category->name }}</a>
+                            </li>
+                            <!-- @if (($key + 1) == count($categories))
+                            <li>
+                                <a href="{{ route('product.index') }}">အားလုံးကိုကြည့်ရန်</a>
+                            </li>
+                            @endif -->
+                            @endforeach
+                        </ul>
                     </li>
                     <li>
                         <a href="#">စာမျက်နှာများ</a>

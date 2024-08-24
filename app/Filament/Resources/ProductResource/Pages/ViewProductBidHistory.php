@@ -13,6 +13,10 @@ class ViewProductBidHistory extends Page
     public $bid_histories;
     public $bid_histories_total;
 
+    public $product_name;
+
+    public $product_images;
+
     protected static ?string $title = 'လေလံမှတ်တမ်း';
 
     protected static string $resource = ProductResource::class;
@@ -21,6 +25,14 @@ class ViewProductBidHistory extends Page
 
     public function mount($record)
     {
+        $product = Product::find($record);
+        if (!$product) {
+            abort(404, 'Product not found');
+        }
+        $this->product_name = $product->name;
+        $this->product_images = $product->images;
+        
+
         $auctions = Product::findOrFail($record)->auctions();
         $this->bid_histories = $auctions->orderBy('amount', 'desc')->orderBy('created_at', 'desc')->limit(20)->get();
         $this->bid_histories_total = $auctions->count();

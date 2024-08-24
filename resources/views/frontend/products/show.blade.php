@@ -60,19 +60,19 @@
                                 @endif
                             @endif
                             <li class="header">
-                                <h5 class="current">လက်ရှိစျေးနှုန်း</h5>
+                                <h5 class="current">Current Price</h5>
                                 <h3 class="price">{{ number_format($product->current_bid) }} ကျပ်</h3>
                             </li>
                             <li>
-                                <span class="details">Buyer's Premium</span>
+                                <span class="details">Buyer's Premium Percent</span>
                                 <h5 class="info">{{ $product->buyer_premium_percent }}%</h5>
                             </li>
                             <li>
-                                <span class="details">လေလံတိုးနှုန်း</span>
+                                <span class="details">Bid increment</span>
                                 <h5 class="info">{{ $product->bid_increment }} ကျပ်</h5>
                             </li>
                             <li>
-                                <span class="details">နောက်ဆုံးလေလံပမာဏ</span>
+                                <span class="details">Final Bid Amount</span>
                                 <h5 class="info">{{ $product->current_bid + $product->bid_increment }} ကျပ်</h5>
                             </li>
                         </ul>
@@ -80,19 +80,23 @@
                             @if (auth()->guard('customer')->user()->id != $product->customer_id)
                                 @if ($product->isExpired())
                                 <div class="product-bid-area">
-                                    <form action="{{ route('make-bid') }}" method="POST" class="product-bid-form">
+                                    <form id="bid-form" action="{{ route('make-bid') }}" method="POST" class="product-bid-form">
                                         @csrf
-                                        <div class="search-icon">
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <input type="hidden" name="amount" value="{{ $product->current_bid + $product->bid_increment }}">
+                                        <button type="button" class="custom-button" onclick="confirmBid()">Submit a bid</button>
+                                        <!-- <div class="search-icon">
                                             <img src="{{ asset('assets/images/search-icon.png') }}" alt="product">
                                         </div>
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         <input type="number" name="amount" placeholder="လေလံပမာဏ">
-                                        <button type="submit" class="custom-button">လေလံပမာဏဖြည့်ပါ</button>
+                                        <button type="submit" class="custom-button">လေလံပမာဏဖြည့်ပါ</button> -->
                                     </form>
                                 </div>
                                 @endif
                             @endif
                         @else
+                        
                         <div class="product-bid-area">
                             <form class="product-bid-form">
                                 <div class="search-icon">
@@ -343,6 +347,23 @@
 
 @push('script')
     <script>
+        function confirmBid() {
+        Swal.fire({
+            title: 'Do you want to increase the bid?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, increase it!',
+            cancelButtonText: 'No, cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Submit the form if the user confirms
+                document.getElementById('bid-form').submit();
+            }
+        });
+    }
+                        
         $(function() {
             var owl = $('.product-details-sl');
             owl.owlCarousel({

@@ -50,8 +50,23 @@
                         <div class="form-group mb-30">
                             <label for="login-pass"><i class="fas fa-lock"></i></label>
                             <input type="password" name="password_confirmation" id="login-pass" placeholder="စကားဝှက်အားပြန်ရိုက်ပါ" required>
+                            <small id="passwordHint" style="display:none;color:gray;">Minimum 8 characters, capital letters, small letters & special characters</small>
                             <!-- <span class="pass-type"><i class="fas fa-eye"></i></span> -->
                         </div>
+                        @push('script')
+                        <script>
+                            const passwordInput = document.getElementById('login-pass');
+                            const passwordHint = document.getElementById('passwordHint');
+
+                            passwordInput.addEventListener('focus', function() {
+                                passwordHint.style.display = 'inline';
+                            });
+
+                            passwordInput.addEventListener('blur', function() {
+                                passwordHint.style.display = 'none';
+                            });
+                        </script>
+                        @endpush
                         <div class="form-group mb-30">
                             <label for="login-email"><i class="fas fa-home"></i></label>
                             <input type="text" name="address" placeholder="မြို့အမည်" required>
